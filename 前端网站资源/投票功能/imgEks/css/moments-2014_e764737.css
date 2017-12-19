@@ -1,0 +1,26 @@
+body.w-small { min-width: 980px }
+body.w-large { min-width: 1180px }
+.layout { margin: 0 auto }
+body.w-small .layout, .layout { width: 980px }
+body.w-large .layout { width: 1180px }
+@media screen and (max-width:1280px) {
+body.w-var .layout { width: 980px }
+}
+@media screen and (min-width:1280px) {
+body.w-var .layout { width: 1180px }
+}
+h2 { margin: 0 0 30px; height: 72px; line-height: 72px; font-size: 40px; font-weight: 400; text-align: center; color: #373737 }
+@font-face { font-family: baikeFont_icons; src: url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/icons/wiki-activity-moments2014-icons_097c710.eot); src: url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/icons/wiki-activity-moments2014-icons_097c710.eot) format('embedded-opentype'), url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/icons/wiki-activity-moments2014-icons_cbc5eb7.woff) format('woff'), url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/icons/wiki-activity-moments2014-icons_7d1916c.ttf) format('truetype'), url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/icons/wiki-activity-moments2014-icons_ddbfd98.svg) format('svg'); font-weight: 400; font-style: normal }
+.wiki-activity-moments2014-icons { font-family: baikeFont_icons }
+.wiki-activity-moments2014-icons_next { *zoom:expression(this.runtimeStyle["zoom"] = "1", this.innerHTML += "&#xe600;")
+}
+.wiki-activity-moments2014-icons_next:before { content: '\e600' }
+.wiki-activity-moments2014-icons_prev { *zoom:expression(this.runtimeStyle["zoom"] = "1", this.innerHTML += "&#xe601;")
+}
+.wiki-activity-moments2014-icons_prev:before { content: '\e601' }
+.momentsGuide-wrapper { position: relative; z-index: 0; overflow: hidden; height: 800px }
+.mainRanking-wrapper { position: relative; z-index: 1; overflow: hidden; margin: -140px 0 0 0 }
+.process-wrapper { margin: 0 0 100px; height: 250px }
+.subRankings-wrapper { background: url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/img/bg-subRankings_f4dfd6b.png) center 75px no-repeat }
+.authorityComments-wrapper { padding: 50px 0 100px; background: url(http://baike.bdimg.com/static/wiki-activity/moments-2014/resource/img/bg-authorityComments_91e429a.png) center 0 no-repeat }
+.cooperation-wrapper { margin: 0 0 50px }

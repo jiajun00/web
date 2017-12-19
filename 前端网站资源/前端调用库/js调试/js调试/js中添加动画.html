@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style>
+div.a {animation: myfirst 1s;-webkit-animation: myfirst 1s;}
+</style>
+<style id=dynamic>
+
+<body>
+<div id='a'>
+123
+</div>
+
+</body>
+</html>
+<script>
+var colors = ['red','yellow','blue','green']
+window.setTimeout(function (){
+    var color = colors.shift()
+    console.log(color)
+    if (!color) return
+    var style = document.getElementById("dynamic")
+    style.innerHTML = '@-webkit-keyframes myfirst{50% {background: '+color+';} }\n'
+             + '@keyframes myfirst {50% {background: '+color+';}}'
+    var a = document.getElementById('a')
+    a.className = 'a'
+
+    window.setTimeout(function(){
+        a.className = ''
+        },1000)
+    window.setTimeout(arguments.callee,1500)
+},1000)
+</script>

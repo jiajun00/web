@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+    <title>时间</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>  
+    <style>
+    	.clock{color:#fff;background-color: red;}
+    </style>
+</head>
+
+<body>
+    
+    <div width:200px;" id="Timer"></div> 
+   
+   
+   	<DIV id="CountMsg" class="HotDate">
+	    <span id="t_d">00天</span>
+	    <span id="t_h">00时</span>
+	    <span id="t_m">00分</span>
+	    <span id="t_s">00秒</span>	    
+	    <span id="t_w">星期</span>
+	</DIV>
+	<DIV id="CountMsg" class="HotDate">
+	    <span id="t_d1">00天</span>
+	    <span id="t_h1">00时</span>
+	    <span id="t_m1">00分</span>
+	    <span id="t_s1">00秒</span>
+	</DIV>
+   
+   
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function(){
+      setInterval("GetTime()",1000);
+    })
+    function GetTime(){
+      var mon,day,now,hour,min,ampm,time,str,tz,end,beg,sec;                
+      mon=new Array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");              
+      day=new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");               
+      now=new Date(); 
+      hour = now.getHours();
+      min = now.getMinutes(); 
+      sec = now.getSeconds();
+      if(hour<10){
+         hour="0"+hour;
+      }            
+      if(min<10){
+            min="0"+min;
+      } 
+      if(sec<10){
+         sec="0"+sec;
+      } 
+      $("#Timer").html("<nobr>"+mon[now.getMonth()]+"&nbsp;&nbsp;&nbsp;"+day[now.getDay()]+"&nbsp;&nbsp;&nbsp;"+now.getFullYear() +"&nbsp;&nbsp;&nbsp;"+now.getDate()+" "+hour+":"+min+":"+sec+"</nobr>");
+    }
+</script>
+
+<script runat="server" type="text/javascript">
+
+    function getRTime(){
+        var EndTime= new Date('2015/11/12 17:21:00'); //截止时间 前端路上 http://www.51xuediannao.com/qd63/
+        var NowTime = new Date();
+        var t =EndTime.getTime() - NowTime.getTime();
+        if(t<0){t=0;}
+		var day=new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
+        var d=Math.floor(t/1000/60/60/24);
+        var h=Math.floor(t/1000/60/60%24);
+        var m=Math.floor(t/1000/60%60);
+        var s=Math.floor(t/1000%60);
+		var w=day[NowTime.getDay()];
+		if(d<10){d="0"+d;}
+		if(h<10){h="0"+h;}            
+	    if(m<10){m="0"+m;} 
+	    if(s<10){s="0"+s;} 
+        $("#t_d").html("<span class='clock'>"+d+"</span>天");
+        $("#t_h").html("<span class='clock'>"+h+"</span>时");
+        document.getElementById("t_m").innerHTML = m + "分";
+        document.getElementById("t_s").innerHTML = s + "秒";
+        document.getElementById("t_w").innerHTML = w;		
+    }
+    setInterval(getRTime,1000);
+    
+    </script>
+    
+<script type="text/javascript">
+    function getRTime(){
+        var EndTime= new Date('2015/11/10 23:40:00'); //截止时间 前端路上 http://www.51xuediannao.com/qd63/
+        var NowTime = new Date();
+        var t =EndTime.getTime() - NowTime.getTime();
+        /*var d=Math.floor(t/1000/60/60/24);
+        t-=d*(1000*60*60*24);
+        var h=Math.floor(t/1000/60/60);
+        t-=h*60*60*1000;
+        var m=Math.floor(t/1000/60);
+        t-=m*60*1000;
+        var s=Math.floor(t/1000);*/
+
+        var d=Math.floor(t/1000/60/60/24);
+        var h=Math.floor(t/1000/60/60%24);
+        var m=Math.floor(t/1000/60%60);
+        var s=Math.floor(t/1000%60);
+
+        document.getElementById("t_d1").innerHTML = d + "天";
+        document.getElementById("t_h1").innerHTML = h + "时";
+        document.getElementById("t_m1").innerHTML = m + "分";
+        document.getElementById("t_s1").innerHTML = s + "秒";
+    }
+    setInterval(getRTime,1000);
+    </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/prototype-1.7.js" ></script>
+	</head>
+	<body>
+	<div id="Result"></div>
+	<button onclick="ShowExample()">点击</button>
+		<script>
+			function foo(v,i){
+				$("Result").innerHTML+="Value:"+v+"Index:"+i+"<br>";
+				return true;
+			}
+			function foo1(a,v,i){
+				a+=i+":"+v+"";
+				return a;
+			}
+			function ShowExample(){
+				var testArr=[10,4,8,9,20];
+				$("Result").innerHTML="数组元素为："+testArr+"<br>";
+				testArr.each(foo);
+				var arr=testArr.grep(/3/);
+				for (var i=0;i<arr.length;i++) {
+					$("Result").innerHTML+="arr["+i+"]:"+arr[i]+"<br>";
+				}
+				var injectArr=testArr.inject("inject()方法执行结果:",foo1);
+				$("Result").innerHTML+=injectArr;
+			}
+		</script>
+	</body>
+</html>

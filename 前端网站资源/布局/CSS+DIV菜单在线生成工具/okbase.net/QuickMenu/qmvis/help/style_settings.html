@@ -1,0 +1,1419 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Visual QuickMenu</title>
+
+
+<link rel="stylesheet" type="text/css" href="help.css">
+<style type="text/css">
+.rname {font-weight:normal;}
+</style>
+
+<script type="text/javascript">
+
+	function goto_bookmark()
+	{
+		if (window.location.search)
+		{
+
+			var tobj = document.getElementById(window.location.search.substring(1));
+			if (window.showHelp)
+				window.scrollTo(0,tobj.offsetTop+10);
+			else
+				window.scrollTo(0,tobj.offsetTop);
+	
+		}
+
+
+	}
+
+
+
+</script>
+
+</head><body onload="goto_bookmark()" class="title" style="margin:20px;"><div style="padding-bottom:5px;font-size:13px;font-weight:bold;">
+	Style Settings Reference</div><div class="topdivider"></div><div class="content">
+
+
+<div class="ctitle" style="color:#111111;">CSS Styles</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=backgroundColor>bg-color <span class="rname">[Background Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Background color settings are available for most items, titles, dividers, containers, and add-ons.  Use any valid CSS color setting or choose a color using the color picker by clicking the build button to the right of the input field.
+</div>
+
+<div class="ctitle" id=backgroundImage>bg-image <span class="rname">[Background Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+CSS background images are best for creating tiled effects such as gradients.  These images can also be used to create parent bullets or item images, however because of a bug in IE6 you may notice a flicker when applying these images to sub menu items or hover states.  Because of this we 
+recommend using the item image and bullet features instead, these add-on's work around the IE6 flickering issues.
+</div>
+
+<div class="ctitle" id=backgroundRepeat>bg-repeat <span class="rname">[Background Repeat]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to repeat, repeat-x, repeat-y, or no-repeat, the default value is no-repeat.
+<br>
+<br>
+Use the repeat option to tile an image, this option is best used for creating gradient type effects in the items or containers.
+</div>
+
+<div class="ctitle" id=backgroundPosition>bg-position <span class="rname">[Background Position]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any combination of top, left, center, or a dimensional value.  The first value defines the vertical position, while the second value determines the horizontal position.  When using two values 
+separate them with a space.
+<br>
+<br>
+A setting of center center will center your image in the middle of the container or item.  The position setting is 
+useful for attaching pure CSS bullets to parent items, you can set the bullet image to the right with center right.
+</div>
+
+<div class="ctitle" id=borderColor>border-color <span class="rname">[Border Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defines the color of all border edges. Use any valid CSS color setting or choose a color using the color picker by clicking the build button to the right of the input field.
+</div>
+
+<div class="ctitle" id=borderStyle>border-style <span class="rname">[Border Style]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the border style for all edges or individual edges.  Valid styles are none, dotted, dashed, solid, double, groove, ridge, inset, outset.  The default value is none.
+<br>
+<br>
+To specify individual edges separate the values with a space, the order is top, right, bottom, left.  A setting of... { solid 
+dashed solid dashed } will produce a solid top and bottom border with dashed left and right edges.
+</div>
+
+<div class="ctitle" id=borderWidth>border-width <span class="rname">[Border Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the border width for all edges or individual edges.  Use any valid unit value, typically px units are 
+preferred by most developers for border edges.
+<br>
+<br>
+To specify individual edges separate the values with a space, the order is top, right, bottom, left.  A setting of... { 5px 1px 1px 1px } will produce a 5 pixel tall top border with 1 pixel width right, bottom, and left edges.
+</div>
+
+
+<div class="ctitle" id=color>color <span class="rname">[Foreground Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+The color style typically defines the text color for items and titles.  With add-ons this 
+parameter may define the color of a bullet or interactive element.  Use any valid CSS color setting or choose a color using the color picker by clicking the build button to the right of the input field.
+</div>
+
+<div class="ctitle" id=cursor>cursor <span class="rname">[Cursor]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify a valid CSS cursor name... pointer, hand, help, resize, etc.  The cursor defines the mouse cursor to display.
+</div>
+
+<div class="ctitle" id=fontFamily>font-family <span class="rname">[Font Family]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify any valid system font family, if left blank the default browser font will be used which is typically Times New Roman.
+<br>
+<br>
+While any valid font may be specified, we recommend choosing a web safe font from the list, click the build button to the right of the filed to see the available settings.
+</div>
+
+<div class="ctitle" id=fontSize>font-size <span class="rname">[Font Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Define the size of you text with any valid dimensional unit such as px, em, %, etc.
+<br>
+<br>
+By default the templates use px units, however we recommend using em units instead.  Em's will allow your menu to be truly scalable in IE, px values fix the font size in IE and adjust to the users font size setting in all other browsers.  Em's adjust to the users settings in all browsers.
+<br>
+<br>
+Em units define a font size relative to the font size set on the menus containing element.  Because of this your em setting may look different in the visual interface than it does once published to your web page.  The visual tool uses a default containing font size of 13px, a setting of 1em in the visual tool is equivelent to 13px.
+</div>
+
+
+<div class="ctitle" id=fontStyle>font-style <span class="rname">[Font Style]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to normal, italic, oblique.  The default value is normal.
+</div>
+
+<div class="ctitle" id=fontWeight>font-weight <span class="rname">[Font Weight]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to normal, bold, bolder, lighter.  The default is normal.
+</div>
+
+<div class="ctitle" id=height>height <span class="rname">[Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defines the height of an item or container.  Use any valid CSS unit such as px, em, %, etc. to define your 
+dimensions.  Setting the height to auto is the same as leaving the field blank.
+</div>
+
+
+<div class="ctitle" id=margin>margin <span class="rname">[Margin]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Margins comprise the space between the outside edge or border of an item and the next item or its container.  Use any valid dimensional unit such as px, em, %, etc.
+<br>
+<br>
+You can specify a single value which will apply to all edges or individual top, right, bottom, and left edges.  When defining individual edges 
+separate each value with a space... { 10px 5px 10px 5px }.
+<br>
+<br>
+Margins are best used with main or sub menu items to create a space or gap between the items.  In a vertical sub menu you can add a bottom or top margin to create blank space between the items.
+<br><br>
+Margins may also be used to specifically position a sub menu container, use negative or positive values to offset the default positioning.  You can also automatically position a sub menu by simply dragging it to any desired location while in design view.
+</div>
+
+
+<div class="ctitle" id=padding>padding <span class="rname">[Padding]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Padding is the space between an item or containers content and its edge, or border if applied.  Use any valid dimensional unit such as px, em, %, etc.
+<br>
+<br>
+You can specify a single value which will apply to all edges or individual top, right, bottom, and left edges.  When defining individual edges 
+separate each value with a space... { 10px 5px 10px 5px }.
+<br>
+<br>
+Padding applied to the main or sub menu containers create a buffer between your menu items and the edges of the container.
+</div>
+
+<div class="ctitle" id=textAlign>text-align <span class="rname">[Text Align]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, center, or right.  The default value for this setting is typically inherited from the HTML page containing the menu.
+</div>
+
+<div class="ctitle" id=fontVariant>font-variant <span class="rname">[Font Variant]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to normal or small-caps.  The small-caps option applies upper-case to all characters. 
+</div>
+
+<div class="ctitle" id=lineHeight>line-height <span class="rname">[Line Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  The value determines the height of the text line in pixels.  Most browsers will center the actual text within the height defined.  Full cross browser testing for likeness should be performed with this setting.
+</div>
+
+<div class="ctitle" id=textDecoration>text-decoration <span class="rname">[Text Decoration]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to none, underline, overline, line-through, blink.  The default value is none.
+</div>
+
+<div class="ctitle" id=width>width <span class="rname">[Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defines the width of an item or container.  Use any valid CSS unit such as px, em, %, etc. to define your dimensions.  Setting the width to auto is the same as leaving the field blank.
+<br>
+<br>
+If setting a width for a main or sub menu container, make sure the width is wide enough to 
+accommodate your content.
+</div>
+
+</div>
+
+
+<!--***********************************box animation-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Box Animation</div>
+<div class="icontent" style="">
+The box animation zooms and shrinks a CSS styled box before and after a sub menu is displayed.  A wide array of effects may be achieved with this add-on by customizing the styles of the box and tweaking the position setting.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=box_animation_frames>box_animation_frames <span class="rname">[Frames]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+This is the total number of animation frames to use, however if combined with an 
+accelerator the number may be lower than what you specify resulting in a quicker animation sequence.
+<br>
+<br>
+The lower the number the faster your animation will be, the higher the number the slower your animation will run.
+</div>
+
+<div class="ctitle" id=box_accelerator>box_accelerator <span class="rname">[Accelerator]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+You can add some snap to the animation effect with the accelerator setting.  Usually a value in the range of .1 to 2.0 works well.
+</div>
+
+<div class="ctitle" id=box_position>box_position <span class="rname">[Position]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+valid values are center, top, left, top-left.  The position determines the starting point from where the box will grow and shrink back to.
+</div>
+
+</div>
+
+
+<!--***********************************fade subs-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Fade Subs</div>
+<div class="icontent" style="">
+The fade subs animation applies to sub menus.  When displayed the sub menu will fade in and then fade out when hidden.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=fade_in_frames>fade_in_frames <span class="rname">[Fade In Frames]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+This is the total number of animation frames to use during the fade in animation.  A lower number results in a faster animation while larger numbers produce smoother, yet slower animations.
+</div>
+
+<div class="ctitle" id=fade_out_frames>fade_out_frames <span class="rname">[Fade Out Frames]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+This is the total number of animation frames to use during the fade out animation.  A lower number results in a faster animation while larger numbers produce smoother, yet slower animations.
+</div>
+
+
+</div>
+
+
+<!--***********************************bump subs-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Bump Subs</div>
+<div class="icontent" style="">
+The bump subs animation applies to sub menus.  When displayed the sub menu will start at a 
+slightly offset position and slide to its final and correct location.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=bump_animation_frames>bump_animation_frames <span class="rname">[Frames]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+This is the total number of animation frames to use.  A lower number results in a faster animation while larger numbers produce smoother, yet slower animations.
+</div>
+
+<div class="ctitle" id=bump_distance>bump_distance <span class="rname">[Distance]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defined using any integer value greater than 0.  The distance determines how for the bump animation will travel.
+</div>
+
+<div class="ctitle" id=bump_main_direction>bump_main_direction <span class="rname">[Main Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+valid values are up, down, left, right.  The default value is up.  This determines the direction that the bump animation will travel for the 1st level sub menus which belong to main parent items.
+</div>
+
+<div class="ctitle" id=bump_sub_direction>bump_sub_direction <span class="rname">[Sub Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+valid values are up, down, left, right.  The default value is up.  This determines the direction that the bump animation will travel for 2nd level and greater sub menus.
+</div>
+
+<div class="ctitle" id=bump_auto_switch_main_left_right_directions>bump_auto_switch_main_left_right_directions <span class="rname">[Auto Switch Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  The default value is false.  When true 1st level sub menus will automatically bump left or right.  The direction is determined by which side of the item a previous sub menu was last visible.  This feature works best with horizontal main menus which have little or no show delay set on the sub menu visibility.
+</div>
+
+</div>
+
+
+<!--***********************************slide subs-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Slide Subs</div>
+<div class="icontent" style="">
+This addon slides sub menus into position from customizable directions.  A unique animation feature is included for dropping subs off screen when hidding sub menus.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=slide_animation_frames>slide_animation_frames <span class="rname">[Frames]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+This is the total number of animation frames to use, however if combined with an 
+accelerator the number may be lower than what you specify resulting in a quicker animation sequence.
+<br>
+<br>
+The lower the number the faster your animation will be, the higher the number the slower your animation will run.
+</div>
+
+<div class="ctitle" id=slide_accelerator>slide_accelerator <span class="rname">[Accelerator]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+You can add some snap to the animation effect with the accelerator setting.  Usually a value in the range of .1 to 2.0 works well.
+</div>
+
+<div class="ctitle" id=slide_left_right>slide_left_right <span class="rname">[Main Right]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+By default 1st level subs slide in from the top, setting this value to true will force 1st level subs to slide from the left.  This works best with vertically oriented main menu items.
+</div>
+
+<div class="ctitle" id=slide_left_right>slide_left_right <span class="rname">[Sub Right]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+By default 2st level subs slide in from the top, setting this value to true will force 2nd level subs to slide from the left.  This works best with vertically oriented sub menu items.
+</div>
+
+<div class="ctitle" id=slide_offxy>slide_offxy <span class="rname">[Offset XY]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Define with an integer value.  The offset applies to the left position of the sub for left to right animations and to the top position for top to bottom animations.
+<br>
+<br>
+The offset does not affect the final location of the sub menu, rather the location from which the slide appears.  The offset is 
+useful for sub menus which appear on top of there parent containers.  By 
+offsetting the slide the animation can be made to appear as if its sliding in from under the parent container even though its final resting spot is over the container.
+</div>
+
+<div class="ctitle" id=slide_drop_subs>slide_drop_subs <span class="rname">[Drop Subs]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When set to true, the sub menu hide animation will drop down and off the screen or to a set position instead of reverse sliding up or left.
+</div>
+
+<div class="ctitle" id=slide_drop_subs_height>slide_drop_subs_height <span class="rname">[Drop Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This setting requires the drop subs setting to be true.
+<br>
+<br>
+The height determines how far the sub menu will drop before disappearing.
+</div>
+
+<div class="ctitle" id=slide_drop_subs_disappear>slide_drop_subs_disappear <span class="rname">[Drop Hide]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false, the default value is false.  This setting requires the drop sub setting to be true and a drop height.
+<br>
+<br>
+By default dropped subs gradually hide as if sliding behind another object.  Setting this option to true will cause the sub to disappear without the added effect when it reaches the set drop height.
+</div>
+
+</div>
+
+
+
+<!--***********************************Merge subs-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Merge Subs</div>
+<div class="icontent" style="">
+This effect create a duplicate clone of the sub menu to be displayed, sets the new sub and the original to a custom opacity level, then merges the two into one by sliding them into each other.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=merge_frames>merge_frames <span class="rname">[Frames]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+This is the total number of animation frames to use.  A lower number results in a faster animation while larger numbers produce smoother, yet slower animations.
+</div>
+
+<div class="ctitle" id=merge_updown>merge_updown <span class="rname">[Main Up]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false. The default value is false.  When true, the 1st level subs will merge from the top and bottom rather than from the left and right.
+</div>
+
+<div class="ctitle" id=merge_sub_subs_updown>merge_sub_subs_updown <span class="rname">[Subs Up]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false. The default value is false.  When true, all 2nd level and higher subs will merge from the top and bottom rather than from the left and right.
+</div>
+
+<div class="ctitle" id=merge_opacity>merge_opacity <span class="rname">[Opacity]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to a decimal value between 0 and 1.  This sets the opacity of the merging sub menus.
+</div>
+
+</div>
+
+
+
+<!--***********************************Hover Fill-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Hover Fill Items</div>
+<div class="icontent" style="">
+This effect creates an animated fill effect on hovered items.  The animation may be faded or grown from any direction.  The fill box is fully CSS customizable and can include background images, borders, and custom colors.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=hoverfill_apply_to>hoverfill_apply_to <span class="rname">[Apply To]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to parent, non-parent, all.  The default value is all.
+<br>
+<br>
+Parents are items with child sub menus, use this setting to tell your users that certain items will display a sub menu with additional links.
+</div>
+
+
+<div class="ctitle" id=hoverfill_main_type>hoverfill_main_type <span class="rname">[Main Animation type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to none, grow, fade. Grow will cause the fill box to expand from a custom direction and may combine a fade effect if specified.
+</div>
+
+<div class="ctitle" id=hoverfill_main_direction>hoverfill_main_direction <span class="rname">[Main Grow Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to center, up, down, left, right. The direction is only valid when the animation type is set to grow.
+</div>
+
+<div class="ctitle" id=hoverfill_main_step_size>hoverfill_main_step_size <span class="rname">[Main Grow Step Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to an integer value greater than 0. The step size determines how many pixels to grow the fill between each animation frame.  The higher the value the faster the animation will run, values between 1 and 5 work well.
+</div>
+
+<div class="ctitle" id=hoverfill_main_fade_in>hoverfill_main_fade_in <span class="rname">[Main Grow Fade In]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false. When true, grow animations will also fade from transparent to opaque as they fill the item area.
+</div>
+
+<div class="ctitle" id=hoverfill_main_fade_type_steps>hoverfill_main_fade_type_steps <span class="rname">[Main Fade In Steps]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to an integer value greater than 0. The setting works with the fade animation type and has no bearing on the 'grow fade in' option.  The setting determines the number of frames to use with a fade animation, the higher the value the slower the animation effect will be.
+</div>
+
+<div class="ctitle" id=hoverfill_main_offset_width>hoverfill_main_offset_width <span class="rname">[Main Offset Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any positive or negative integer value. This will offset the width of the hoverfill area in pixels by the specified amount.  This is typically usefull for adjusting the width when using bordered edges, as a bordered edge will add extra size.  To offset this extra size of a border use a negative value.
+</div>
+
+<div class="ctitle" id=hoverfill_main_offset_height>hoverfill_main_offset_height <span class="rname">[Main Offset Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any positive or negative integer value. This will offset the height of the hoverfill area in pixels by the specified amount.  This is typically usefull for adjusting the width when using bordered edges, as a bordered edge will add extra size.  To offset this extra size of a border use a negative value.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_type>hoverfill_sub_type <span class="rname">[Sub Animation type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to none, grow, fade. Grow will cause the fill box to expand from a custom direction and may combine a fade effect if specified.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_direction>hoverfill_sub_direction <span class="rname">[Sub Grow Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to center, up, down, left, right. The direction is only valid when the animation type is set to grow.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_step_size>hoverfill_sub_step_size <span class="rname">[Sub Grow Step Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to an integer value greater than 0. The step size determines how many pixels to grow the fill between each animation frame.  The higher the value the faster the animation will run, values between 1 and 5 work well.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_fade_in>hoverfill_sub_fade_in <span class="rname">[Sub Grow Fade In]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false. When true, grow animations will also fade from transparent to opaque as they fill the item area.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_fade_type_steps>hoverfill_sub_fade_type_steps <span class="rname">[Sub Fade In Steps]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to an integer value greater than 0. The setting works with the fade animation type and has no bearing on the 'grow fade in' option.  The setting determines the number of frames to use with a fade animation, the higher the value the slower the animation effect will be.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_offset_width>hoverfill_sub_offset_width <span class="rname">[Sub Offset Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any positive or negative integer value. This will offset the width of the hoverfill area in pixels by the specified amount.  This is typically usefull for adjusting the width when using bordered edges, as a bordered edge will add extra size.  To offset this extra size of a border use a negative value.
+</div>
+
+<div class="ctitle" id=hoverfill_sub_offset_height>hoverfill_sub_offset_height <span class="rname">[Sub Offset Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any positive or negative integer value. This will offset the height of the hoverfill area in pixels by the specified amount.  This is typically usefull for adjusting the width when using bordered edges, as a bordered edge will add extra size.  To offset this extra size of a border use a negative value.
+</div>
+
+</div>
+
+
+
+
+<!--***********************************Item Bullets CSS-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Item Bullets (CSS Based / Imageless)</div>
+<div class="icontent" style="">
+These item bullets are styled completely with CSS and are drawn by the QuickMenu software on the fly when your menu loads without the need for images.  A host of shapes, styling options, and hover plus active features are combined into this relatively lightweight add-on.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=ibcss_apply_to>ibcss_apply_to <span class="rname">[Apply To]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to parent, non-parent, all.  The default value is all.
+<br>
+<br>
+Parents are items with child sub menus, use this setting to tell your users that certain items will display a sub menu with additional links.
+</div>
+
+<div class="ctitle" id=ibcss_main_type>ibcss_main_type <span class="rname">[Main Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Click the build button to the right of this field to select the type of arrow to display for the main items.
+</div>
+
+<div class="ctitle" id=ibcss_main_direction>ibcss_main_direction <span class="rname">[Main Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to down, right, up, left. These options apply to arrow type bullets only and determine the direction in which the main arrow will point.
+</div>
+
+<div class="ctitle" id=ibcss_main_size>ibcss_main_size <span class="rname">[Main Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This determines the size of the bullet for the main menu items.
+</div>
+
+<div class="ctitle" id=ibcss_main_bg_color>ibcss_main_bg_color <span class="rname">[Main Static Background Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the background color for the bullet.
+</div>
+
+<div class="ctitle" id=ibcss_main_bg_color_hover>ibcss_main_bg_color_hover <span class="rname">[Main Static Background Hover color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the background color for the bullet when the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_main_bg_color_active>ibcss_main_bg_color_active <span class="rname">[Main Static Background Active color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the background color for the bullet while the menu items child sub menu is visible.  If the item does not contain a sub menu then only the hover color will be visible while the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_main_border_color>ibcss_main_border_color <span class="rname">[Main Static Border Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the border or outline color for the bullet.
+</div>
+
+<div class="ctitle" id=ibcss_main_border_color_hover>ibcss_main_border_color_hover <span class="rname">[Main Static Border Hover color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the border or outline color for the bullet when the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_main_border_color_active>ibcss_main_border_color_active <span class="rname">[Main Static Border Active color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the border or outline color for the bullet while the menu items child sub menu is visible.  If the item does not contain a sub menu then only the hover color will be visible while the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_main_position_x>ibcss_main_position_x <span class="rname">[Main Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be horizontally offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibcss_main_position_y>ibcss_main_position_y <span class="rname">[Main Offset Y]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be vertically offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibcss_main_align_x>ibcss_main_align_x <span class="rname">[Main align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, center, right.  The bullet will be positioned left, center, or right, within each menu item.
+</div>
+
+<div class="ctitle" id=ibcss_main_align_x>ibcss_main_align_x <span class="rname">[Main align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, middle, right.  The bullet will be positioned left, middle, or right, within each menu item.
+</div>
+
+<div class="ctitle" id=ibcss_sub_type>ibcss_sub_type <span class="rname">[Sub Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Click the build button to the right of this field to select the type of arrow to display for the sub items.
+</div>
+
+<div class="ctitle" id=ibcss_sub_direction>ibcss_sub_direction <span class="rname">[Sub Direction]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to down, right, up, left. These options apply to arrow type bullets only and determine the direction in which the sub arrow will point.
+</div>
+
+<div class="ctitle" id=ibcss_sub_size>ibcss_sub_size <span class="rname">[Sub Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This determines the size of the bullet for the sub menu items.
+</div>
+
+<div class="ctitle" id=ibcss_sub_bg_color>ibcss_sub_bg_color <span class="rname">[Sub Static Background Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the background color for the bullet.
+</div>
+
+<div class="ctitle" id=ibcss_sub_bg_color_hover>ibcss_sub_bg_color_hover <span class="rname">[Sub Static Background Hover color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the background color for the bullet when the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_sub_bg_color_active>ibcss_sub_bg_color_active <span class="rname">[Sub Static Background Active color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the background color for the bullet while the menu items child sub menu is visible.  If the item does not contain a sub menu then only the hover color will be visible while the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_sub_border_color>ibcss_sub_border_color <span class="rname">[Sub Static Border Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the border or outline color for the bullet.
+</div>
+
+<div class="ctitle" id=ibcss_sub_border_color_hover>ibcss_sub_border_color_hover <span class="rname">[Sub Static Border Hover color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the border or outline color for the bullet when the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_sub_border_color_active>ibcss_sub_border_color_active <span class="rname">[Sub Static Border Active color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Use any valid CSS color setting or pick your color using the build button / color swatch to the right of the field.  This value sets the border or outline color for the bullet while the menu items child sub menu is visible.  If the item does not contain a sub menu then only the hover color will be visible while the mouse is over the menu item.
+</div>
+
+<div class="ctitle" id=ibcss_sub_position_x>ibcss_sub_position_x <span class="rname">[Sub Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be horizontally offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibcss_sub_position_y>ibcss_sub_position_y <span class="rname">[Sub Offset Y]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be vertically offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibcss_sub_align_x>ibcss_sub_align_x <span class="rname">[Sub align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, center, right.  The bullet will be positioned left, center, or right, within each menu item.
+</div>
+
+<div class="ctitle" id=ibcss_sub_align_x>ibcss_sub_align_x <span class="rname">[Sub align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, middle, right.  The bullet will be positioned left, middle, or right, within each menu item.
+</div>
+
+</div>
+
+
+<!--***********************************Tabs (css)-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Tabs (CSS Imageless)</div>
+<div class="icontent" style="">
+The tab effect applies to the main menu items.  The effect works by inserting a CSS imageless shape between the menu items.  By blending the background colors and edge colors of the shapes with the colors of your main items a tab effect is created.  Like all QuickMenu add-on's, tabs scale to the size of your menu items and are applied to all menu items, even when dynamically generating your structure from a database.
+<br>
+<br>
+Tabs are designed to work with horizontally oriented main menus only.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=tabscss_type>tabscss_type <span class="rname">[Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to angled or rounded.  Angled tabs cut diagonally across and create a v effect.  Rounded tabs arch download create an arch effect between items.
+</div>
+
+
+<div class="ctitle" id=tabscss_size>tabscss_size <span class="rname">[Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This determines the size of each tabs rounded or angled corners.
+</div>
+
+<div class="ctitle" id=tabscss_left_offset>tabscss_left_offset <span class="rname">[Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  The x offset will adjust the tab shape which appears between your standard menu items horizontally from its default position.
+</div>
+
+<div class="ctitle" id=tabscss_top_offset>tabscss_top_offset <span class="rname">[Top X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  The y offset will adjust the tab shape which appears between your standard menu items vertically from its default position.
+</div>
+
+<div class="ctitle" id=tabscss_apply_far_left>tabscss_apply_far_left <span class="rname">[Apply Left]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the tab shape will be added before the first main menu item.
+</div>
+
+<div class="ctitle" id=tabscss_apply_far_right>tabscss_apply_far_right <span class="rname">[Apply Right]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the tab shape will be added after the last main menu item.
+</div>
+
+<div class="ctitle" id=tabscss_apply_middles>tabscss_apply_middles <span class="rname">[Apply Between]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the tab shape will be added between each main menu item.
+</div>
+
+<div class="ctitle" id=tabscss_bg_color>tabscss_bg_color <span class="rname">[Background Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any valid CSS color.  The background color appears inside of the shape, this color may also be set to transparent.
+</div>
+
+<div class="ctitle" id=tabscss_border_color>tabscss_border_color <span class="rname">[Border Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any valid CSS color.  This is the color of the arch or angled line which comprises the tabbed corners.  Typically this color will match the color of your main menu item borders. 
+</div>
+
+
+</div>
+
+
+<!--***********************************Rounded Subs-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Rounded Subs (CSS Imageless)</div>
+<div class="icontent" style="">
+Rounded subs use CSS and QuickMenu code to draw a duplicate container with rounded or angled edges.  This duplicate container sits inside the standard sub menu container to create a single rounded container effect.
+<br>
+<br>
+Because rounded subs use a duplicate container, it's best to set the standard sub menu container colors to transparent and remove any borders.  When applying this add-on a dialog will appear asking if you would like to automatically apply any existing border and background colors from the standard containers to the rounded corner containers.  Choosing yes in this dialog will also automatically set your standard container colors transparent and remove the borders.
+<br>
+<br>
+Like all QuickMenu add-ons and features, rounded corners are fully scalable and will automatically size to your content and conform to new menu items which may be dynamically generated by a server side database.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=rcorner_size>rcorner_size <span class="rname">[Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This sets the size of the rounded or angled corners.
+</div>
+
+<div class="ctitle" id=rcorner_border_color>rcorner_border_color <span class="rname">[Border Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any valid CSS color.  This is the color of the edge or border which outlines the rounded corners.
+</div>
+
+<div class="ctitle" id=rcorner_bg_color>rcorner_bg_color <span class="rname">[Background Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any valid CSS color.  The background color may also be set transparent.
+</div>
+
+<div class="ctitle" id=rcorner_opacity>rcorner_opacity <span class="rname">[Opacity]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any decimal value between 0 and 1.  A value of .5 is equal to 50% opacity.  The opacity is applied to the rounded container only, menu items within the container will remain fully opaque.  This option works best when sub menu item background colors are set transparent.
+</div>
+
+<div class="ctitle" id=rcorner_angle_corners>rcorner_angle_corners <span class="rname">[Angled]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the corners will angle at 45 degrees.  When false the corners will have a rounded effect.
+</div>
+
+<div class="ctitle" id=rcorner_apply_corners>rcorner_apply_corners <span class="rname">[Apply Where]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defines which corners receive the rounding effect, corners without the rounding will be squared.  Use true and false values 
+separated by commas... {  true, true, true, true  }  The values start at the top-left...  top-left, top-right, bottom-right, bottom-left.
+</div>
+
+<div class="ctitle" id=rcorner_top_line_auto_inset>rcorner_top_line_auto_inset <span class="rname">[Top Inset]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the top border of the rounded container will be inset the same distance as the main menu item to which it belongs.  This effect works with sub menus that are wider then their parent main items.
+<br>
+<br>
+This feature is best used for blending the rounded container with the main menu items,  the adobe template uses this feature for a 
+seamless integration between the items and sub containers.
+</div>
+
+</div>
+
+
+<!--***********************************Rounded Items-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Rounded Items (CSS Imageless)</div>
+<div class="icontent" style="">
+Rounded items may be applied in various assortments to both main menu and sub menu items.  Each rounded item is a duplicate item box with text that sits on-top of the standard items.  
+<br>
+<br>
+Because rounded items are duplicates, any existing item border and background colors should be made transparent or they will be visible at the rounded items corners and edges.  Rounded item boxes are absolute positioned containers and as such they do not expand the natural size of the menu items and containers.  To size, match, and line things up you may have to 
+tweak the standard item CSS style settings.  Typically this involves adding 
+additional padding in the standard CSS to create extra space to help accommodate the rounded items which they will contain.
+<br>
+<br>
+Text descriptions for the items are automatically applied to the standard item and rounded items which sit on top.  Some very advanced layouts may be created by combining rounded items with the rounded subs add-on.  A good understanding of padding and the standard CSS styling options is 
+recommended before attempting to apply this advanced add-on to an existing menu.  It may be easier to work from a rounded item template such as the adobe implementation.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=ritem_size>ritem_size <span class="rname">[Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This sets the size of the rounded or angled corners.
+</div>
+
+<div class="ctitle" id=ritem_apply>ritem_apply <span class="rname">[Apply]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to main, sub, main-sub, parents, titles, dividers.  You can apply the rounding to multiple item areas by combining these values and 
+separating them with a dash '-'...  { main-titles }  This would apply rounded items to all main menu items and title elements within the menu.
+</div>
+
+<div class="ctitle" id=ritem_angle_corners>ritem_angle_corners <span class="rname">[Angled]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the corners will angle at 45 degrees.  When false the corners will have a rounded effect.
+</div>
+
+<div class="ctitle" id=ritem_main_apply_corners>ritem_main_apply_corners <span class="rname">[Main Apply Where]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defines which corners receive the rounding effect, corners without the rounding will be squared.  Use true and false values 
+separated by commas... {  true, true, true, true  }  The values start at the top-left...  top-left, top-right, bottom-right, bottom-left.
+</div>
+
+<div class="ctitle" id=ritem_sub_apply_corners>ritem_sub_apply_corners <span class="rname">[Sub Apply Where]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Defines which corners receive the rounding effect, corners without the rounding will be squared.  Use true and false values 
+separated by commas... {  true, true, true, true  }  The values start at the top-left...  top-left, top-right, bottom-right, bottom-left.
+</div>
+
+<div class="ctitle" id=ritem_show_on_actives>ritem_show_on_actives <span class="rname">[Actives Only]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the rounded item effect will only appear while its child sub menu is visible.  If the item is not a parent and does not have a child sub menu then the rounding effect will no become visible.
+</div>
+
+</div>
+
+
+<!--***********************************Drop Shadows-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Drop Shadows (CSS Imageless)</div>
+<div class="icontent" style="">
+Drop shadows are duplicate containers which sit under the existing sub menu container and are offset to create a shadow effect at any edge.
+<br>
+<br>
+The shadow container is automatically sized to the same dimensions of the standard container.  If your standard container is 
+transparent then the entire shadow container will be visible.  This effect works best when the sub menu container has a background color set.
+<br>
+<br>
+This add-on can also be used to create semi-opaque sub menus.  To do this set the offset to 0, specify a color, and set the opacity to any desired level.  The standard menu container and item background color CSS styles should also be set transparent, this will make the semi-opaque drop shadow box the visible container.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=shadow_offset>shadow_offset <span class="rname">[Offset]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  Use negative values to create a shadow on the top and left or positive values for a shadow at the bottom and right.
+</div>
+
+<div class="ctitle" id=shadow_color>shadow_color <span class="rname">[Color]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any valid CSS color.  This determines the color of the shadow.
+</div>
+
+<div class="ctitle" id=shadow_opacity>shadow_opacity <span class="rname">[Opacity]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any decimal value between 0 and 1.  A value of .5 is equal to 50% opacity.  The opacity is applied to the drop shadow container only, menu items within the container will remain fully opaque.
+</div>
+
+</div>
+
+
+<!--***********************************Drop Shadows-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Match Widths (CSS Imageless)</div>
+<div class="icontent" style="">
+Match widths are applied to all 1st level sub menus, these are sub menus which belong to a main menu item.  This add-on will automatically size the sub menus to match the width of the main item to which they belong.
+<br>
+<br>
+This add-on is designed to work best with horizontally oriented main menus.
+<div style="padding:10px;">
+
+<div class="ctitle" id=mwidths_active>mwidths_active <span class="rname">[Active]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the match widths add-on will be active and applied to your 1st level subs.
+</div>
+
+</div>
+
+
+<!--***********************************Item Bullets-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Item Bullets (Image Based)</div>
+<div class="icontent" style="">
+Image based item bullets use custom defined images to create static, however, and active images.  Typically these bullets are applied to the parent items within a menu to indicate that a sub menu with additional links is available for a given menu item.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=ibullets_apply_to>ibullets_apply_to <span class="rname">[Apply To]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to parents, non-parents, all.  The default value is all.
+<br>
+<br>
+Parents are items with child sub menus, use this setting to tell your users that certain items will display a sub menu with additional links.
+</div>
+
+<div class="ctitle" id=ibullets_main_image>ibullets_main_image <span class="rname">[Main Static Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The static image is the default visible image.
+</div>
+
+<div class="ctitle" id=ibullets_main_image_hover>ibullets_main_image_hover <span class="rname">[Main Hover Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The hover image is visible while the mouse is over the menu item to which it belongs.
+</div>
+
+<div class="ctitle" id=ibullets_main_image_active>ibullets_main_image_active <span class="rname">[Main Active Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The active image is displayed when the items sub menu is visible, if the item does not have a sub menu then only the hover image will be shown.
+</div>
+
+<div class="ctitle" id=ibullets_main_image_width>ibullets_main_image_width <span class="rname">[Main Image Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer greater than 0.  This defines the width of the images... static, hover, and active. Images should all be the same dimensions or they will be scaled and my not appear as intended.
+</div>
+
+<div class="ctitle" id=ibullets_main_image_height>ibullets_main_image_height <span class="rname">[Main Image Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer greater than 0.  This defines the height of the images... static, hover, and active. Images should all be the same dimensions or they will be scaled and my not appear as intended.
+</div>
+
+<div class="ctitle" id=ibullets_main_position_x>ibullets_main_position_x <span class="rname">[Main Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be horizontally offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibullets_main_position_y>ibullets_main_position_y <span class="rname">[Main Offset Y]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be vertically offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibullets_main_align_x>ibullets_main_align_x <span class="rname">[Main align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, center, right.  The bullet will be positioned left, center, or right, within each menu item.
+</div>
+
+<div class="ctitle" id=ibullets_main_align_x>ibullets_main_align_x <span class="rname">[Main align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, middle, right.  The bullet will be positioned left, middle, or right, within each menu item.
+</div>
+
+<div class="ctitle" id=ibullets_sub_image>ibullets_sub_image <span class="rname">[Sub Static Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The static image is the default visible image.
+</div>
+
+<div class="ctitle" id=ibullets_sub_image_hover>ibullets_sub_image_hover <span class="rname">[Sub Hover Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The hover image is visible while the mouse is over the menu item to which it belongs.
+</div>
+
+<div class="ctitle" id=ibullets_sub_image_active>ibullets_sub_image_active <span class="rname">[Sub Active Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The active image is displayed when the items sub menu is visible, if the item does not have a sub menu then only the hover image will be shown.
+</div>
+
+<div class="ctitle" id=ibullets_sub_image_width>ibullets_sub_image_width <span class="rname">[Sub Image Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer greater than 0.  This defines the width of the images... static, hover, and active. Images should all be the same dimensions or they will be scaled and my not appear as intended.
+</div>
+
+<div class="ctitle" id=ibullets_sub_image_height>ibullets_sub_image_height <span class="rname">[Sub Image Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer greater than 0.  This defines the height of the images... static, hover, and active. Images should all be the same dimensions or they will be scaled and my not appear as intended.
+</div>
+
+<div class="ctitle" id=ibullets_sub_position_x>ibullets_sub_position_x <span class="rname">[Sub Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be horizontally offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibullets_sub_position_y>ibullets_sub_position_y <span class="rname">[Sub Offset Y]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any negative or positive integer value.  The bullet will be vertically offset from its default positioning.
+</div>
+
+<div class="ctitle" id=ibullets_sub_align_x>ibullets_sub_align_x <span class="rname">[Sub align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, center, right.  The bullet will be positioned left, center, or right, within each menu item.
+</div>
+
+<div class="ctitle" id=ibullets_sub_align_x>ibullets_sub_align_x <span class="rname">[Sub align X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to left, middle, right.  The bullet will be positioned left, middle, or right, within each menu item.
+</div>
+
+</div>
+
+
+<!--***********************************Tabs (image based)-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Tabs (Image Based)</div>
+<div class="icontent" style="">
+The tab effect applies to the main menu items.  The effect works by inserting an image directly between the menu items, the image then overlaps both the item to the left and right.  Create an image which includes both the top right and top left corners of your tabbed items.  The add-on will apply these image between the menu items, if the image is designed to blend with the look of the main items a 
+seamless tabbed effect will result.
+<br>
+<br>
+The optional far left and far right tabbed corners use the left half and right half of the single image used to create the effect.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=tabscss_type>tabscss_type <span class="rname">[Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to angled or rounded.  Angled tabs cut diagonally across create a v effect.  Rounded tabs arch download create an arch effect between items.
+</div>
+
+
+<div class="ctitle" id=tabs_image>tabs_image <span class="rname">[Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.
+<br>
+<br>
+The tab image sits to the top and between the main menu items.  The image will overlap the items to the left and right.  Create an image which includes the top right and top left of your tabs, then blend the colors of the main menu item borders and backgrounds for a 
+seamless tab effect.
+<br>
+<br>
+The portion of the image which sits inside the borderer of the items is best when left transparent.  This way if your item background colors change you will not have to recreate the image.
+</div>
+
+<div class="ctitle" id=tabs_width>tabs_width <span class="rname">[Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value greater than 0.  This defines the width of the tab image.
+</div>
+
+<div class="ctitle" id=tabs_height>tabs_height <span class="rname">[Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value greater than 0.  This defines the height of the tab image.
+</div>
+
+<div class="ctitle" id=tabs_top_offset>tabs_top_offset <span class="rname">[Offset Y]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value.  This will vertically offset the tab image from its default 
+position.  The default position for the image is to the top and between all menu items.
+</div>
+
+<div class="ctitle" id=tabs_apply_far_left>tabs_apply_far_left <span class="rname">[Apply Left]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the tab image will be added before the first main menu item.  Only the right half of the image will be visible.
+</div>
+
+<div class="ctitle" id=tabs_apply_far_right>tabs_apply_far_right <span class="rname">[Apply Right]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the tab image will be added after the last main menu item.  Only the left half of the image will be visible.
+</div>
+
+<div class="ctitle" id=tabs_apply_middles>tabs_apply_middles <span class="rname">[Apply Between]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the tab image will be added between each main menu item.  
+</div>
+
+</div>
+
+
+<!--***********************************Follow Pointer (image based)-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Follow Pointer (Image Based)</div>
+<div class="icontent" style="">
+Follow pointer are custom images which follow the mouse as it moves over the main or sub menu containers.  The pointer adds 
+additional interactivity and helps users pinpoint there location within the menu structure.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=tabscss_type>tabscss_type <span class="rname">[Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to angled or rounded.  Angled tabs cut diagonally across create a v effect.  Rounded tabs arch download create an arch effect between items.
+</div>
+
+
+<div class="ctitle" id=pointer_main_image>pointer_main_image <span class="rname">[Main Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.
+<br>
+<br>
+The follow pointer image will appear when the mouse is over the main menu container.
+</div>
+
+<div class="ctitle" id=pointer_main_image_width>pointer_main_image_width <span class="rname">[Main Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value greater than 0.  This defines the width of the pointer image.
+</div>
+
+<div class="ctitle" id=pointer_main_image_height>pointer_main_image_height <span class="rname">[Main Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value greater than 0.  This defines the height of the pointer image.
+</div>
+
+<div class="ctitle" id=pointer_main_align>pointer_main_align <span class="rname">[Main Align]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+set to top-or-left, bottom-or-right.  Vertically oriented menus will use left or right placement, horizontally oriented menus will use top or bottom placement.
+</div>
+
+<div class="ctitle" id=pointer_main_off_x>pointer_main_off_x <span class="rname">[Main Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  This will horizontally offset the pointer from its default position.
+</div>
+
+<div class="ctitle" id=pointer_main_off_y>pointer_main_off_y <span class="rname">[Main Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  This will vertically offset the pointer from its default position.
+</div>
+
+<div class="ctitle" id=pointer_sub_image>pointer_sub_image <span class="rname">[Sub Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.
+<br>
+<br>
+The follow pointer image will appear when the mouse is over the sub menu containers.
+</div>
+
+<div class="ctitle" id=pointer_sub_image_width>pointer_sub_image_width <span class="rname">[Sub Width]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value greater than 0.  This defines the width of the pointer image.
+</div>
+
+<div class="ctitle" id=pointer_sub_image_height>pointer_sub_image_height <span class="rname">[Sub Height]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any ineger value greater than 0.  This defines the height of the pointer image.
+</div>
+
+<div class="ctitle" id=pointer_sub_align>pointer_sub_align <span class="rname">[Sub Align]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+set to top-or-left, bottom-or-right.  Vertically oriented menus will use left or right placement, horizontally oriented menus will use top or bottom placement.
+</div>
+
+<div class="ctitle" id=pointer_sub_off_x>pointer_sub_off_x <span class="rname">[Sub Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  This will horizontally offset the pointer from its default position.
+</div>
+
+<div class="ctitle" id=pointer_sub_off_y>pointer_sub_off_y <span class="rname">[Sub Offset X]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value.  This will vertically offset the pointer from its default position.
+</div>
+
+</div>
+
+
+<!--***********************************Tree Style Menu-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Tree Style Menu</div>
+<div class="icontent" style="">
+This addon converts any standard drop down menu into a tree style menu.  A host of animation options and a self collapsing feature allow for a wide and unique array of design possibilites.
+<br>
+<br>
+Like standard drop down menus, tree style menus benefit from all the same advanced CSS styling features and several of the add-ons.  Use bullets, titles, dividers, striping, and more.
+</div>
+<div style="padding:10px;">
+
+
+<div class="ctitle" id=tree_sub_sub_indent>tree_sub_sub_indent <span class="rname">[Sub Sub Indent]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This defines the indenting of level 2 or greater sub menus.
+<br>
+<br>
+Typically margin or padding applied through the standard CSS styles adds indenting for the first level sub menus.  This option will apply consistent indenting to all level 2+ sub menus.
+</div>
+
+<div class="ctitle" id=tree_hide_focus_box>tree_hide_focus_box <span class="rname">[Hide Focus Box]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the focus box which appears when clicking a link will not be visible.
+</div>
+
+<div class="ctitle" id=tree_auto_collapse>tree_auto_collapse <span class="rname">[Auto Hide]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  The auto hide feature will force the previous tree node to automatically collapse when clicking a new node.
+</div>
+
+<div class="ctitle" id=tree_expand_animation>tree_expand_animation <span class="rname">[Expand Animation Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to  0, 1, 2, 3.  0=none, 1=accelerate, 2=decelerate, 3=normal.  Leave this field blank or set to 0 for no animation effect.
+<br>
+<br>
+The normal animation is a standard slide effect, accelerate and decelerate modify the normal slide.
+</div>
+
+<div class="ctitle" id=tree_expand_step_size>tree_expand_step_size <span class="rname">[Expand Animation Step Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This defines how many pixels the animation will jump between frames.  The higher the value the faster the animation effect will run.
+</div>
+
+<div class="ctitle" id=tree_collapse_animation>tree_collapse_animation <span class="rname">[Collapse Animation Type]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to  0, 1, 2, 3.  0=none, 1=accelerate, 2=decelerate, 3=normal.  Leave this field blank or set to 0 for no animation effect.
+<br>
+<br>
+The normal animation is a standard slide effect, accelerate and decelerate modify the normal slide.
+</div>
+
+<div class="ctitle" id=tree_collapse_step_size>tree_collapse_step_size <span class="rname">[Collapse Animation Step Size]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any integer value greater than 0.  This defines how many pixels the animation will jump between frames.  The higher the value the faster the animation effect will run.
+</div>
+
+
+</div>
+
+
+<!--***********************************Keep Subs In window-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Keep Subs In Window</div>
+<div class="icontent" style="">
+When active this add-on will stop sub menus from falling outside of the browsers visible window area.  Sub menus will automatically be moved up or to the left so they are fully visible.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=subs_in_window_active>subs_in_window_active <span class="rname">[Active]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true, large sub menus which can fall outside the browsers visible window area will automatically reposition and stay visible.
+</div>
+
+</div>
+
+<!--***********************************Persistent State-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Persistent State</div>
+<div class="icontent" style="">
+The persistent state is visible when a menu items link matches the URL location of the document containing the menu.  If the item is in a sub menu then 
+parent&#39;s grandparent's, etc. who own the child will also display there persistent state styles.
+<br>
+<br>
+Persistent states are integral to modern menu design.  The persistent items help users locate there current location in the menu relative to the document.  For drop down menus you can gain many of the advantages of tree style structures without the real-estate overhead.
+<br>
+<br>
+Persistent styles are located within the standard CSS style settings.  A wide array of custom images, colors, fonts, and more can be applied to persistent items to make them stand out.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=sopen_auto_enabled>sopen_auto_enabled <span class="rname">[Active]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true any persistent state styles will be displayed for items with URL's that match the 
+URL location of the document containing the menu.
+</div>
+
+<div class="ctitle" id=sopen_auto_show_subs>sopen_auto_show_subs <span class="rname">[Atuo Open Subs]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true any any sub menu containing an item with its persistent state showing will by default be visible when the menu loads.  This feature works with standard drop down menus and tree structures.
+</div>
+
+</div>
+
+
+<!--***********************************Keyboard Access-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Keyboard Access</div>
+<div class="icontent" style="">
+This add-on adds an extra level of accessibility to the menu.  Users can navigate the structure entirely with the keyboard.
+<br>
+<br>
+Use the arrow, tab, shift-tab, and enter keys to navigate and activate hyperlinks.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=keyboard_access_active>keyboard_access_active <span class="rname">[Active]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the menu is further accessible via the keyboard, use the arrow, tab, shift-tab, and enter keys.
+<br>
+<br>
+To test this add-on you may need to preview or save the menu.
+</div>
+
+</div>
+
+
+<!--***********************************select tag fix-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: IE6 Over Select Tag</div>
+<div class="icontent" style="">
+This add-on remedies the infamous IE6 select tag / list box bug.  Drop down list boxes in IE will not allow dynamic content to z-index above the form element, this add-on 
+seamlessly works around the issue.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=overselects_active>overselects_active <span class="rname">[Active]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true sub menus will display on top of select tag / drop down list form elements in IE6
+</div>
+
+</div>
+
+
+<!--***********************************show subs onload-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Show Subs Onload</div>
+<div class="icontent" style="">
+Unlike the persistent state which matches item URL's to the document's URL, this add-on allows for any sub menu(s) to be set visible when the menu loads.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=showload_active>showload_active <span class="rname">[Active]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the show subs onload addon will be enabled.
+</div>
+
+<div class="ctitle" id=showload_auto_close>showload_auto_close <span class="rname">[Auto Close]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true sub menus which start visible will automatically hide based upon the mouseover and mouseclick settings for the menu.  With a mouse over menu the visible subs will close once the user moves about the page.  With onclick menus the visible sub will close once a different menu item is selected.
+</div>
+
+<div class="ctitle" id=sopen>qm-startopen <span class="rname">[Show]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true the sub menu container will be visible when the menu loads.
+</div>
+
+
+</div>
+
+<!--***********************************Item Images-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Add-On: Item Images</div>
+<div class="icontent" style="">
+The item images add-on turns any menu item into an image based item with hover and active state support. This add on is typically used for main menu image based buttons, however images may be added to sub menu items as well.
+</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=staticimage>static image<span class="rname">[Static Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Specify the location and file name of the image to display.  Use relative or fully qualified (http://) paths.  The static image is the default visible image.
+</div>
+
+<div class="ctitle" id=hoverimage>hover image<span class="rname">[Hover Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true QuickMenu will look for an image with the same name as the static image defined for the item, with '_hover' appended to the name. If your static image is called main1.gif, the hover image must be in the same folder and called main1_hover.gif.
+<br>
+<br>
+The hover image is visible when the mouse is over the menu item, or if no active image is defined, it will also be visible while its child sub menu is visible.
+</div>
+
+<div class="ctitle" id=activeimage>active image<span class="rname">[Active Image]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true QuickMenu will look for an image with the same name as the static image defined for the item, with '_active' appended to the name. If your static image is called main1.gif, the hover image must be in the same folder and called main1_hover.gif.
+<br>
+<br>
+The active image will display while the items sub menu is visible.  If the item does not have a child sub then only the hover image will appear.
+</div>
+
+
+<div class="ctitle" id=alt>alternate text<span class="rname">[Alternate Text]</span></div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to any text description, in some browsers this may appear as a tool tip when hovering over the image.  The setting is primarily used for accessibility purposes and helps keep your content valid.
+</div>
+
+</div>
+
+
+<!--***********************************Item Images-->
+
+<div class="ctitle" style="color:#111111;margin-top:20px;">Menu Settings</div>
+<div style="padding:10px;">
+
+<div class="ctitle" id=isvertical>Vertical</div>
+<div class="icontent" style="margin-bottom:10px;">
+set to true or false.  This determines the orientation of the main menu, when true the main items will be vertically oriented, when false they will be horizontally oriented.
+</div>
+
+<div class="ctitle" id=showdelay>Show Delay</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to an integer value greater than 0.  The show delay is defined in milliseconds (1/1000 of a second).
+<br>
+<br>
+The show delay helps users control there menu selection by delaying the appearance of sub menus.
+</div>
+
+
+<div class="ctitle" id=hidedelay>Hide Delay</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to an integer value greater than 0.  The hide delay is defined in milliseconds (1/1000 of a second).
+<br>
+<br>
+The hide delay prevents the sub menus from closing to quickly if a user 
+accidentally moves the mouse off the menu.
+</div>
+
+<!--
+<div class="ctitle" id=hidefocus>Hide Focus</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true menu items which must be clicked to expand a sub menu will not show the focus box. The keyboard control add-on will override this setting with a false value.
+<br>
+<br>
+The focus box is always hidden during visual design, to test this setting you must preview the menu.
+</div>
+-->
+
+<div class="ctitle" id=onclick>On Click</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to false, 'all', 'all-always-open', 'lev2', or 'main'...
+<br>
+<div style="padding:15px;">
+<b>false</b> - Sub menus expand and collapse based on mouse over events only.
+<br>
+<br>
+<b>'all'</b> - Sub menus expand and collapse based on mouse click events only, sub menus remain visible 
+until clicking outside of the menu area (except for tree style menus).
+<br>
+<br>
+<b>'all-always-open'</b> - This is the same as the 'all' option except that the visible sub menu will not close when clicking outside of the menu.  Combining this option with the 'Show Subs Onload' addon is great for created tab based content areas which are always visible.
+<br>
+<br>
+<b>'lev2'</b> - 2nd level sub menus expand and collapse based on mouse click events. 1st level sub menus expand and collapse when moving the mouse over a main menu item.
+<br>
+<br>
+<b>'main'</b> - In this mode the menu behaves similar to a menu system within a Windows or Mac application.  To activate the menu a main item must be clicked, then the remaining structure may be navigated with mouse over events.  The menu will close when clicking in the HTML document outside of the menu area.
+</div>
+During visual design the menu only reacts to click events, to test this setting you must preview the menu.
+</div>
+
+
+<div class="ctitle" id=leftsided>Left Sided Subs</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true sub menus which are children of vertically oriented menu containers will appear by default at the left edge of the parent item versus the default right edge.
+<br>
+<br>
+This setting is useful for vertically oriented menus on the right edge of a web page.
+</div>
+
+<div class="ctitle" id=hsubs>Horizontal Subs</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true sub menu items will be horizontally oriented instead of vertically oriented.
+<br>
+<br>
+Horizontally oriented sub menus must not exceed the width of there parent containers.  This is due to the scalable layout of QuickMenu and restrictions placed on this type of content by the browsers.  You can typically work around width issues by adding additional padding to the main menu container which will stretch the container beyond your items.
+</div>
+
+<div class="ctitle" id=flushleft>Flush Left Subs</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true, sub menus will appear at the left edge of horizontally oriented parent containers, versus the default position which places the sub directly under the parent item.
+<br>
+<br>
+This setting is typically used with horizontally oriented main menus with horizontally oriented sub menus.
+</div>
+
+<div class="ctitle" id=flushtop>Flush Top Subs</div>
+<div class="icontent" style="margin-bottom:10px;">
+Set to true or false.  When true, sub menus will appear at the top edge of vertically oriented parent containers, versus the default position which places the sub directly right or left of the parent item.
+<br>
+<br>
+For a unique and simplified horizontally oriented menu concept, combine this feature with the 'lev2' on click setting.
+</div>
+
+
+
+</div>
+
+
+
+</div><div class="bottomdivider"></div><div class="copyright">Copyright (c) 2007, OpenCube Inc., All Rights Reserved.</div></body></html>
+
+
+

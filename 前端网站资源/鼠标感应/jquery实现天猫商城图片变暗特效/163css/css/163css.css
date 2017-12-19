@@ -1,0 +1,21 @@
+/* CSS Document */
+
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif; background:url(../images/bg01.gif) repeat-x left top;  text-align:center; margin:0 auto;}
+a{ text-decoration:none;}
+img{ display:block;}
+
+.area01{ width:970px; margin:20px auto;height:300px; border-top:2px solid #000; overflow:hidden;}
+.box01-tmall{ float:left; width:190px;}
+/*box-163css*/
+.box-163css{ width:780px; float:left;position:relative; height:300px;}
+.box-163css a{ float:left;}
+
+.floor-maskItem{ position:absolute; float:left;}
+.floor-maskItem img{ float:left;}
+
+.mask{ position:absolute; left:0; top:0;background:#000;  width:195px;height:150px; opacity:0;filter:alpha(opacity=0);}
+.hover .mask{background:#000;opacity:0.5;filter:alpha(opacity=50); cursor:pointer;}
+.hover .qq .mask{opacity:0;filter:alpha(opacity=0);}

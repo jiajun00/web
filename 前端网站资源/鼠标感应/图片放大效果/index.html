@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.images{width:120px;height:130px;overflow:hidden;position:absolute;left:300px;top:50px;}
+		.images img:hover{	-webkit-animation:actions 1.5s ease-out;
+							-moz-animation:actions 1.5s ease-out;
+							-o-animation:actions 1.5s ease-out;
+							-ms-animation:actions 1.5s ease-out;
+							animation:actions 1.5s ease-out;
+							}
+		@-webkit-keyframes actions{
+			0%{-webkit-transform:scale(1);opacity:1;}
+			100%{-webkit-transform:scale(1.05);opacity:1;}
+		}
+		@-moz-keyframes actions{
+			0%{-moz-transform:scale(1);opacity:1;}
+			100%{-moz-transform:scale(1.05);opacity:1;}
+		}
+		@-o-keyframes actions{
+			0%{-o-transform:scale(1);opacity:1;}
+			100%{-o-transform:scale(1.05);opacity:1;}
+		}
+		@-ms-keyframes actions{
+			0%{-ms-transform:scale(1);opacity:1;}
+			100%{-ms-transform:scale(1.05);opacity:1;}
+		}
+		@keyframes actions{
+			0%{transform:scale(1);opacity:1;}
+			100%{transform:scale(1.05);opacity:1;}
+		}
+	</style>
+	<div class="images">
+		<img src="image/1.jpg"		
+	</div>
+</body>
+</html>

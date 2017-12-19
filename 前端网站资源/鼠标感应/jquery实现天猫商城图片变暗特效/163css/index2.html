@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery 特效,css群:184853157,网站重构设计,div+css网站建设</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+<style type="text/css">
+*{margin:0;padding:0;font-size:12px;list-style:none;border:0;}
+body{margin:30px;}
+ul{background:url(http://www.zzsky.cn/effect/images/201112/182000/T1HH1oXexDXXXXXXXX-190-300.png) no-repeat left top;width:190px;height:300px;float:left;}
+ul li{float:left;position:relative;width:95px;height:30px;}
+ul li a{position:absolute;text-indent:-9999px;display:block;width:95px;height:30px;top:0;left:0;overflow:hidden;outline:none;}
+ul li a:hover{background:#000;opacity:.1;filter:alpha(opacity=10);}
+.floorMain{float:left;position:relative;}
+.floorMain a{position:absolute;}
+.floorMain a.item1{left:0;top:0;}
+.floorMain a.item2{left:195px;top:0;}
+.floorMain a.item3{left:195px;top:150px;}
+.floorMain a.hover{}
+.mask{position:absolute;background:#000;opacity:0;filter:alpha(opacity=0);left:0;top:0;width:195px;}
+.m1{height:300px;}
+.m2{height:150px;}
+.m3{height:150px;}
+</style>
+<script type="text/javascript">
+$(function() {
+	$(".floorMain").find("a").each(function() {
+		$(this).hover(function() {
+			$(this).siblings().find(".mask").stop();
+			$(this).siblings().find(".mask").fadeTo("fast",0.3);
+		},
+		function() {
+			$(this).siblings().find(".mask").stop();
+			$(this).siblings().find(".mask").fadeTo("fast",0);
+		});
+	});
+})
+</script>
+</head>
+<body>
+<div style="width:970px;">
+	<ul>
+		<li><a href="#">dior</a></li>
+		<li><a href="#">雅漾</a></li>
+		<li><a href="#">露得清</a></li>
+		<li><a href="#">施华蔻</a></li>
+	</ul>
+	<div class="floorMain">
+		<a href="#" class="item1"><img src="images/T11YWoXdhSXXXXXXXX-195-300.jpg"><div class="mask m1"></div></a>
+		<a href="#" class="item2"><img src="images/T17KanXa8cXXXXXXXX-195-150.jpg"><div class="mask m2"></div></a>
+		<a href="#" class="item3"><img src="images/T1sVCoXaNxXXXXXXXX-195-150.jpg"><div class="mask m3"></div></a>
+	</div>
+</div>
+
+</body>
+</html>

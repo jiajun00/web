@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery可拖动表格调整列格子的宽度大小</title>
+</head>
+<body>
+
+<style type="text/css">
+table{border-collapse:collapse;border-spacing:0;}
+.listext th{background:#eee;color:#3366cc;}
+.listext th,.listext td{border:solid 1px #ddd;text-align:left;padding:10px;font-size:14px;}
+.rc-handle-container{position:relative;}
+.rc-handle{position:absolute;width:7px;cursor:ew-resize;*cursor:pointer;margin-left:-3px;}
+</style>
+
+
+<table width="100%" class="listext">
+  <tr>
+    <th>www</th>
+    <th>daixiaorui</th>
+    <th>com</th>
+  </tr>
+  <tr>
+    <td>欢迎</td>
+    <td>您的</td>
+    <td>访问</td>
+  </tr>
+  <tr>
+    <td>欢迎</td>
+    <td>您的</td>
+    <td>访问</td>
+  </tr>
+  <tr>
+    <td>欢迎</td>
+    <td>您的</td>
+    <td>访问</td>
+  </tr>
+</table>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.resizableColumns.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".listext").resizableColumns({});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>摩托罗拉momotorola手机相册特效</title>
+<LINK href="css/lanrenzhijia.css" type=text/css rel=stylesheet>
+<script language=javascript src="http://code.jquery.com/jquery-latest.js" type=text/javascript></script>
+</HEAD>
+<BODY>
+<div id="box-lanrenzhijia">
+	<div class="chanegecolor" name='0'>
+		<span class="b00eaff"><a href="javascript:void(0)"><img alt="" src="images/icon11.gif" name=0></a>黑色</span><span style="color: #666"><a href="javascript:void(0)"><img alt="" src="images/icon12.gif" name=1></a>白色</span> <span style="color: #666666"><a href="javascript:void(0)"><img alt="" src="images/icon13.gif" name=2></a>粉色</span>	</div>
+	<div class="bigPic">
+		<a class="btnleft" href="javascript:;"></a><a class="btnright" href="javascript:;"></a>
+		<div class="info">
+			<table>
+			  <tbody>
+			  <tr>
+				<td>
+				  <div><img src="images/bigpic1.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic2.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic3.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic4.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic5.jpg"></div></td>
+				<td><div><img src="images/bigpic6.jpg"></div></td>
+				<td><div><img src="images/bigpic7.jpg"></div></td></tr>
+			  <tr style="display: none">
+				<td>
+				  <div><img src="images/bigpic8.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic9.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic10.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic11.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic12.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic13.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic14.jpg"></div></td></tr>
+			  <tr style="display: none">
+				<td>
+				  <div><img src="images/bigpic15.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic16.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic17.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic18.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic19.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic20.jpg"></div></td>
+				<td>
+				  <div><img src="images/bigpic21.jpg"></div></td>
+				</tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+	<div class="sPic">
+		<div class=info>
+			<table>
+			  <tbody>
+			  <tr>
+				<td class=current>
+				  <div><a href="javascript:"><img src="images/sp1.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp2.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp3.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp4.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp5.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp6.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp7.jpg"></a></div></td>
+				 </tr>
+				 </tbody>
+			</table>
+			<table>
+			  <tbody>
+			  <tr style="display: none">
+				<td class=current>
+				  <div><a href="javascript:"><img src="images/sp8.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp9.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp10.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp11.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp12.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp13.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp14.jpg"></a></div></td></tr></tbody></table>
+			<table>
+			  <tbody>
+			  <tr style="display: none">
+				<td class=current>
+				  <div><a href="javascript:"><img src="images/sp15.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp16.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp17.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp18.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp19.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp20.jpg"></a></div></td>
+				<td>
+				  <div><a href="javascript:"><img src="images/sp21.jpg"></a></div></td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+	<script type=text/javascript>
+		var curid = 0;
+		var n = $(".chanegecolor").attr("name");
+		$(".chanegecolor img").click(function(){
+		 var number = $(this).attr('name');
+		 var cH = $(".chanegecolor img").length;
+		for(var i=0;i<=cH;i++){
+		$(".sPic .info tr").eq(i).hide();
+		$(".bigPic .info tr").eq(i).hide();
+		$(".chanegecolor span").eq(i).removeClass("b00eaff");
+		}
+		$(".sPic .info tr").eq(number).show();
+		$(".bigPic .info tr").eq(number).show();
+		$(".chanegecolor span").eq(number).addClass("b00eaff");
+		var s = $(".chanegecolor").attr('name',number);
+		$(".sPic .info tr").eq(number).find("td").removeClass("current");
+		$(".sPic .info tr").eq(number).find("td").eq(0).addClass("current");
+		$(".bigPic .info").scrollLeft(0)
+		return curid = 0;
+		  })
+		$(".sPic .info td").click(function(){
+		  var n = $(".chanegecolor").attr('name');
+			$(".sPic .info tr").eq(n).find("td").removeClass("current");
+			$(this).addClass("current");
+			curid = $(this).index();
+			$(".bigPic .info").animate({"scrollLeft":curid*818})
+		})
+		$(".bigPic a.btnleft").click(function(){
+		 var n = $(".chanegecolor").attr('name');
+			curid--;
+			if(curid<0){
+				alert("已经是第一张了！");
+				curid=0;
+			}else{
+				$(".bigPic .info").animate({"scrollLeft":curid*818})
+			}
+			$(".sPic .info tr").eq(n).find("td").removeClass("current");
+			$(".sPic .info tr").eq(n).find("td").eq(curid).addClass("current");
+		})
+		$(".bigPic a.btnright").click(function(){
+		 var n = $(".chanegecolor").attr('name');
+			curid++;
+			if(curid>$(".sPic .info tr").eq(n).find("td").size()-1){
+				alert("已经是最后一张了！");
+				curid=$(".sPic .info tr").eq(n).find("td").size()-1;
+			}else{
+				$(".bigPic .info").animate({"scrollLeft":curid*818})
+			}
+			$(".sPic .info tr").eq(n).find("td").removeClass("current");
+			$(".sPic .info tr").eq(n).find("td").eq(curid).addClass("current");
+		})
+		$(".sPic a.btnleft").click(function(){
+			$(".sPic .info").animate({"scrollLeft":"-=113"})
+		})
+		$(".sPic a.btnright").click(function(){
+			$(".sPic .info").animate({"scrollLeft":"+=113"})
+		})
+	</script>
+</div>
+</BODY>
+</HTML>

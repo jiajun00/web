@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>懒人原创tab标签、选项卡切换效果#######Demo1</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+body{ font-size:12px; color:#666; text-align:left;}
+h1{ text-align:center;}
+
+.lanrenzhijia{ width:500px; height:200px; margin:100px auto; background:#f0f0f0; font-family:'微软雅黑';}
+.lanrenzhijia .tab{ overflow:hidden; background:#ccc;}
+.lanrenzhijia .tab a{ display:block; padding:10px 20px; float:left; text-decoration:none; color:#333;}
+.lanrenzhijia .tab a:hover{ background:#E64E3F; color:#fff; text-decoration:none;}
+.lanrenzhijia .tab a.on{ background:#E64E3F; color:#fff; text-decoration:none;}
+.lanrenzhijia .content{ overflow:hidden; padding:10px;}
+.lanrenzhijia .content li{ display:none;}
+</style>
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div class="lanrenzhijia">
+	<div class="tab">
+    	<a href="javascript:;" class="on">js特效</a>
+        <a href="javascript:;">flash素材</a>
+        <a href="javascript:;">亚当学院</a>
+        <a href="javascript:;">在线客服代码</a>
+    </div>
+    <div class="content">
+    	<ul>
+        	<li style="display:block;">js特效内容</li>
+            <li>flash素材内容</li>
+            <li>亚当学院内容</li>
+            <li>在线客服代码内容</li>
+        </ul>
+    </div>
+</div>
+
+<h1><a href="index.html">效果一</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index2.html">效果二</a></h1>
+
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+<script>
+$(function(){
+	$(".lanrenzhijia .tab a").mouseover(function(){
+		$(this).addClass('on').siblings().removeClass('on');
+		var index = $(this).index();
+		number = index;
+		$('.lanrenzhijia .content li').hide();
+		$('.lanrenzhijia .content li:eq('+index+')').show();
+	});
+	
+	var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+	if(auto ==1){
+		var number = 0;
+		var maxNumber = $('.lanrenzhijia .tab a').length;
+		function autotab(){
+			number++;
+			number == maxNumber? number = 0 : number;
+			$('.lanrenzhijia .tab a:eq('+number+')').addClass('on').siblings().removeClass('on');
+			$('.lanrenzhijia .content ul li:eq('+number+')').show().siblings().hide();
+		}
+		var tabChange = setInterval(autotab,3000);
+		//鼠标悬停暂停切换
+		$('.lanrenzhijia').mouseover(function(){
+			clearInterval(tabChange);
+		});
+		$('.lanrenzhijia').mouseout(function(){
+			tabChange = setInterval(autotab,3000);
+		});
+	  }
+});
+</script>
+<!-- 代码部分end -->
+
+</body>
+</html>

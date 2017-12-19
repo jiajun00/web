@@ -1,0 +1,60 @@
+@charset "utf-8";
+*{margin:0px;padding:0px;}
+body{font-family:"Microsoft Yahei",Arial,helvetica,arial,sans-serif;font-size:12px;margin:0;padding:0px;line-height:20px;color:#777;}
+*:focus {outline: none;}
+img{border:0;vertical-align:top;}
+ul,li{margin:0px;padding:0;list-style-type:none;}
+.clear{clear:both;height:0;overflow:hidden;font-size:0;}
+a {blr:expression(this.onFocus=this.blur())} 
+a{color:#a0a0a0;text-decoration:none;outline:none;}
+a:link,a:visited{color:#a0a0a0;text-decoration:none;outline:none;}
+a:hover{color:#1fb388;outline:none;}
+
+.con_right{width:750px;margin:0 auto;}
+
+/* zh_map */
+#zh_map{position:relative;width:743px;height:422px; overflow:hidden;padding-top:20px;} 
+
+.areaImg{position:absolute;width:743px;height:422px;z-index:3;}
+.cityImg{position:absolute;z-index:1;display:none;}
+
+#s_xinjiang{left:60px;top:82px;}
+#s_gansu{left:213px;top:155px;}
+#s_qinghai{left:181px;top:192px;}
+#s_neimeng{left:255px;top:43px;}
+#s_heilongjiang{left:422px;top:38px;}
+#s_jilin{left:438px;top:113px;}
+#s_liaoning{left:426px;top:141px;}
+#s_ningxia{left:310px;top:196px;}
+#s_shanxi{left:322px;top:193px;}
+#s_shanxii{left:359px;top:181px;}
+#s_hebei{left:385px;top:156px;}
+#s_beijing{left:399px;top:164px;}
+#s_shandong{left:402px;top:203px;}
+#s_henan{left:363px;top:226px;}
+#s_hubei{left:346px;top:262px;}
+#s_hunan{left:350px;top:294px; }
+#s_anhui{left:404px;top:241px;}
+#s_shanghai{left:415px;top:234px;}
+#s_jiangsu{left:415px;top:234px;}
+#s_zhejiang{left:436px;top:285px;}
+#s_fujian{left:421px;top:309px;}
+#s_guangdong{left:360px;top:343px;}
+#s_guangxi{left:312px;top:337px;}
+#s_hainan{left:348px;top:395px;}
+#s_guizhou{left:303px;top:304px;}
+#s_yunnan{left:242px;top:306px;}
+#s_sichuan{left:247px;top:252px;}
+
+.map_city_list{position:absolute;width:160px;height:300px;background:#D5D5D5;z-index:260;margin-left:550px;margin-top:60px;padding:10px;}
+.map_city_list h1{height:30px;border-bottom:1px solid #1fb388;color:#1fb388;font-size:15px;}
+.shop_list_panel{position:relative;width:160px;height:250px;top:10px;}
+
+.shop_list_panel .jspArrow{background:url(../images/d_arrow.jpg);}
+.shop_list_panel .jspArrow.jspDisabled{background:url(../images/up_arrow.jpg);}
+
+.shop_list_panel .jspVerticalBar{position:absolute;width:8px;}
+.shop_list_panel .jspDrag{position:relative; background:#1fb388 url(../images/arrow_v.jpg) no-repeat;}
+
+.shop_name_title{color:#1fb388;line-height:18px;font-size:12px;font-weight:bold;}
+.shop_name_add{color:#666;line-height:18px;font-size:12px;padding-bottom:10px;}

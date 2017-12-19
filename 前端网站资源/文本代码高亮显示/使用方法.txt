@@ -1,0 +1,59 @@
+代码高亮插件Syntaxhighlighter3.0.83详细使用方法
+
+一.Syntaxhighlighter下载地址:http://alexgorbatchev.com/SyntaxHighlighter/download/
+
+二.现在的版本是3.0.83,本文也是介绍此版本的使用方法,历史版本也可以在上面的链接里下载.
+
+三.下载下来后的目录结构介绍
+
+2015-01-28/54c8b6da09d13.png
+
+        index.html是一个很好的示例文件,内部结构如下:
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello SyntaxHighlighter</title>
+<script type="text/javascript" src="scripts/shCore.js"></script>
+<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+ 
+<body style="background: white; font-family: Helvetica">
+ 
+<h1>Hello SyntaxHighlighter</h1>
+<pre class="brush: js;">
+function helloSyntaxHighlighter()
+{
+return "hi!";
+}
+</pre>
+ 
+</html>
+        一般使用ueditor的编辑器,都含有代码语言编辑,选择是何种语言贴入代码,会生成:
+
+
+<pre class="brush:js;"></pre>
+        代码在pre标签内即可.
+
+        这里要着重说明一下,如果你要让你贴的代码高亮生效,那么就要引入相应的代码js.以上面的为例,首先头部需要引入两个css文件,styles/shCore.css,和styles/shCoreDefault.css,第二个是主题css,大家可以根据个人喜好更换,其次就是js文件,scripts/shCore.js必须引入,然后引入需要用到语言的js,本例需要用到shBrushJScript.js.
+
+        那么怎么才能做到自动识别呢?这里有个坑,官方也一直没有修复,scripts文件夹下是有个shAutoloader.js的,这个js的作用是用来自动根据pre标签内要引的代码js来自动加载的,但是光光把这个js引进来是没有用的,会提示"brush could not found xxx".怎么解决呢?在使Syntaxhighlighter生效前加入以下js代码:
+
+$(document).ready(function(){
+    SyntaxHighlighter.autoloader(
+            ['js','jscript','javascript','scripts/shBrushJScript.js'],
+            ['bash','shell','scripts/shBrushBash.js'],
+            ['css','scripts/shBrushCss.js'],
+            ['xml','html','scripts/shBrushXml.js'],
+            ['sql','scripts/shBrushSql.js'],
+            ['php','scripts/shBrushPhp.js']
+        ); 
+    SyntaxHighlighter.all(); 
+})
+        Syntaxhighlighter需要用此方法先把对应brush的js识别一遍,才能达到自动根据pre标签进行判断,还有最后一个注意点,那就是这些代码js的路径书写,一定要写对路径,否则是load不进来的.
+
+        本博客就是采用此方法改造后显示的,有兴趣的朋友可以试下.

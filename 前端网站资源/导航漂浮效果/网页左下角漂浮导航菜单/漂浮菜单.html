@@ -1,0 +1,70 @@
+<a href="http://zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+<script>
+if (!document.layers)
+document.write('<div id="divStayTopLeft" style="position:absolute">')
+</script>
+<layer id="divStayTopLeft">
+<!--EDIT BELOW CODE TO YOUR OWN MENU-->
+<table border="1" width="130" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%" bgcolor="#FFFFCC">
+      <p align="center"><b><font size="4">左侧定位菜单</font></b></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF">
+      <p align="left"> <a href="http://www.zzjs.net">站长特效网</a><br />
+       <a href="http://zzjs.net/">zzjs</a><br />
+       <a href="http://zzjs.net/">网页特效</a><br />
+       <a href="http://zzjs.net/">阿里西西</a><br />
+       <a href="http://zzjs.net/">站长特效</a></td>
+  </tr>
+</table>
+<!--END OF EDIT-->
+<br />zzjs.net<br />www.zzjs.net<br />zzjs.net<br /><br /><br /><br /><br /><br /><br /><br /><br />
+</layer>
+<script type="text/javascript">
+//Enter "frombottom" or "fromtop"
+var verticalpos="frombottom"
+if (!document.layers)
+document.write('</div>')
+//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function JSFX_FloatTopDiv()
+{
+	var startX = 3,
+	startY = 150;
+	var ns = (navigator.appName.indexOf("Netscape") != -1);
+	var d = document;
+	function ml(id)
+	{//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+		var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+		if(d.layers)el.style=el;
+		el.sP=function(x,y){this.style.left=x;this.style.top=y;};
+		el.x = startX;
+		if (verticalpos=="fromtop")
+		el.y = startY;
+		else{
+		el.y = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
+		el.y -= startY;
+		}
+		return el;
+	}
+	window.stayTopLeft=function()
+	{
+		if (verticalpos=="fromtop"){
+		var pY = ns ? pageYOffset : document.body.scrollTop;
+		ftlObj.y += (pY + startY - ftlObj.y)/8;
+		}
+		else{
+		var pY = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
+		ftlObj.y += (pY - startY - ftlObj.y)/8;
+		}
+		ftlObj.sP(ftlObj.x, ftlObj.y);
+		setTimeout("stayTopLeft()", 10);
+	}
+	ftlObj = ml("divStayTopLeft");
+	stayTopLeft();
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+JSFX_FloatTopDiv();
+</script>

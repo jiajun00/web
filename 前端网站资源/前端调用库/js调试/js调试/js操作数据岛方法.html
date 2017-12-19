@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>  
+		<style>
+			#bookInfo{display: none;}
+		</style>
+		<script language="JavaScript" type="text/javascript">
+	function add(){
+		var frmObj=document.frmXMLDI;
+		var	txtName=frmObj.txtName.value;
+		var	txtPublisher=frmObj.txtPublisher.value;
+		var	txtAuthor=frmObj.txtAuthor.value;
+		var	xmlDl=bookInfo;
+		var	newName=xmlDl.createElement("name");
+		var	nameVal=xmlDl.createTextNode(txtName);
+		newName.appendChild(nameVal);
+		var newPublisher=xmlDl.createElement("publisher");
+		newPublisher.appendChild(xmlDl.createTextNode(txtPublisher));
+		var newAuthor=xmlDl.createElement("author");
+		newAuthor.appendChild(xmlDl.createTextNode(txtAuthor));
+		var newBook=xmlDl.createElement("book");
+		newBook.appendChild(newName);
+		newBook.appendChild(newPublisher);
+		newBook.appendChild(newAuthor);
+		xmlDl.documentElement.appendChild(newBook);
+		frmObj.txtName.value="";
+		frmObj.txtPublisher.value="";
+		frmObj.txtAuthor.value="";
+	}
+</script>
+	</head>
+	<body>
+		<form name="frmXMLDI" method="post" action="#">
+			<xml id="bookInfo">
+				<books>
+					<book>
+						<name>Javascript</name>
+						<publisher>ONE publisher</publisher>
+						<author>Tom</author>
+					</book>
+					<book>
+						<name>PHP</name>
+						<publisher>php publisher</publisher>
+						<author>Tom</author>
+					</book>
+					<book>
+						<name>C++</name>
+						<publisher>cc publisher</publisher>
+						<author>Tom</author>
+					</book>
+				</books>
+			</xml>
+			<table width="400" align="center" cellpadding="0" border="1">
+				<tr>
+					<td>书名</td>
+					<td><input type="text" name="txtName"></td>
+					<td>出版社:</td>
+					<td><input type="text" name="txtPublisher"></td>
+					<td>作者</td>
+					<td><input type="text" name="txtAuthor"></td>
+					<td colspan="2"><input type="button" value="添加" onclick="add()"></td>
+				</tr>
+			</table>
+			<table width="400" align="center" cellspacing="0" border="1" datasrc="#bookInfo">
+				<thead>
+					<tr>
+						<th>书名</th>
+						<th>出版社</th>
+						<th>作者</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><div datafld="name"></div></td>
+						<td><div datafld="publisher"></div></td>
+						<td><div datafld="author"></div></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquery-powerSwitch插件实现京东商城首页幻灯片切换效果</title>
+</head>
+<body>
+<!-- 代码begin -->
+<style>
+*{ margin:0; padding:0; list-style:none;}
+img{ border:0;}
+
+.jd_ad_slide {width: 670px; height: 400px; margin:0 auto; overflow:hidden;position: relative;} 
+.jd_ad_img {position: absolute; left: 0; top: 0;width: 100%; height: 100%;display: none; background:url(http://www.lanrenzhijia.com/demo/images/loading.gif) no-repeat center center;}
+.jd_ad_btn {position: absolute; right: 3px; bottom: 8px;}
+.jd_ad_btn_a {width: 22px; height: 22px;line-height: 22px;margin-right: 5px;text-align: center;border-radius: 11px;background: #999;color: #fff;float: left; text-decoration:none;}
+.jd_ad_btn_a:hover {text-decoration: none;}
+.jd_ad_btn .active {background: #E4393C;}
+</style>
+<div id="jdAdSlide" class="jd_ad_slide">
+	<img src="http://www.lanrenzhijia.com/images/lanren01.jpg" class="jd_ad_img">
+	<img data-src="http://www.lanrenzhijia.com/images/lanren02.jpg" class="jd_ad_img">
+	<img data-src="http://www.lanrenzhijia.com/images/lanren03.jpg" class="jd_ad_img">
+	<img data-src="http://www.lanrenzhijia.com/images/lanren04.jpg" class="jd_ad_img">
+	<img data-src="http://www.lanrenzhijia.com/images/lanren05.jpg" class="jd_ad_img">
+	<img data-src="http://www.lanrenzhijia.com/images/lanren06.jpg" class="jd_ad_img">
+	<div id="jdAdBtn" class="jd_ad_btn"></div>
+</div>
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery-powerSwitch-min.js"></script>
+<script>
+var htmlAdBtn = '';
+$("#jdAdSlide img").each(function(index, image) {
+	var id = "adImage" + index;
+	htmlAdBtn = htmlAdBtn + '<a href="javascript:" class="jd_ad_btn_a" data-rel="'+ id +'">'+ (index + 1) +'</a>';
+	image.id = id;
+});
+$("#jdAdBtn").html(htmlAdBtn).find("a").powerSwitch({
+	eventType: "hover",
+	classAdd: "active",
+	animation: "fade",
+	autoTime: 5000,
+	onSwitch: function(image) {
+		if (!image.attr("src")) {
+			image.attr("src", image.attr("data-src"));	
+		}
+	}
+}).eq(0).trigger("mouseover");
+</script>
+<!-- 代码end -->
+</body>
+</html>

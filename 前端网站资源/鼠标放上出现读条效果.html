@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	
+	<body>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				overflow: hidden;
+				background-color: aliceblue;
+			}
+			.box{
+				width: 310px;
+				height: 210px;
+				background-color: #FFFFFF;
+				overflow: hidden;
+				position: relative;
+				margin: 20px auto;
+			}
+			.box_content{
+				width: 300px;
+				height: 200px;
+				margin: 5px;
+				overflow: hidden;
+				background-color: burlywood;
+			}
+			.box span{
+				display: block;
+				position: absolute;
+				background-color: hotpink;
+			}
+			.s1{
+				width: 0;
+				height: 5px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: width linear 2s 6s;
+				-webkit-transition: width linear 2s 6s;
+				-moz-transition: width linear 2s 6s;
+				-ms-transition: width linear 2s 6s;
+			}
+			.s2{
+				width: 5px;
+				height: 0;
+				position: absolute;
+				top: 0;
+				right: 0;
+				transition: height linear 2s 4s;
+				-webkit-transition: height linear 2s 4s;
+				-moz-transition: height linear 2s 4s;
+				-ms-transition: height linear 2s 4s;
+			}
+			.s3{
+				width: 0;
+				height: 5px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				transition: width linear 2s 2s;
+				-webkit-transition: width linear 2s 2s;
+				-moz-transition: width linear 2s 2s;
+				-ms-transition: width linear 2s 2s;
+			}
+			.s4{
+				width: 5px;
+				height: 0;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: height linear 2s;
+				-webkit-transition: height linear 2s;
+				-moz-transition: height linear 2s;
+				-ms-transition: height linear 2s;
+			}
+			.box:hover .s1{
+				width: 100%;
+				transition: width linear 2s;
+				-webkit-transition: width linear 2s;
+				-moz-transition: width linear 2s;
+				-ms-transition: width linear 2s;
+			}
+			.box:hover .s2{
+				height: 100%;
+				transition: height linear 2s 2s;
+				-webkit-transition: height linear 2s 2s;
+				-moz-transition: height linear 2s 2s;
+				-ms-transition: height linear 2s 2s;
+			}
+			.box:hover .s3{
+				width: 100%;
+				transition: width linear 2s 4s;
+				-webkit-transition: width linear 2s 4s;
+				-moz-transition: width linear 2s 4s;
+				-ms-transition: width linear 2s 4s;
+			}
+			.box:hover .s4{
+				height: 100%;
+				transition: height linear 2s 6s;
+				-webkit-transition: height linear 2s 6s;
+				-moz-transition: height linear 2s 6s;
+				-ms-transition: height linear 2s 6s;
+			}
+		</style>
+		<div class="box">
+			<span class="s1"></span>
+			<span class="s2"></span>
+			<span class="s3"></span>
+			<span class="s4"></span>
+			<div class="box_content"></div>
+		</div>
+	</body>
+</html>

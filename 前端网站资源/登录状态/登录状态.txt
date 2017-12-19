@@ -1,0 +1,14 @@
+$(function(){
+	$.ajax({
+		type:"GET",
+		url:"index.php/Home/Index/ajaxChkLogin",
+		dataType:"json",
+		success:function(data){
+			if(data !=null){
+				$("#logInfo").html('ÄúºÃ£¬'+data.username+'<a href="/index.php/Home/Index/Logout">ÍË³ö</a>');
+			}else{
+				$("#logInfo").html('');
+			}
+		}
+	})
+});

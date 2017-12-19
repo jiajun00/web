@@ -1,0 +1,78 @@
+﻿<html>
+<body>
+<link type="text/css" href="jquery-ui.css" rel="stylesheet" />
+<style>
+#loading{background-image:url(images/loading.gif);background-position:0px 0px;background-repeat:no-repeat; position:absolute;width:50px;height:50px;top:60%;left:50%;margin-left:-25px;text-align:center;}
+</style>
+<script type ="text/javascript" src="jquery.js"></script>
+<script type ="text/javascript" src="jquery.form.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript">
+$(function () {
+    bindSubmit();
+    $("#loading").hide();
+    $("#msgdlg").hide();
+});
+
+function bindSubmit() {
+    var options = {
+            target: '#msgdlg',
+            success: showResponse,
+			error: showError
+
+            // 其它可选参数: 
+            //url:       url         // override for form's 'action' attribute 
+            //type:      type        // 'get' or 'post', override for form's 'method' attribute 
+            //dataType:  null        // 'xml', 'script', or 'json' (expected server response type) 
+            //clearForm: true        // clear all form fields after successful submit 
+            //resetForm: true        // reset the form after successful submit 
+
+            // $.ajax 选项,例如超时: 
+            //timeout:   3000 
+        };
+
+        $('#form1').submit(function () {
+            $(this).ajaxSubmit(options);
+			$("#loading").show();
+            return false;
+        });
+}
+
+// 
+function showResponse(responseText, statusText, xhr, $form) {
+    $("#loading").hide();
+	messagebox(responseText);
+    //bindSubmit();
+}
+
+function showError(xhr, ajaxOptions, thrownError) {
+    $("#loading").hide();
+	messagebox("出错了!" + thrownError);
+    bindSubmit();
+}
+
+// 显示结果信息的对话框
+function messagebox(msg) {
+    $("#msgdlg").html(msg);
+    $("#dialog:ui-dialog").dialog("destroy");
+    $("#msgdlg").dialog({
+            modal: true,
+            width: 380,
+            height: 230,
+            buttons: {
+                确认: function () {
+                    $(this).dialog("close");
+                }
+            }
+    });
+}
+</script>
+<form id="form1" name="form1" method="get" action="post.html">
+标题<input id="testtitle" name="testtitle" type="text" size="40" />
+<input type="submit" value="提交">
+</form>
+<div id="msgdlg" title="消息"></div>
+<div id="loading" style="display:none" ondblclick="this.style.display='none'"></div>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<meta charset="utf-8" />
+<style>
+	div{border: 1px solid red;}
+</style>
+</head>
+<body>
+
+<div id="div1"><h2>使用 jQuery AJAX 修改文本内容1</h2></div>
+<div id="div2"><h2>使用 jQuery AJAX(function) 修改文本内容2</h2></div>
+<div id="div3" ><h2>使用 load 修改文本内容3</h2></div>
+<div id="div4" ></div>
+<button class="add1">获取其他内容</button>
+<button onclick="ajax1()">获取txt内容</button>
+<button onclick="StandardTaxRate()">通过xml读取</button>
+</body>
+</html>
+<script>
+	$(document).ready(function(){
+	  $(".add1").click(function(){
+	    $.ajax({url:"http://127.0.0.1:8020/js%E8%B0%83%E8%AF%95/ajax/demo_test.txt",success:function(result){
+	      $("#div1").html(result);
+	    }});
+	  });
+	});
+	
+	function ajax1(){
+		$.ajax({
+			type:"get",
+			url:"http://127.0.0.1:8020/js%E8%B0%83%E8%AF%95/ajax/demo_test.txt",
+			success:function(ad){
+	      $("#div2").html(ad);
+	  }});
+	}
+	
+	$("#div3").load('demo_test.txt #p1');
+	
+	function StandardTaxRate(){
+	    $.ajax({
+	        url: "xmltest.xml",
+	        dataType: 'xml',
+	        type: 'GET',
+	        timeout: 2000,
+	        error: function(xml){
+	            alert("加载XML 文件出错！");
+	        },
+	        success: function(xml){
+	        	$('#div4').append('<h3> Saturn给你推荐几本书： </h3>');       
+      			$('#div4').append('<dl />');  
+	            $(xml).find("书").each(function(i){
+                 	var $book = $(this);        
+	           		var title = $book.attr("标题");       
+		           	var description = $book.find('描述').text();       
+		          	var imageurl = $book.attr('图片地址');       
+		          	var html = '<dt> <img class="bookImage" alt="" src="' + imageurl + '" mce_src="' + imageurl + '" /> </dt>';       
+			           	html += '<dd> <span class="loadingPic" alt="Loading" />';       
+			          	html += '<p class="title">' + title + '</p>';       
+			          	html += '<p> ' + description + '</p>' ;       
+			           	html += '</dd>';       
+			         	$('dl').append($(html));              
+	            });
+	        }
+	    });
+	}
+</script>

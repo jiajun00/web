@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Visual QuickMenu</title>
+
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+</head><body class="title" style="margin:20px;"><div style="padding-bottom:5px;font-size:13px;font-weight:bold;">HTML Structure Types</div><div class="topdivider"></div><div class="content">
+
+<div class="ctitle"><a name=b12>Switching Structure Types</a></div>
+<div class="icontent">
+Menus can be saved with two different structure concepts.  The pros and cons of each structure type are highlighted below.  To switch the structure select Settings --&gt; HTML Structure from the main menu.
+</div>
+
+<div class="ctitle"><a name=b12>Pure CSS (&lt;UL&gt;&lt;LI&gt;)</a></div>
+<div class="icontent" style="margin-bottom:30px;">
+Pure CSS menus function in all modern browsers (Firefox 1+, Netscape 7+, IE 6 - 
+mains only, IE 7+, Safari, Mozilla, Opera 9+) with 
+their JavaScript turned off, if JavaScript capabilities are present these menus will also fully function in older browsers such as IE6 and IE5 on the Mac.  The menu will look and behave similar to the scripted menu 
+and pools from the same CSS styles, however add-ons, delay timers, active states, and other features will only function if JavaScript is enabled in the browser.  Test the pure CSS functionality by viewing your menu with JavaScript disabled in the browser.
+<br>
+<br>
+The pure CSS structure type is preferred by most developers, these menus benefit in script capable browsers while offering a fully styled and functional menu to script disabled browsers.</div>
+
+
+<div class="ctitle"><a name=b12>Hybrid (&lt;DIV&gt;&lt;A&gt;)</a></div>
+<div class="icontent">
+The QuickMenu hybrid structure concept is less-nested than the pure alternative and easier to work with manually.  The down-side to this structure is it does not allow for functional drop downs in the 
+absence of JavaScript, with JavaScript disabled only the main menu will be 
+visible. However there is an optional no-script access option for the Hybrid 
+which will present non-JavaScript users with a full listing of your menus links 
+in a scrollable box.&nbsp; This feature is an optional step presented in the 
+publish wizard when the hybrid option, or DIV / A structure option is selected.
+<br>
+<br>
+The hybrid menu code is about 1K smaller than the pure CSS menus optional 
+JavaScript and will load a very large menu quicker, however load speed differences will be 
+unnoticeable for all but the largest (1000+ items) menu structures.
+</div>
+
+
+</div><div class="bottomdivider"></div><div class="copyright">Copyright (c) 2007, OpenCube Inc., All Rights Reserved.</div></body></html>
+
+
+

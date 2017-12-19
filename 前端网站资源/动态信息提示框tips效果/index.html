@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery实现简单实用的动态信息提示框tips效果_脚本分享网</title>
+        <link rel="stylesheet" href="css/demo.css" media="screen" />
+         <link rel="icon" href="../favicon.gif" />
+		 <style>
+			#tooltip {
+				border: 1px solid #444;
+				font-size: 14px;
+				max-width: 205px;
+				padding:1em;
+				position: absolute;
+				z-index:2000;
+				text-shadow:none;
+				border-radius: 6px;
+				-moz-border-radius: 6px;
+				-webkit-border-radius: 6px;
+			}
+		 </style>
+</head>
+    
+<body>
+
+	<section id="main">   
+    <h2>Hover on the contents to reveal the tooltip</h2>
+    
+	<p>
+    Suspendisse imperdiet ullamcorper est at interdum.<a href="" class="tooltip" title="This is a title"> Suspendisse at felis nunc.</a> 				    Integer eu felis lacus, id blandit augue. Mauris commodo hendrerit risus, quis vehicula mi adipiscing in. Integer nec pretium 
+    odio. Sed ligula enim, scelerisque ut tempor lacinia, iaculis eget erat. Integer eu felis lacus, id blandit augue. Mauris commodo hendrerit     risus, quis vehicula mi adipiscing in. <a href="" class="tooltip" title="Wow i did not know plugins can be this fun.">Integer nec pretium odio.</a>  
+     Sed ligulaenim, scelerisque ut tempor lacinia, iaculis eget erat. Integer eu felis lacus, id blandit augue. 
+     Mauris commodo hendrerit risus, <a href="" class="tooltip" title=" <img src='images/tutorial-pot.png' /> Web development tutorials and resources .">quis vehicula mi adipiscing in.</a>
+     Integer nec pretium odio. Sed ligula enim, scelerisque ut tempor lacinia, iaculis eget erat. <br /><br />  
+       Follow me on <a href="http://twitter.com/Tutorialpot/" class="tooltip" title="@Tutorialpot on twitter" >TWITTER</a>
+       & grab the <a href="http://feeds.feedburner.com/Tutorialpot/" class="tooltip" title="Straight to your inbox  Be the first to know" >RSS FEED</a>    
+	</p>    	
+     <img class="tooltip" title="jQuery tooltip" src="images/tutorial-pot.png" />   
+	</section>
+    
+
+	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="js/jQuery.toolTip.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		//Apply the plugin on every tooltip selector on the page
+		//This piece of code can also be included from an external file
+		// http://www.sharejs.com
+		$('.tooltip').toolTip();
+		
+	});
+	
+	</script>
+
+</body>
+</html>

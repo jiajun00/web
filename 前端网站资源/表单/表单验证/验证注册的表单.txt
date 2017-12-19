@@ -1,0 +1,149 @@
+//blur失去焦点
+//focus获得焦点
+var chkUsername = false;
+$("input[name=username]").blur(function(){
+	var _this = $(this);
+	var value = $.trim(_this.value());
+	if(value == ""){
+		_this.next.html("用户名不能为空！");
+		chkUsername = false;
+	}else{
+		$.ajax({
+			type:"GET",
+			url:"__CONTROLLER__/ajaxchkUname/uname/"+encodeURIComponent(value),
+			success:function(data){
+				if(data ==-1){
+					_this.css("borderColor","#F00");
+					_this.next.html("用户名不存在");
+					_this.focus();
+					_this.select();
+					chkUsername = false;
+				}else{
+					_this.css("borderColor","#CCC");
+					_this.next.html("OK")
+					chkUsername = true;
+				}
+			}
+		});
+	}	
+});
+密码验证
+var chkPass = false;
+$("input[name=password]").blur(function(){
+	var _this=$(this);
+	var value = $.trim(_this.val());
+	if(value == ""){
+		_this.css("borderColor","#f00");
+		_this.next.html("密码为空");
+		chkPass = false;
+	}else{
+		if(/^[/w](6,20)$/.test(value)){
+		_this.css("borderColor","#ccc");
+		_this.next.html("OK");
+		chkPass = true;
+		}else{
+			_this.css("borderColor","#F00");
+			_this.next.html("密码格式不正确");
+			_this.focus();
+			_this.select();
+			chkPass = false;
+		}
+	} 
+});
+密码二次验证
+$("input[name=rpassword]").blur(function(){
+	var _this=$(this);
+	var value = $.trim(_this.val());
+	if(value == ""){
+		_this.css("borderColor","#f00");
+		_this.next.html("密码为空");
+		chkPass = false;
+	}else{
+		if(value == $.trim($("input[name=password]").val())){
+		_this.css("borderColor","#ccc");
+		_this.next.html("OK");
+		chkPass = true;
+		}else{
+			_this.css("borderColor","#F00");
+			_this.next.html("两次密码不一致");
+			_this.focus();
+			_this.select();
+			chkPass = false;
+		}
+	} 
+});
+验证码
+var chkcode = false;
+$("input[name=chkcode]").blur(function(){
+	var _this=$(this);
+	var value = $.trim(_this.val());
+	if(value == ""){
+		_this.css("borderColor","#f00");
+		_this.next.html("验证码为空");
+		chkcode = false;
+	}else{
+		$.ajax({
+			type:"GET",
+			url: "__CONTROLLER__/ajaxchkcode/c/"+encodeURIComponent(value)",
+			success:function(data){
+				if(data ==-1){
+					_this.css("borderColor","#F00");
+					_this.next.html("错误");
+					_this.focus();
+					_this.select();
+					chkcode = false;
+				}else{
+					_this.css("borderColor","#CCC");
+					_this.next.html("OK")
+					chkcode = true;
+				}
+			}
+		});
+		
+	} 
+});
+
+
+表单验证
+function chkForm(){
+	if(!$("input[name=mustClick]").attr("checked")){
+		alert("必须同意协议！");
+		return false;
+	}
+	return chkUsername && chkEmail && chkPass && chkcode;
+}
+
+表单上使用
+<form action="" method="post" onsubmit="return chkForm();">
+
+php控制器
+public function ajaxchkUname($uname){
+	$member=M('Member');
+	if($member->where("username='$uname'")->count()>0){
+		echo -1;
+	}else{
+		echo 1;
+	}
+}
+public function ajaxchkcode($c){
+	$key = substr(md5('ThinkPHP.CN'),5,8);
+	$str = substr(md5('ThinkPHP.CN'),8,10);
+	$key = md5($key.$str);
+	$secode = sessio n($key);
+	if(empty($code)||empty($secode)){
+		echo -1;
+		exit;
+	}
+	if(NOW_TIME - $secode['verify_time']>1800){
+		echo -1;
+		exit;
+	}
+	$key1 = substr(md5('ThinkPHP.CN')),5,8);
+	$key2 = substr(md5(strtoupper($code)),8,10);
+	$codeKey = md5($key1.$key2); 
+	if($codeKey == $secode['verify_code']){
+		echo 1;		
+	}else{
+		echo -1;
+	}
+}

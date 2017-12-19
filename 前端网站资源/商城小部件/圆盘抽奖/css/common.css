@@ -1,0 +1,87 @@
+@charset "utf-8";
+/*常用样式*/
+body, h1, h2, h3, ul, p, form, input,dl,dt,dd,header,section,article,nav{ margin:0; }
+body{font: 12px/24px Tahoma,'Microsoft Yahei','Simsun';}
+header,section,article,nav{display:block; }
+img { border:0 none; }
+a { text-decoration:none; color:#444  }
+a:focus {outline:none; }
+.underline,.hoverlink:hover{ text-decoration:underline;}
+.underline:hover{ text-decoration:none;}
+
+ul,ol, form,dt,dd,dl ,header,section,article,nav{ padding:0; }
+ul { list-style:none; }
+table { border-collapse:collapse; width:100%; border:0 none;  border-spacing:0; }
+em{font-style:normal;}
+strong { font-weight:bold; }
+.dn { display:none; }
+.db { display:block; }
+.dib{ display:inline-block;}
+.l, .fl-li li { float:left; }
+.fl-li li { margin-right:5px; }
+.r { float:right; }
+.b { font-weight:bold; }
+.n { font-weight:normal; }
+.ti { text-indent:-9999px; overflow:hidden; }
+.ti28{ text-indent:28px;}
+.tl { text-align:left; }
+.tc { text-align:center; }
+.tr { text-align:right; }
+.f0{ font-size:0; line-height:0;}
+.f12 { font-size:12px; }
+.f14 , input , select{ font-size:14px; }
+.f16 { font-size:16px; }
+.f18 { font-size:18px; }
+.f22 { font-size:22px; }
+.f32 { font-size:32px;}
+.fm{ font-family:microsoft yahei;}
+.lh32{ line-height:32px;}
+.lh20{ line-height:20px;}
+.lh18{ line-height:18px;}
+.red{color:#ff4340;}
+.white{color:#fff;}
+.green{color:#029a47;}
+.blue{ color:#278ff5;}
+.orange{ color:#e45c27;}
+.gray{color:#666;}
+.lgray{ color:#b2b2b2;}/*light-gray*/
+.black{ color:#000;}
+.bd0{ border:0 none !important;}
+.mb0 { margin-bottom:0 !important; }
+.mb5{ margin-bottom:5px;}
+.mb10{ margin-bottom:10px;}
+.mb20{ margin-bottom:20px;}
+.mb30 { margin-bottom:30px;}
+.mb40{ margin-bottom:40px;}
+.mtf5{ margin-top:-5px;}
+.mt5 { margin-top:5px;}
+.mt10 {margin-top:10px;}
+.mt30{ margin-top:30px;}
+.ml5{ margin-left:5px;}
+.ml20{ margin-left:20px;}
+.mr3{ margin-right:3px;}
+.mr10{ margin-right:10px;}
+.mr15{ margin-right:15px; }
+.mr20{ margin-right:20px;}
+.p5{ padding:5px;}
+.p10{ padding:10px;}
+.plr5{ padding-left:5px; padding-right:5px;}
+.pl0{ padding-left:0 !important;}
+.p20{ padding:20px;}
+.pl10{ padding-left:10px;}
+.pl15{ padding-left:15px;}
+.pl100{ padding-left:100px;}
+.pt20{ padding-top:20px;}
+.pt30{ padding-top:30px;}
+.mid{ margin-left:auto; margin-right:auto;}
+.w960{ width:960px;}
+.rel { position:relative; }
+.abs, .abs-tr, .abs-br, .abs-lt { position:absolute; }
+.clearfix:after{
+	content:"\200B";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
+	font-size: 0px;
+}

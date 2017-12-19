@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Visual QuickMenu</title>
+
+
+<link rel="stylesheet" type="text/css" href="help.css">
+
+
+</head><body class="title" style="margin:20px;"><div style="padding-bottom:5px;"><img src="images/oc_logo.gif" width=16 height=16 align=absbottom style="margin-right:5px;">Visual QuickMenu</div><div class="topdivider"></div><div class="content">
+
+
+
+<div class="ctitle"><a name=b3>Saving and Re-Opening Menus</a></div>
+<div class="icontent">
+To save your menu, click the save menu option at the top of the visual interface.  Visual QuickMenu employs a copy and paste save option, this method of saving is required due to the interfaces web based foundation.  The instructions within the save interface will explain the method of creating a blank HTML page and pasting the supplied contents to that new document.
+<br>
+<br>
+To edit your saved menu, open the saved document using Firefox or IE.
+<br>
+<br>
+You can optionally add the visual interface when you publish to an existing page, or the visual interface may be added to any existing document, 
+whether it contains a menu system or not.  If the document does not contain a menu, a blank template menu will be displayed for editing.  To manually add the visual interface to an existing HTML document paste the following code before the closing body tag (&lt;/body&gt;).
+
+	<div style="padding:20px 20px 0px 20px;">
+	<input value='<script type="text/javascript" src="http://www.opencube.com/qmv6/qm_visual.js"></script>' type="text" style="padding:3px 0px 3px 2px;width:100%;border-color:#dd3300;font-size:13px;color:#222222;border-width:1px;border-style:solid;">
+	</div>
+<br>
+When publishing your menu this code will be provided as an optional step within the wizard.
+<br>
+<br>
+When the interface is included within an existing HTML page it may be accessed locally or via HTTP://, however when accessing locally some firewall settings may block the script from loading.  If this happens check your security settings within your firewall software.
+<br>
+<br>
+You may notice a longer delay when initially loading a saved menu, after the interface loads it will run at normal speeds.  The reason for this delay is that saved documents access the visual tool by grabbing the code from 
+Opencube's server.  The reference to Opencube may be redirected to the interface on your local computer which was included in the download, the mian program file is called qm_visual.js and is located in the visual_interface/qmv6/ folder.  Change the src="http://www.opencube.com/qmv6/qm_visual.js" reference in the script pointer before the closing body tag to point to a local copy of this file.
+<br>
+<br>
+<font style="color:#333333;font-weight:bold;">Tip:</font> If you include the visual interface in your document when publishing you can do future edits from within your web page.  Any effects your design has on the page will be visible in real time!  Note: If you page is live, visitors to your site will also see the visual interface, to avoid this, make a temporary copy of your document that is hidden from the public when designing from within your HTML pages.
+</div>
+
+
+
+
+</div><div class="bottomdivider"></div><div class="copyright">Copyright (c) 2007, OpenCube Inc., All Rights Reserved.</div></body></html>
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="站长,网页特效,js特效,js脚本,脚本,广告代码,zzjs,zzjs.net,sky,www.zzjs.net,站长特效 网" />
+<meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。全力打造一流网页特效站！" />
+<title>站长特效 jquery仿手机翻牌菜单效果 站长特效网</title>
+<script type="text/javascript" src="../jquery.js"></script>
+<style type="text/css">
+ul,li{list-style:none;padding:0;margin:0;}
+#wwwzzjsnet{width:300px;height:100px;border:1px solid #777;margin:50px auto;}
+#wwwzzjsnet li{width:100px;float:left;height:50px;font-size:14px;text-align:center;line-height:28px;position:relative;z-index:1;}
+#wwwzzjsnet li a{display:block;height:28px;border:2px solid #333;text-decoration:none;width:50px;background:#888;overflow:hidden;position:absolute;left:25px;top:10px;}
+</style>
+<script type="text/javascript" src="/img/jquery_zzjs.js"></script>
+<script language="javascript">
+var nummove=0;
+var numout=0;
+$(function(){
+	$("#wwwzzjsnet li").hover(
+		function(){
+		if(nummove==0)
+		{
+			nummove=1;
+			$("a",this).animate({ height: "0px",top: "25px"}, 80,function(){nummove=0;});
+			$("a",this).animate({ height: "28px",top: "10px"}, 80);
+			$("a",this).css("background","yellow");
+		}
+			},
+			function(){
+			if(numout==0)
+			{
+			numout=1;
+			$("a",this).animate({ height: "0px",top: "25px"}, 80,function(){numout=0;});
+			$("a",this).animate({ height: "28px",top: "10px"}, 80);
+			$("a",this).css("background","#888");
+			numout=0;
+			}
+			}
+	)
+	$("#wwwzzjsnet li a").click(function(){
+		$(this).parents("li").css("z-index","2")
+		$(this).animate({ height: "558px",top: "-255px",width: "1000px",left: "-460px",opacity: 'toggle',lineHeight: '558px',fontSize: '500px'}, 1000);
+		$(this).animate({ height: "28px",top: "10px",width: "50px",left: "25px",opacity: 'toggle',lineHeight: '28px',fontSize: '12px'}, 400);
+		$(this).parents("li").css("z-index","1")
+	})
+})//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+</script>
+</head>
+<body>
+<a href="http://www.zzjs.net/">站长特效网</a>，以质量为核心，以实用为目的，打造一流网页特效站！zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+需要加载js文件，请刷新页面看效果！
+<ul id="wwwzzjsnet">
+  <li><a href="http://www.zzjs.net">一号</a></li>
+  <li><a href="http://www.zzjs.net">二号</a></li>
+  <li><a href="http://www.zzjs.net">三号</a></li>
+  <li><a href="http://www.zzjs.net">四号</a></li>
+  <li><a href="http://www.zzjs.net">五号</a></li>
+  <li><a href="http://www.zzjs.net">六号</a></li>
+</ul>
+</body>
+</html>

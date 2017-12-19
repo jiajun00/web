@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/*正方形*/
+#square{width:100px;height:100px;background:red;}
+/*长方形*/
+#rectangle{width:200px;height:100px;background:red;} 
+/*圆*/
+#circle{width:100px;height:100px;background:red;-moz-border-radius:50px;-webkit-border-radius:50px;border-radius:50px;}
+/*椭圆*/
+#oval{width:200px;height:100px;background:red;-moz-border-radius:100px / 50px;-webkit-border-radius:100px / 50px;border-radius:100px / 50px;}
+/*三角形*/
+#triangle-up{width:0;height:0;border-left:50px solid transparent;border-right:50px solid transparent;border-bottom:100px solid red;/*向上*/ }
+#triangle-down{width:0;height:0;border-left:50px solid transparent;border-right:50px solid transparent;border-top:100px solid red;/*向下*/ }
+#triangle-left{width:0;height:0;border-top:50px solid transparent;border-right:100px solid red;border-bottom:50px solid transparent;/*向左*/ }
+#triangle-right{width:0;height:0;border-top:50px solid transparent;border-left:100px solid red;border-bottom:50px solid transparent;/*向右*/  }
+
+/*平行四边形*/
+#parallelogram{width:150px;height:100px;-webkit-transform:skew(20deg);-moz-transform:skew(20deg);-o-transform:skew(20deg);background:red;}
+/*五边形*/
+#pentagon{position:relative;width:54px;border-width:50px 18px 0;border-style:solid;border-color:red transparent;} 
+#pentagon:before{content:"";position:absolute;height:0;width:0;top:-85px;left:-18px;border-width:0 45px 35px;border-style:solid;border-color:transparent transparent red;}
+
+
+/*五角星*/
+#star-five{margin:50px 0;position:relative;display:block;color:red;width:0px;height:0px;border-right:100px solid transparent;border-bottom:70px solid red;border-left:100px solid transparent;-moz-transform:rotate(35deg);-webkit-transform:rotate(35deg);-ms-transform:rotate(35deg);-o-transform:rotate(35deg);}
+#star-five:before{border-bottom:80px solid red;border-left:30px solid transparent;border-right:30px solid transparent;position:absolute;height:0;width:0;top:-45px;left:-65px;display:block;content:'';-webkit-transform:rotate(-35deg);-moz-transform:rotate(-35deg);-ms-transform:rotate(-35deg);-o-transform:rotate(-35deg);}
+#star-five:after{position:absolute;display:block;color:red;top:3px;left:-105px;width:0px;height:0px;border-right:100px solid transparent;border-bottom:70px solid red;border-left:100px solid transparent;-webkit-transform:rotate(-70deg);-moz-transform:rotate(-70deg);-ms-transform:rotate(-70deg);-o-transform:rotate(-70deg);content:'';}
+
+/*对话框*/
+#talkbubble{width:120px;height:80px;background:red;position:relative;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+#talkbubble:before{content:"";position:absolute;right:100%;top:26px;width:0;height:0;border-top:13px solid transparent;border-right:26px solid red;border-bottom:13px solid transparent;}
+
+/*八卦*/
+#yin-yang{width:96px;height:48px;background:#eee;border-color:red;border-style:solid;border-width:2px 2px 50px 2px;border-radius:100%;position:relative;}
+#yin-yang:before{content:"";position:absolute;top:50%;left:0;background:#eee;border:18px solid red;border-radius:100%;width:12px;height:12px;}
+#yin-yang:after{content:"";position:absolute;top:50%;left:50%;background:red;border:18px solid #eee;border-radius:100%;width:12px;height:12px;}
+
+/*Facebook*/
+#facebook-icon{background:red;text-indent:-999em;width:100px;height:110px;border-radius:5px;position:relative;overflow:hidden;border:15px solid red;border-bottom:0;}
+#facebook-icon::before{content:"/20";position:absolute;background:red;width:40px;height:90px;bottom:-30px;right:-37px;border:20px solid #eee;border-radius:25px;}
+#facebook-icon::after{content:"/20";position:absolute;width:55px;top:50px;height:20px;background:#eee;right:5px;}
+
+
+/*搜索符号*/
+#magnifying-glass{font-size:10em;/* This controls the size. */ display:inline-block;width:0.4em;height:0.4em;border:0.1em solid red;position:relative;border-radius:0.35em;}
+#magnifying-glass::before{content:"";display:inline-block;position:absolute;right:-0.25em;bottom:-0.1em;border-width:0;background:red;width:0.35em;height:0.08em;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);}
+
+/*折叠型*/
+#chevron{position:relative;text-align:center;padding:12px;margin-bottom:6px;height:60px;width:200px;}
+#chevron:before{content:'';position:absolute;top:0;left:0;height:100%;width:51%;background:red;-webkit-transform:skew(0deg, 6deg);-moz-transform:skew(0deg, 6deg);-ms-transform:skew(0deg, 6deg);-o-transform:skew(0deg, 6deg);transform:skew(0deg, 6deg);} 
+#chevron:after{content:'';position:absolute;top:0;right:0;height:100%;width:50%;background:red;-webkit-transform:skew(0deg, -6deg);-moz-transform:skew(0deg, -6deg);-ms-transform:skew(0deg, -6deg);-o-transform:skew(0deg, -6deg);transform:skew(0deg, -6deg);}​
+
+/*钻石*/
+#cut-diamond{border-style:solid;border-color:transparent transparent red transparent;border-width:0 25px 25px 25px;height:0;width:50px;position:relative;margin:20px 0 50px 0;} #cut-diamond:after{content:"";position:absolute;top:25px;left:-25px;width:0;height:0;border-style:solid;border-color:red transparent transparent transparent;border-width:70px 50px 0 50px;}
+/*鸡蛋*/
+#egg{display:block;width:126px;height:180px;background-color:red;-webkit-border-radius:63px 63px 63px 63px / 108px 108px 72px 72px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;}

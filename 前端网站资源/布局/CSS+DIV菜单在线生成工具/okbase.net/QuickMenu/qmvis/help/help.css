@@ -1,0 +1,15 @@
+a:link {color:#0033cc;}
+a:visited {}
+
+.title {font-family:arial;font-size:15px;color:#000000;}
+.content {font-family:arial;font-size:13px;margin-left:10px;margin-right:10px;}
+.copyright {font-family:arial;font-size:10px;}
+
+.ctitle {font-family:arial;font-size:13px;color:#0033cc;font-weight:bold;margin-bottom:2px;padding-top:16px;}
+.icontent {margin-bottom:10px;}
+.ordlist {margin-bottom:5px;}
+.ordlist_container {margin-bottom:22px;}
+.iimage {text-align:left;margin:10px;}
+
+.topdivider {border-color:#333333;border-style:dashed;border-width:0px;border-bottom-width:1px;margin-bottom:10px;}
+.bottomdivider {border-color:#333333;border-style:dashed;border-width:0px;border-bottom-width:1px;margin-top:25px;margin-bottom:3px;}

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+.a{border:1px solid green}
+.b{background:red;}
+.c{margin:100px;}
+.x{padding:100px;}
+</style>
+<script type="text/javascript" src="thd-simple.js"></script>
+
+</head>
+
+<body>
+
+<div id="d" class="a b c">
+Hello World;
+</div>
+
+<input type="button" value="点我看效果" id="bton"/>
+
+
+<script type="text/javascript" >
+
+t("bton").on("click",function(){
+	t("d").removeClass("a");
+	t("d").removeClass("b");
+	t("d").removeClass("c");
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<body>
+	<style>
+		*{margin:0;padding0;text-decoration: none;list-style: none;}
+		a{cursor: pointer;}
+		.boder{margin:0 auto;background-color:#F12345;width:800px;height:8000px;}
+		/*漂浮导航样式*/
+		.elevator{width:30px;overflow:hidden;display:none}
+		.elevator ul{overflow:hidden;background-color:rgba(255,255,255,.8);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ccffffff, endColorstr=#ccffffff)}
+		.elevator li{width:30px;height:30px;line-height:30px;text-align:center;overflow:hidden;margin-top:-1px;cursor:pointer}
+		.elevator li a{display:block;width:30px;height:30px;margin:0 auto;color:#625351;font-size:14px;font-family:Arial;											
+		.elevator li a:hover{color:#fff;text-decoration:none;background:#c81623}
+		.elevator li .etitle{display:none;width:30px;height:30px;color:#fff;font-size:12px}
+		.elevator li.current a{display:none}
+		.elevator li.current .etitle{display:block;color:#c81623}
+		.elevator li.current .etitle:hover{color:#fff}
+		.elevator li.hover a,.elevator li:hover a{display:none}
+		.elevator li.hover .etitle,.elevator li:hover .etitle{display:block;color:#fff}
+
+	</style>
+	<div class="boder"></div>
+	/*漂浮导航*/
+	<div id="elevator" class="elevator" style="z-index: 5; position: fixed; left: 266.190490722656px; top: 137px; display: block;">
+		<ul>
+			<li class="handler current" clstag="h|keycount|2015|1501" data-idx="0">
+				<a href="javascript:;">1F</a><a href="javascript:;" class="etitle">服饰</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1502" data-idx="1">
+				<a href="javascript:;">2F</a><a href="javascript:;" class="etitle">美妆</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1503" data-idx="2">
+				<a href="javascript:;">3F</a><a href="javascript:;" class="etitle">手机</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1504" data-idx="3">
+				<a href="javascript:;">4F</a><a href="javascript:;" class="etitle">家电</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1505" data-idx="4">
+				<a href="javascript:;">5F</a>
+				<a href="javascript:;" class="etitle">数码</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1506" data-idx="5">
+				<a href="javascript:;">6F</a>
+				<a href="javascript:;" class="etitle">运动</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1507" data-idx="6">
+				<a href="javascript:;">7F</a>
+				<a href="javascript:;" class="etitle">居家</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1508" data-idx="7">
+				<a href="javascript:;">8F</a>
+				<a href="javascript:;" class="etitle">母婴</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1509" data-idx="8">
+				<a href="javascript:;">9F</a>
+				<a href="javascript:;" class="etitle">食品</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1510" data-idx="9">
+				<a href="javascript:;">10F</a>
+				<a href="javascript:;" class="etitle">图书</a>
+			</li>
+			<li class="handler" clstag="h|keycount|2015|1511" data-idx="10">
+				<a href="javascript:;">11F</a>
+				<a href="javascript:;" class="etitle">服务</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

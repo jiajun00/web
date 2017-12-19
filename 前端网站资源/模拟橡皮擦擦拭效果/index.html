@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>jquery.eraser插件模拟橡皮擦擦拭效果</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src='js/jquery.eraser.js'></script>
+	<script>
+		addEventListener( "load", init, false );
+		function init(event) {
+			//下面的代码实现当画布被擦除50%时触发事件showResetButton。
+			$('#redux').eraser( {
+				completeRatio: .5,
+				completeFunction: showResetButton
+			});
+		}
+		function reset(event) {
+			$("#redux").eraser('reset');
+			event.preventDefault();
+		}
+		function grow(event) {
+			$("#redux").eraser("size",150); //橡皮擦大小
+			event.preventDefault();
+		}
+		//下面的代码实现当画布被擦除50%时触发事件showResetButton。
+		$('#redux').eraser( {
+			completeRatio: .5,
+			completeFunction: showResetButton
+		});
+		function showResetButton(){
+			$("#resetBtn").css("display","inline-block");
+		}
+	</script>
+</head>
+<body>
+	<!-- 代码部分begin -->
+	<span class="container">
+		<img id="robot" src="images/Tesla.jpg" />
+		<img id="redux" src="images/Tesla2.jpg" />
+	</span>
+	<p><a href="#" id="resetBtn" onClick="reset(event);" style="display:none" class="box">重置</a></p>
+	<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+	<!-- 代码部分end -->
+</body>
+</html>

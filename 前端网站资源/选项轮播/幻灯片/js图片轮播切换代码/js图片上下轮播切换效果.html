@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>站长特效_js图片自动轮播切换代码_站长特效网</title>
+<meta name="keywords" content="站长,网页特效,网页特效代码,js特效,js脚本,脚本,广告代码,zzjs,zzjs.net,www.zzjs.net,站长特效 网" />
+<meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。大量高质量js特效，提供高质量广告代码下载,尽在站长特效网" />
+<style>
+body,div,ul,li{margin:0;padding:0;}
+ul{list-style-type:none;}
+body{background:#000;text-align:center;font:12px/20px Arial;}
+#box_wwwzzjsnet{position:relative;width:492px;height:172px;background:#fff;border-radius:5px;border:8px solid #fff;margin:10px auto;cursor:pointer;}
+#box_wwwzzjsnet .list{position:relative;width:490px;height:170px;overflow:hidden;}
+#box_wwwzzjsnet .list ul{position:absolute;top:0;left:0;}
+#box_wwwzzjsnet .list li{width:490px;height:170px;overflow:hidden;}
+#box_wwwzzjsnet .count{position:absolute;right:0;bottom:5px;}
+#box_wwwzzjsnet .count li{color:#fff;float:left;width:20px;height:20px;cursor:pointer;margin-right:5px;overflow:hidden;background:#F90;opacity:0.7;filter:alpha(opacity=70);border-radius:20px;}
+#box_wwwzzjsnet .count li.current{color:#fff;opacity:1;filter:alpha(opacity=100);font-weight:700;background:#f60;}
+#tmp{width:100px;height:100px;background:red;position:absolute;}
+</style>
+<script type="text/javascript">
+//获取ID
+var $ = function (id) {return typeof id === "string" ? document.getElementById(id) : id};
+//获取tagName
+var $$ = function (tagName, oParent) {return (oParent || document).getElementsByTagName(tagName)};
+//自动播放对象
+var AutoPlay = function (id) {this.initialize(id)};
+AutoPlay.prototype = {
+	initialize: function (id)
+	{
+		var oThis = this;
+		this.oBox = $(id);
+		this.oUl = $$("ul", this.oBox)[0];
+		this.aImg = $$("img", this.oBox);
+		this.timer = null;
+		this.autoTimer = null;
+		this.iNow = 0;
+		this.creatBtn();
+		this.aBtn = $$("li", this.oCount);
+		this.toggle();
+		this.autoTimer = setInterval(function ()
+		{
+			oThis.next()
+		}, 3000);
+		this.oBox.onmouseover = function ()
+		{
+			clearInterval(oThis.autoTimer)
+		};
+		this.oBox.onmouseout = function ()
+		{
+			oThis.autoTimer = setInterval(function ()
+			{
+				oThis.next()
+			}, 3000)
+		};
+		for (var i = 0; i < this.aBtn.length; i++)
+		{
+			this.aBtn[i].index = i;
+			this.aBtn[i].onmouseover = function ()
+			{
+				oThis.iNow = this.index;
+				oThis.toggle()
+			}
+		}
+	},
+	creatBtn: function ()
+	{
+		this.oCount = document.createElement("ul");
+		this.oFrag = document.createDocumentFragment();
+		this.oCount.className = "count";
+		for (var i = 0; i < this.aImg.length; i++)
+		{
+			var oLi = document.createElement("li");
+			oLi.innerHTML = i + 1;
+			this.oFrag.appendChild(oLi)
+		}
+		this.oCount.appendChild(this.oFrag);
+		this.oBox.appendChild(this.oCount)
+	},
+	toggle: function ()
+	{
+		for (var i = 0; i < this.aBtn.length; i++) this.aBtn[i].className = "";
+		this.aBtn[this.iNow].className = "current";
+		this.doMove(-(this.iNow * this.aImg[0].offsetHeight))
+	},
+	next: function ()
+	{
+		this.iNow++;
+		this.iNow == this.aBtn.length && (this.iNow = 0);
+		this.toggle()
+	},
+	doMove: function (iTarget)
+	{
+		var oThis = this;
+		clearInterval(oThis.timer);
+		oThis.timer = setInterval(function ()
+		{
+			var iSpeed = (iTarget - oThis.oUl.offsetTop) / 5;
+			iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+			oThis.oUl.offsetTop == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.top = oThis.oUl.offsetTop + iSpeed + "px")
+		}, 30)
+	}
+};
+window.onload = function ()
+{
+	new AutoPlay("box_wwwzzjsnet");
+};
+</script>
+</head>
+<body>
+<div id="box_wwwzzjsnet">
+    <div class="list">
+        <ul>
+            <li><img style="background-color:#aaa;" width="490" height="170" /></li>
+            <li><img style="background-color:#bbb;" width="490" height="170" /></li>
+            <li><img style="background-color:#ccc;" width="490" height="170" /></li>
+            <li><img style="background-color:#ddd;" width="490" height="170" /></li>
+            <li><img style="background-color:#eee;" width="490" height="170" /></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

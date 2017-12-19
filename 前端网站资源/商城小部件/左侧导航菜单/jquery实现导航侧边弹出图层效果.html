@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="站长,网页特效,js特效,js脚本,脚本,广告代码,zzjs,zzjs.net,sky,www.zzjs.net,站长特效 网" />
+<meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。全力打造一流网页特效站！" />
+<script type="text/javascript" src="../jquery"></script>
+<title>网页特效 jquery+css蓝色导航侧边弹出图层效果 站长特效网</title>
+<style type="text/css">
+html, body, ul, li {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+    font-family: "Verdana","lucida sans",Sans-serif;
+	font-size: 12px;
+}
+html, body {
+    min-height: 100%;
+	color: #FFFFFF;
+	background-repeat: repeat-x;
+	background-position: top;
+	background-color: #161f2a;
+}
+ul.nav_zzjs {
+     width: 200px;
+     float: left;
+     margin: 0;
+     padding: 0;
+}
+ul.nav_zzjs li {
+     position: relative;
+     float: left;
+     margin: 0;
+     padding: 0;
+     display: inline;
+}
+ul.nav_zzjs li a {
+     width: 165px;
+     border-top: 1px solid #3373a9;
+     border-bottom: 1px solid #003867;
+     padding: 10px 10px 10px 25px;
+     display: block;
+     color: #fff;
+     text-decoration: none;
+     background: #005094 url(/img/sidenav_20110112zzjs_net.gif) no-repeat 5px 10px;
+     position: relative;
+     z-index: 2;
+}
+ul.nav_zzjs li a:hover {
+     background-color: #2d353f;
+}
+ul.nav_zzjs li div {
+     display: none;
+     position: absolute;
+     top: 2px;
+     left: 0;
+     width: 225px;
+     background: url(/img/bubble_20110112zzjs_net.gif) no-repeat right top;
+}
+ul.nav_zzjs li div p {
+     margin: 7px 0;
+     line-height: 1.3em;
+     padding: 0 5px 10px 30px;
+     color: #444;
+     background: url(/img/btm_20110112zzjs_net.gif) no-repeat right bottom;
+}
+</style>
+<script language="javascript" src="/img/jquery_zzjs.js"></script>
+<script language="javascript">
+    $(document).ready(function() {
+//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+        $("ul.nav_zzjs li").hover(function() {
+            $(this).find("div").stop()
+        .animate({ left: "210", opacity: 1 }, "fast")
+        .css("display", "block")
+        }, function() {
+            $(this).find("div").stop()
+        .animate({ left: "0", opacity: 0 }, "fast")
+        });
+    });
+</script>
+</head>
+<body>
+<a href="http://www.zzjs.net/">站长特效网</a>，以质量为核心，以实用为目的，打造一流网页特效站！zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+<span style="color:#FF0000">需要加载js文件，请刷新页面后看效果。</span>
+<ul class="nav_zzjs">
+	<li>
+		<a href="http://www.zzjs.net">站长特效首页</a>
+		<div><p>站长特效网，以质量为核心，以实用为目的，打造一流网页特效站！</p></div>
+	</li>
+	<li>
+		<a href="http://www.zzjs.net">站长特效一号</a>
+		<div><p>站长特效网，以质量为核心，以实用为目的，打造一流网页特效站！</p></div>
+	</li>
+	<li>
+		<a href="http://www.zzjs.net">站长特效二号</a>
+		<div><p>站长特效网，以质量为核心，以实用为目的，打造一流网页特效站！</p></div>
+	</li>
+	<li>
+		<a href="http://www.zzjs.net">站长特效三号</a>
+		<div><p>站长特效网，以质量为核心，以实用为目的，打造一流网页特效站！</p></div>
+	</li>
+	<li>
+		<a href="http://www.zzjs.net">站长特效四号</a>
+		<div><p>站长特效网，以质量为核心，以实用为目的，打造一流网页特效站！</p></div>
+	</li>
+	<li>
+		<a href="http://www.zzjs.net">站长特效五号</a>
+		<div><p>站长特效网，以质量为核心，以实用为目的，打造一流网页特效站！</p></div>
+	</li>
+</ul>
+</body>
+</html>

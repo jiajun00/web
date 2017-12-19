@@ -1,0 +1,4 @@
+Before installing or accessing the folders in this download, please unzip to your hard drive.
+
+Attemting to view the samples or use the QuickMenu visual interface directly from the zip will
+cause errors!

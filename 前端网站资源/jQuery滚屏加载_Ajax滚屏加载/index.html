@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <title>jQuery滚屏加载_Ajax滚屏加载</title>
+        <link rel="stylesheet" type="text/css" href="http://www.sucaihuo.com/jquery/css/common.css" />
+        <style type="text/css">
+            .per{padding: 20px; border-bottom: 1px dotted #d3d3d3;}
+            .title{font-weight:bold; color:#39f}
+            .nodata{display:none; height:32px; line-height:32px; text-align:center; color:#999; font-size:14px}
+            h2.tip{margin:20px;font-size: 18px}
+        </style>
+    </head>
+	
+    <body>
+        <div class="head">
+            <div class="head_inner">
+                <a class="logo" href="http://www.sucaihuo.com">
+                    <img alt="素材火logo" src="http://www.sucaihuo.com/Public/images/logo.jpg"/>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="title"><a href="http://www.sucaihuo.com/js/9.html">jQuery滚屏加载_Ajax滚屏加载</a></h2>
+            <div class="demo">
+                <h2 class="tip">提示：使用滚动或拉动滚动条向下看。</h2>
+                <div id="lists"></div> 
+                <div class="nodata"></div>
+            </div>  
+        </div>
+        <div class="foot">
+            Powered by sucaihuo.com  本站皆为作者原创，转载请注明原文链接：<a href="http://www.sucaihuo.com" target="_blank">www.sucaihuo.com</a>
+        </div>
+        <script type="text/javascript" src="http://www.sucaihuo.com/Public/js/other/jquery.js"></script>
+        <script type="text/javascript">
+            i = 1; //设置当前页数 
+
+            $(function() {
+                var totalpage = 6; //总页数，防止超过总页数继续滚动
+                var winH = $(window).height(); //页面可视区域高度 
+
+                $(window).scroll(function() {
+                    if (i < totalpage) { // 当滚动的页数小于总页数的时候，继续加载
+                        var pageH = $(document.body).height();
+                        var scrollT = $(window).scrollTop(); //滚动条top 
+                        var aa = (pageH - winH - scrollT) / winH;
+                        if (aa < 0.01) {
+                           getJson(i)
+                        }
+                    } else { //否则显示无数据
+                        showEmpty();
+                    }
+                });
+                getJson(0); //加载第一页
+            });
+			
+            function getJson(page) {
+                $(".nodata").show().html("<img src='http://www.sucaihuo.com/Public/images/loading.gif'/>");
+                $.getJSON("ajax.php", {page: i}, function(json) {
+                    if (json) {
+                        var str = "";
+                        $.each(json, function(index, array) {
+                            var str = "<div class='per'>";
+                            var str = str + "<div class='title'>" + array['id'] + "、" + array['title'] + "</div></div>";
+                            $("#lists").append(str);
+                        });
+                        $(".nodata").hide()
+                    } else {
+                        showEmpty();
+                    }
+                });
+                i++;
+            }
+            function showEmpty() {
+                $(".nodata").show().html("别滚动了，已经到底了。。。");
+            }
+        </script>
+
+    </body>
+</html>
+

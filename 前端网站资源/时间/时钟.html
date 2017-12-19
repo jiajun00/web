@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <script type="text/javascript" src="js/jquery.min.js"></script>  
+<title>j时钟效果</title>
+   <style>
+	   	*{margin:0;padding:0;text-decoration:none;list-style: none;}
+	   	.border{border: 1px solid red;}
+		body{background:#f9f9f9;color:#000;font:15px Calibri, Arial, sans-serif;}
+		/*styling for the clock*/
+		#clock{position:relative;width:600px;height:600px;margin:22px auto;background: url('./img/clock/clock.png') no-repeat center;}
+		.hms{position: absolute;left: 270px;width: 30px;height: 580px;}
+		#date{text-shadow:1px 2px 1px #000;position: absolute;top: 365px;right: 140px;color:#fff;font:30px/36px Acens;font-weight:bold;letter-spacing:3px;}
+		#hours{background: url('./img/clock/hands.png') no-repeat left;z-index: 1000;}
+		#minutes{background: url('./img/clock/hands.png') no-repeat center;width:25px;z-index: 2000;}
+		#seconds{background: url('./img/clock/hands.png') no-repeat right;z-index: 3000;}
+		
+		/*简易闹钟*/
+		.clocksingle{position:relative;width:200px;height:200px;margin:10px auto;border-radius:50%;background-color: #000;}
+		.shms{position: absolute;background-color:#fff;transform-origin:50% 95%;}
+		#sclock{position:absolute;width:200px;height:200px;}
+		#shours{top:50px;left: 95px;width:10px;height:50px;z-index: 100;}
+		#sminutes{top:33px;left: 96px;width:10px;height:68px;z-index: 150;}
+		#sseconds{top:18px;left: 97px;width:8px;height:85px;z-index: 200;}
+		.seconds{animation:secon 60s linear infinite;}	
+   	</style>   
+	<style id="clockanimation"></style>
+</head>
+<body>
+        <div class="clocksingle">
+        	<span style="position: absolute;top:50%;left: 50%;z-index: 10000;" class="border"></span>
+        </div>
+</body>
+</html>
+<script>
+/*
+	$(document).ready(function() {
+	
+		//markup for the clock		
+		var clock = [
+			'<ul id="clock">',
+			'<li id="date"></li>',
+			'<li id="seconds" class="hms"></li>',
+			'<li id="hours" class="hms"></li>',
+			'<li id="minutes" class="hms"></li>',
+			'</ul>'
+			].join('');
+		
+	  	$(clock).fadeIn().appendTo('body');
+			
+		(function Clock(){
+	
+           	var date = new Date().getDate(),
+		   	hours = new Date().getHours(),
+           	minutes = new Date().getMinutes(),	
+		   	seconds = new Date().getSeconds();	   
+       		$("#date").html(date);          
+		 	var hrotate = hours * 30 + (minutes / 2);
+		 	//i.e 12 hours * 30 = 360 degrees   
+	      	$("#hours").css({
+			  	'transform'	:  'rotate('+ hrotate +'deg)',
+				'-moz-transform'	:'rotate('+ hrotate +'deg)',
+				'-webkit-transform'	:'rotate('+ hrotate +'deg)'
+		  	});				  
+	  		var mrotate = minutes * 6;                        
+	      	$("#minutes").css({
+				'transform'	:  'rotate('+ mrotate +'deg)',
+				'-moz-transform'	:'rotate('+ mrotate +'deg)',
+				'-webkit-transform'	:'rotate('+ mrotate +'deg)'
+		  	});  	  
+	      	var srotate = seconds * 6;              
+	      	$("#seconds").css({
+			 	'transform'	:  'rotate('+ srotate +'deg)',
+				'-moz-transform'	:'rotate('+ srotate +'deg)',
+				'-webkit-transform'	:'rotate('+ srotate +'deg)'
+		  	});             
+	     	//a call to the clock function after every 1000 miliseconds
+		  	setTimeout(Clock,1000);
+	 	})();
+    }); 
+*/
+    
+    //简易时钟
+    $(document).ready(function() {
+	
+		//markup for the clock		
+		var clock = [
+			'<ul id="sclock">',
+				'<li id="sdate"></li>',
+				'<li id="sseconds" class="seconds shms"></li>',
+				'<li id="shours" class="shms border"></li>',
+				'<li id="sminutes" class="shms"></li>',
+			'</ul>'
+			].join('');
+		
+	  	$(clock).fadeIn().appendTo('.clocksingle');
+			
+		(function Clock(){
+	
+           	var sdate = new Date().getDate(),
+			   	shours = new Date().getHours(),
+	           	sminutes = new Date().getMinutes();	
+			   	sseconds = new Date().getSeconds(),	   
+       		$("#sdate").html(sdate);          
+		 	var hrotate = shours * 30 + (sminutes/2);
+		 	//i.e 12 hours * 30 = 360 degrees   
+	      	$("#shours").css({
+			  	'transform'	:  'rotate('+ hrotate +'deg)',
+				'-moz-transform'	:'rotate('+ hrotate +'deg)',
+				'-webkit-transform'	:'rotate('+ hrotate +'deg)'
+		  	});				  
+	  		var mrotate = sminutes * 6;                        
+	      	$("#sminutes").css({
+				'transform'	:  'rotate('+ mrotate +'deg)',
+				'-moz-transform'	:'rotate('+ mrotate +'deg)',
+				'-webkit-transform'	:'rotate('+ mrotate +'deg)'
+		  	});  	  
+	      	var srotate = sseconds * 6;
+	      	var fsrotate=parseInt(srotate)+360;
+	      	/*
+	      	$("#sseconds").css({
+	      		
+			 	'transform'	:  'rotate('+ srotate +'deg)',
+				'-moz-transform'	:'rotate('+ srotate +'deg)',
+				'-webkit-transform'	:'rotate('+ srotate +'deg)'
+				
+		  	});
+		  	*/
+		  	document.getElementById("clockanimation").innerHTML='@keyframes secon{from{transform: rotate('+srotate+'deg)}to{transform: rotate('+fsrotate+'deg)}}'
+		  														
+		  		
+	     	//a call to the clock function after every 1000 miliseconds
+		  	setTimeout(Clock,60000);
+	 	})();
+    }); 
+    
+    // style.innerHTML = '@-webkit-keyframes myfirst{50% {background: '+color+';} }\n'
+        //     + '@keyframes myfirst {50% {background: '+color+';}}'
+</script>
+

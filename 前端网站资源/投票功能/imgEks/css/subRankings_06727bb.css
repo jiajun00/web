@@ -1,0 +1,106 @@
+@charset "utf-8";
+/*科e互联特效基本框架CSS*/
+body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input {margin:0;padding:0;-webkit-text-size-adjust: none}
+h1, h2, h3, h4, h5, h6{font-size:12px;font-weight:normal}
+body>div{margin:0 auto}
+div {text-align:left}
+a img {border:0}
+body { color: #333; text-align: center; font: 12px "宋体"; }
+ul, ol, li {list-style-type:none;vertical-align:0}
+a {outline-style:none;color:#535353;text-decoration:none}
+a:hover { color: #D40000; text-decoration: none}
+.clear{height:0; overflow:hidden; clear:both}
+.button {display: inline-block;zoom: 1; *display: inline;vertical-align: baseline;margin: 0 2px;outline: none;cursor: pointer;text-align: center;text-decoration: none;font: 14px/100% Arial, Helvetica, sans-serif;padding:0.25em 0.6em 0.3em;text-shadow: 0 1px 1px rgba(0,0,0,.3);-webkit-border-radius: .5em; -moz-border-radius: .5em;border-radius: .5em;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.red {color: #faddde;border: solid 1px #980c10;background: #d81b21;background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#A51715));background: -moz-linear-gradient(top,  #ed1c24,  #A51715);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+.red:hover { background: #b61318; background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115)); background: -moz-linear-gradient(top,  #c9151b,  #a11115); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115'); color:#fff;}
+.red:active {color: #de898c;background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');}
+.cor_bs,.cor_bs:hover{color:#ffffff;}
+.keBody{background:url(../images/bodyBg.jpg) repeat #333;}
+.keTitle{height:100px; line-height:100px; font-size:30px; font-family:'微软雅黑'; color:#FFF; text-align:center; background:url(../images/bodyBg3.jpg) repeat-x bottom left; font-weight:normal}
+.kePublic{background:#FFF; padding:0px;}
+.kePublic div{text-align:center;}
+.keBottom{color:#FFF; padding-top:25px; line-height:28px; text-align:center; font-family:'微软雅黑'; background:url(../images/bodyBg2.jpg) repeat-x top left; padding-bottom:25px}
+.keTxtP{font-size:16px; color:#ffffff;}
+.keUrl{color:#FFF; font-size:30px;}
+.keUrl:hover{ text-decoration: underline; color: #FFF; }
+.mKeBanner,.mKeBanner div{text-align:center;}
+/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+.w-small .vote-bubble { border-color: #ccc; font: 14px "微软雅黑"; }
+.w-small .vote-bubble div { padding: 3px 7px; background: #fff }
+.w-small .vote-bubble div span { font-size: 16px; font-weight: 700; color: #397ddb }
+.w-small .vote-bubble .tail { text-shadow: 0 0 2px #ccc }
+.subRankings .subRankings_nav-wrapper { position: relative; overflow: hidden; margin: 0 0 50px; height: 40px }
+.subRankings .subRankings_nav-wrapper .subRankings_nav-container { position: absolute; left: 50% }
+.subRankings .subRankings_nav { white-space: nowrap; position: relative; left: -50%; border: 1px solid #338de6; border-radius: 3px; background: #fff }
+.subRankings .subRankings_nav li { border-right: 1px solid #338de6; width: 164px; height: 38px; line-height: 38px; font-size: 18px; text-align: center; color: #777; cursor: pointer }
+.subRankings .subRankings_nav li.actived { background: #338de6; color: #fff }
+.subRankings .subRankings_nav li:last-child { border-right: 0 }
+.subRankings .subRankings_comments { position: relative; margin: 0 auto; width: 920px }
+.subRankings .subRankings_comments .viewport { position: relative; overflow: hidden; margin: 0 0 20px; height: 80px }
+.subRankings .subRankings_comments .viewport ul li { float: left; width: 460px; height: 80px; font-size: 14px }
+.subRankings .subRankings_comments .viewport ul li.eve { padding-left: 41px; width: 419px }
+.subRankings .subRankings_comments .viewport ul li .comment_avator { float: left; margin: 0 20px 0 0; border: 1px solid #338de6; width: 60px; height: 60px; border-radius: 31px }
+.subRankings .subRankings_comments .viewport ul li .comment_title { float: left; width: 300px; height: 20px; line-height: 20px }
+.subRankings .subRankings_comments .viewport ul li .comment_title a { color: #338de6; text-decoration: none }
+.subRankings .subRankings_comments .viewport ul li .comment_title a:hover { text-decoration: underline }
+.subRankings .subRankings_comments .viewport ul li .comment_content { float: left; overflow: hidden; margin: 5px 0 0; border: 1px solid #ccc; padding: 5px 10px; width: 315px; height: 40px; line-height: 20px; color: #565656; border-radius: 5px; background: #fff }
+.subRankings .subRankings_comments .viewport ul li .comment_content a { color: #397ddb; text-decoration: none }
+.subRankings .subRankings_comments .viewport ul li .comment_content a:hover { color: #397ddb; text-decoration: underline }
+.subRankings .subRankings_comments .pager { height: 18px; text-align: center }
+.subRankings .subRankings_comments .pager a { margin: 0 5px; font-size: 12px; color: #c9c9c9; text-shadow: 0 0 0 }
+.subRankings .subRankings_comments .pager a.cur { color: #397ddb }
+.subRankings-tri { position: relative; margin: 0 0 50px }
+.subRankings-tri .subRankings_content { position: relative; margin: 0 0 25px; height: 485px }
+.subRankings-tri .subRankings_content li { position: absolute; display: none; left: 0; top: 0; width: 100%; height: 485px; background: no-repeat 100% 100% }
+.subRankings-tri .subRankings_content li.actived { display: block }
+.subRankings-tri .subRankings_content li .svg { position: relative; z-index: 0 }
+.subRankings-tri .subRankings_content li .svg .shape { filter: alpha(opacity=1); opacity: .01; -webkit-transition: .2s linear; transition: .2s linear }
+.subRankings-tri .subRankings_content li .svg .show { filter: alpha(opacity=65); opacity: .65 }
+.subRankings-tri .subRankings_content li .vml { position: relative; z-index: 0; height: 485px }
+.subRankings-tri .subRankings_content li .vml .shape { position: absolute; width: 100%; height: 100%; filter: alpha(opacity=1); opacity: .01; -webkit-transition: .2s linear; transition: .2s linear }
+.subRankings-tri .subRankings_content li .vml .show { filter: alpha(opacity=65); opacity: .65 }
+.subRankings-tri .subRankings_content li .detail { position: absolute; z-index: 1; width: 90px; height: 90px; text-align: center; color: #fff; cursor: default; filter: alpha(opacity=0); opacity: 0; -webkit-transition: .2s linear; transition: .2s linear }
+.subRankings-tri .subRankings_content li .detail .detail_title { position: relative; margin: 3px 0 5px; height: 24px; line-height: 24px; font-size: 18px; filter: alpha(opacity=0); opacity: 0 }
+.subRankings-tri .subRankings_content li .detail .detail_title a { color: #fff; text-decoration: none; border-bottom: 1px solid #fff }
+.subRankings-tri .subRankings_content li .detail .detail_pv { margin: 0 0 3px; height: 20px; line-height: 20px; font-size: 12px }
+.subRankings-tri .subRankings_content li .detail .detail_vote { margin: 0 0 3px; outline: 0; width: 76px; height: 30px; line-height: 30px; font-size: 16px; text-decoration: none; color: #fff; border-radius: 3px; background: #338de6; display:inline-block }
+.subRankings-tri .subRankings_content li .detail .detail_counts { height: 20px; line-height: 20px; font-size: 14px; color: #ffbd20 }
+.subRankings-tri .subRankings_content li .detail-up .detail_title { left: -55px; width: 200px }
+.subRankings-tri .subRankings_content li .detail-down .detail_title { margin-top: -15px; margin-bottom: 3px }
+.subRankings-tri .subRankings_content li .detail-0 { left: 113px; top: 7px }
+.subRankings-tri .subRankings_content li .detail-2 { left: 445px; top: 7px }
+.subRankings-tri .subRankings_content li .detail-4 { left: 777px; top: 7px }
+.subRankings-tri .subRankings_content li .detail-1 { left: 279px; top: 60px }
+.subRankings-tri .subRankings_content li .detail-3 { left: 611px; top: 60px }
+.subRankings-tri .subRankings_content li .detail-5 { left: 279px; top: 171px }
+.subRankings-tri .subRankings_content li .detail-6 { left: 611px; top: 171px }
+.subRankings-tri .subRankings_content li .detail-7 { left: 445px; top: 285px }
+.subRankings-tri .subRankings_content li .detail-8 { left: 279px; top: 390px }
+.subRankings-tri .subRankings_content li .detail-9 { left: 611px; top: 390px }
+.subRankings-tri .subRankings_content li .show { filter: alpha(opacity=100); opacity: 1; font-family:"微软雅黑"; }
+.subRankings-tri .subRankings_content li .show .detail_title { filter: alpha(opacity=100); opacity: 1 }
+.subRankings-sqr { position: relative; margin: 0 auto 50px; padding: 90px 0 0; width: 940px }
+.subRankings-sqr .subRankings_content { position: relative; margin: 0 0 15px }
+.subRankings-sqr .subRankings_content li { display: none }
+.subRankings-sqr .subRankings_content li.actived { display: block }
+.subRankings-sqr .subRankings_content li .subRanking_candidate { position: relative; float: left; border: 0; margin: 0 10px 10px 0; width: 227px; height: 175px }
+.subRankings-sqr .subRankings_content li .subRanking_candidate.noMargin { margin-right: 0 }
+.subRankings-sqr .subRankings_content li .subRanking_candidate.hasPaddingLeft { margin-left: 237px }
+.subRankings-sqr .subRankings_content li .subRanking_candidate:hover .shadow { filter: alpha(opacity=65); opacity: .65 }
+.subRankings-sqr .subRankings_content li .subRanking_candidate:hover .detail { filter: alpha(opacity=100); opacity: 1 }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .pic { display: block; width: 227px; height: 175px }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .shadow { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #000; filter: alpha(opacity=0); opacity: 0; -webkit-transition: .2s linear; transition: .2s linear }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .detail { position: absolute; left: 0; top: 35px; width: 100%; color: #fff; text-align: center; filter: alpha(opacity=0); opacity: 0; -webkit-transition: .2s linear; transition: .2s linear }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .detail .detail_title { margin: 0 0 5px; font-size: 18px }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .detail .detail_title a { color: #fff; text-decoration: none; border-bottom: 1px solid #fff }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .detail .detail_pv { margin: 0 0 5px; height: 20px; line-height: 20px; font-size: 12px }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .detail .detail_vote { margin: 0 0 5px; outline: 0; width: 76px; height: 30px; line-height: 30px; font-size: 16px; text-decoration: none; color: #fff; border-radius: 3px; background: #338de6 }
+.subRankings-sqr .subRankings_content li .subRanking_candidate .detail .detail_counts { height: 24px; line-height: 24px; font-size: 16px; color: #ffbd20 }
+.subRankings-text { position: relative; margin: 0 auto 50px; padding: 90px 0 0; width: 940px }
+.subRankings-text .subRankings_content { margin: 0 0 25px }
+.subRankings-text .subRankings_content li { overflow: hidden; float: left; margin: 0 29px 0 0; border: 1px solid #b5b5b5; width: 292px; height: 486px; border-radius: 5px; background: #fff }
+.subRankings-text .subRankings_content li.last { margin-right: 0 }
+.subRankings-text .subRankings_content li .subRanking_title { height: 47px; line-height: 47px; font-size: 24px; text-align: center; color: #fff; background: #397ddb }
+

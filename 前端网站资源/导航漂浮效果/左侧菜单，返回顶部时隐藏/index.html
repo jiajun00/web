@@ -1,0 +1,182 @@
+<html>
+<body>
+<style>
+	*{margin:0; padding0;}
+</style>
+<div style="height:8000px;width:600px;margin:0 auto;background-color:#333;"></div>
+<!--左侧快捷菜单栏-->
+<style>
+.leftbannerbox{ width:83px; height:100%; position:fixed; top:0px; left:0px; z-index:99999; background-image:url(_ui/desktop/common/images/actImg/chengrenyongpin/b-g.png); background-repeat:no-repeat; background-position:right top; display:none;}
+.leftb{ width:55px; height:100%; background-color:#e251d0; float:left; position:relative;}
+.floorbox{ width:55px; overflow:hidden; position:absolute; top:15%; left:0; border-bottom:#FFF 1px dashed;}
+.floorbox a{ display:block; width:55px; height:66px; margin:0 auto;}
+.tier{ width:49px; height:22px; line-height:22px; display:block; font-size:15px; color:#000; border-top:#FFF 1px dashed; margin:0 auto;}
+.tradename{ width:49px; text-align:center; font-size:14px; color:#FFF; display:block; height:16px; line-height:16px;}
+.current{ background-color:#ac1999;}
+.gotoptop_icon{ width:55px; height:86px; background-image:url(_ui/desktop/common/images/actImg/chengrenyongpin/returntop.png); background-position:center; background-repeat:no-repeat; display:block; position:absolute; bottom:0; left:0; display:none;}
+</style>
+<script type="text/javascript">
+$(function(){
+     var icon='<a class="gotoptop_icon" id="gotoptop_icon" href="#" title="返回顶部"></a>';
+     $("body").append(icon);
+	 var $leftbannerbox=$(".leftbannerbox")
+     var $window=$(window);
+     var $gotoptop_icon=$("#gotoptop_icon");
+     var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); // opera fix
+     $(window).bind('scroll resize',function(){
+        if($window.scrollTop()>600)
+         {
+          $gotoptop_icon.show();
+         }
+        else
+         {
+          $gotoptop_icon.hide();
+         }
+     });
+     $(window).bind('scroll resize',function(){
+        if($window.scrollTop()>1160)
+         {
+          $leftbannerbox.show();
+         }
+        else
+         {
+          $leftbannerbox.hide();
+         }
+     });
+     $gotoptop_icon.bind('click',function(){
+        $body.animate({scrollTop:'0px'},1500);
+         return false;
+     });
+});
+</script>
+<script type="text/javascript">
+$(function(){
+     var $window=$(window);
+     var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); // opera fix
+     $(window).bind('scroll resize',function(){
+        if($window.scrollTop()>=1160)
+         {
+		  $(".floorbox a").removeClass("current");
+		  $("#current1").addClass("current");
+         }
+        else
+         {
+          $("#current1").removeClass("current");
+         }
+		 
+        if($window.scrollTop()>=1780)
+         {
+		  $(".floorbox a").removeClass("current");
+		  $("#current2").addClass("current");
+         }
+        else
+         {
+          $("#current2").removeClass("current");
+         }
+		 
+        if($window.scrollTop()>=2300)
+         {
+		  $(".floorbox a").removeClass("current");
+		  $("#current3").addClass("current");
+         }
+        else
+         {
+          $("#current3").removeClass("current");
+         }
+
+        if($window.scrollTop()>=2850)
+         {
+		  $(".floorbox a").removeClass("current");
+		  $("#current4").addClass("current");
+         }
+        else
+         {
+          $("#current4").removeClass("current");
+         }
+
+        if($window.scrollTop()>=3560)
+         {
+		  $(".floorbox a").removeClass("current");
+		  $("#current5").addClass("current");
+         }
+        else
+         {
+          $("#current5").removeClass("current");
+         }
+
+        if($window.scrollTop()>=4050)
+         {
+		  $(".floorbox a").removeClass("current");
+		  $("#current6").addClass("current");
+         }
+        else
+         {
+          $("#current6").removeClass("current");
+         }
+		 
+     });
+     $("#current1").bind('click',function(){
+        $body.animate({scrollTop:'1170px'},500);
+         return false;
+     });
+     $("#current2").bind('click',function(){
+        $body.animate({scrollTop:'1800px'},500);
+         return false;
+     });
+     $("#current3").bind('click',function(){
+        $body.animate({scrollTop:'2300px'},500);
+         return false;
+     });
+     $("#current4").bind('click',function(){
+        $body.animate({scrollTop:'2850px'},500);
+         return false;
+     });
+     $("#current5").bind('click',function(){
+        $body.animate({scrollTop:'3560px'},500);
+         return false;
+     });
+     $("#current6").bind('click',function(){
+        $body.animate({scrollTop:'4050px'},500);
+         return false;
+     });
+});
+$(function(){
+	$(".floorbox a").click(function(){
+		$(".floorbox a").removeClass("current")
+		$(this).addClass("current")
+	})
+})
+</script>
+<div class="leftbannerbox">
+	<div class="leftb">
+    	<div class="floorbox">
+        	<a class="current" id="current1" href="#one">
+            	<span class="tier">1F</span>
+                <span class="tradename">SM<br>用具</span>
+            </a>
+        	<a id="current2" href="#two">
+            	<span class="tier">2F</span>
+                <span class="tradename">自慰<br>器具</span>
+            </a>
+        	<a id="current3" href="#three">
+            	<span class="tier">3F</span>
+                <span class="tradename">男用<br>情趣</span>
+            </a>
+        	<a id="current4" href="#four">
+            	<span class="tier">4F</span>
+                <span class="tradename">情趣<br>制服</span>
+            </a>
+        	<a id="current5" href="#five">
+            	<span class="tier">5F</span>
+                <span class="tradename">安全套</span>
+            </a>
+        	<a id="current6" href="#six">
+            	<span class="tier">6F</span>
+                <span class="tradename">计生<br>用品</span>
+            </a>
+        </div>
+        <a class="gotoptop_icon" id="gotoptop_icon" href="#" title="返回顶部"></a>
+    </div>
+</div>
+</body>
+</html>

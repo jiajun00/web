@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js随机动画生成一组随机数字</title>
+<style>
+.number{ transition:5s all ease-out; float:left; border-radius:50%; margin:10px; width:100px; height:100px; line-height:100px; text-align:center; font-size:60px; background:#f00; color:#fff;}
+.active{transition:.3s all ease-in; height:200px; line-height:200px; transform: rotateY(360deg);transform:0.4s rotate(100deg); background:#0FF;}
+input#btn{ width:200px; border-radius:30%; outline:none; margin:10px; height:100px; font-size:60px; float:left;}
+</style>
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div class="number"></div>
+<div class="number"></div>
+<div class="number"></div>
+<div class="number"></div>
+<div class="number"></div>
+<div class="number"></div>
+<input type="button" value="换一换" id="btn" />
+<script>
+window.onload=function(){
+	var aDiv=document.getElementsByTagName('div');
+	getTicket();
+	function getTicket()
+	{
+		var arr=[];
+		while(arr.length<6)
+		{
+			var n=ran(1,34);
+			if(!findArr(arr,n))
+			{
+				arr.push(bl(n));	
+			}
+		}
+		arr.sort(function(n1,n2){
+			return n1-n2;	
+		});
+		function bl(n)
+		{
+			return n<10?'0'+n:''+n;	
+		}
+		
+		function findArr(arr,n)
+		{
+			for(var i=0;i<arr.length;i++)
+			{
+				if(arr[i]==n)
+				{
+					return true;
+				}	
+			}
+			return false;
+		}
+		
+		function ran(n,m)
+		{
+			return Math.floor(Math.random()*(m-n)+n)	
+		}	
+		for(var i=0;i<aDiv.length;i++)
+		{
+			aDiv[i].innerHTML=arr[i];	
+		}	
+	}
+	
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		getTicket();
+		for(var i=0;i<aDiv.length;i++)	
+		{
+			aDiv[i].className='active';	
+		}
+		setTimeout(function(){
+			for(var i=0;i<aDiv.length;i++)	
+			{
+				aDiv[i].className='';
+			}		
+		},400);
+	};
+};
+</script>
+<!-- 代码部分end -->
+
+</body>
+</html>

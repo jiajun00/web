@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/prototype-1.7.js"></script>
+	</head>
+
+	<body>
+		<form id="form1">
+			<table>
+				<tr>
+					<td>录入系统</td>
+				</tr>
+				<tr>
+					<td>图书种类</td>
+					<td>
+						<select>
+							<option>Java图书种类</option>
+							<option>php图书种类</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>图书价格</td>
+					<td>
+						<input id="target">
+					</td>
+				</tr>
+			</table>
+		</form>
+
+		<table>
+			<tr>
+				<td>
+					<button onclick="setDisable()">全部表单元素失效</button>
+					<br />
+					<button onclick="setEnable()">全部表单元素有效</button>
+				</td>
+				<td>
+					<button onclick="getInput()">返回表单input元素</button>
+					<br />
+					<button onclick="getElement()">返回表单的全部表单域</button>
+				</td>
+			</tr>
+		</table>
+		<script>
+			function getInput(){
+				var obj=Form.getInputs("form1");
+				for (i=0;i<obj.length;i++) {
+					alert(obj[i].value);
+				}
+			}
+			function setEnable(){
+				Form.enable("form1");
+			}
+			function setDisable(){
+				Form.disable("form1");
+			}
+			function getElement(){
+				var obj=Form.getElements("form1");
+				for (i=0;i<obj.length;i++) {
+					alert(obj[i].value);
+				}
+			}
+		</script>
+	</body>
+
+</html>

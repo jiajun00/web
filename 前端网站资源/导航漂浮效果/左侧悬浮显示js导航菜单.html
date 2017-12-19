@@ -1,0 +1,235 @@
+<STYLE type=text/css>.table1 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-BOTTOM-COLOR: black; BORDER-LEFT: #cccccc 1px solid; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: black; BACKGROUND-COLOR: #666666; BORDER-BOTTOM-STYLE: solid
+}
+.alp {
+	FILTER: Alpha(Opacity=0,FinishOpacity=0, Style=2, StartX=0, StartY=0, FinishX=80, FinishY=80); BACKGROUND-COLOR: #99ccff
+}
+.maskl {
+	OVERFLOW: hidden
+}
+.submenu {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: #ffffff 1px solid
+}
+</STYLE>
+<SCRIPT>
+function subClose1(){
+	if(sub2.style.pixelLeft>-26){
+		sub2.style.pixelLeft--;
+		setTimeout("subClose1()",1);
+		}else{
+		sub2.style.pixelLeft=-26;
+		subMenuShowing=false;
+		hideM2();
+		}
+}
+subMenuShowing=false;
+function subMenu1(){
+	var obj=event.srcElement;
+	subMenuShowing=true;
+	sub2out();
+}
+function sub2out(){
+	if(sub2.style.pixelLeft<2){
+		sub2.style.pixelLeft++;
+		setTimeout("sub2out()",1);
+		}
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+curSelect=0;
+function showMenu(mID){
+	var oMenu=eval("menu"+mID);
+	var oCircle=eval("sl"+mID);
+	oMenu.style.pixelTop+=10;
+	if(oMenu.style.pixelTop<oCircle.style.pixelTop+6) {
+		oMenu.timeHandle=setTimeout("showMenu("+mID+")",1);
+		}
+		else oMenu.style.pixelTop=oCircle.style.pixelTop+6;
+}
+function hideMenu(mID){
+	var oMenu=eval("menu"+mID);
+	var oCircle=eval("sl"+mID);
+	oMenu.style.pixelTop-=10;
+	if(oMenu.style.pixelTop>-60) {
+		oMenu.timeHandle=setTimeout("hideMenu("+mID+")",1);
+		}
+		else oMenu.style.pixelTop=-80;
+}
+function lightMv(){
+	if(light.filters.Alpha.opacity<100) {
+		light.filters.Alpha.opacity+=5;
+		light.timeHandle=setTimeout("lightMv()",1);
+		}
+}
+function darkMv(){
+	if(light.filters.Alpha.opacity>0) {
+		light.filters.Alpha.opacity-=5;
+		light.timeHandle=setTimeout("darkMv()",1);
+		}
+}
+function sfMv1(){
+	sl1.style.pixelTop+=sl1.mvStep;
+	if ((sl1.dx++)>20) {
+		sl1.mvStep=-sl1.mvStep;
+		sl1.dx=0;
+		sl1.speed=parseInt(Math.random(1)*60+1)
+		}
+	sl1.timeHandle=setTimeout("sfMv1()",sl1.speed);
+}
+function sfMv2(){
+	sl2.style.pixelTop+=sl2.mvStep;
+	if ((sl2.dx++)>20) {
+		sl2.mvStep=-sl2.mvStep;
+		sl2.dx=0;
+		sl2.speed=parseInt(Math.random(1)*60+1)
+		}
+	sl2.timeHandle=setTimeout("sfMv2()",sl2.speed);
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function sfMv3(){
+	sl3.style.pixelTop+=sl3.mvStep;
+	if ((sl3.dx++)>20) {
+		sl3.mvStep=-sl3.mvStep;
+		sl3.dx=0;
+		sl3.speed=parseInt(Math.random(1)*60+1)
+		}
+	sl3.timeHandle=setTimeout("sfMv3()",sl3.speed);
+}
+//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function sfMv4(){
+	sl4.style.pixelTop+=sl4.mvStep;
+	if ((sl4.dx++)>20) {
+		sl4.mvStep=-sl4.mvStep;
+		sl4.dx=0;
+		sl4.speed=parseInt(Math.random(1)*60+1)
+		}
+	sl4.timeHandle=setTimeout("sfMv4()",sl4.speed);
+}
+function stopAllMv(){
+	clearTimeout(sl1.timeHandle);
+	clearTimeout(sl2.timeHandle);
+	clearTimeout(sl3.timeHandle);
+	clearTimeout(sl4.timeHandle);
+}
+function startAllMv(){
+	clearTimeout(light.timeHandle);
+	darkMv();
+	sfMv1();
+	sfMv2();
+	sfMv3();
+	sfMv4();
+}
+function showM1(){
+	if(!subMenuShowing){
+	stopAllMv();
+	light.style.pixelTop=sl1.style.pixelTop-30;
+	clearTimeout(light.timeHandle);
+	clearTimeout(menu1.timeHandle);
+	lightMv();
+	showMenu(1);
+	}
+}
+function showM2(){
+	if(!subMenuShowing){
+	stopAllMv();
+	light.style.pixelTop=sl2.style.pixelTop-30;
+	clearTimeout(light.timeHandle);
+	clearTimeout(menu2.timeHandle);
+	lightMv();
+	showMenu(2);
+	}
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function showM3(){
+if(!subMenuShowing){
+	stopAllMv();
+	light.style.pixelTop=sl3.style.pixelTop-30;
+	clearTimeout(light.timeHandle);
+	clearTimeout(menu3.timeHandle);
+	lightMv();
+	showMenu(3);
+	}
+}
+function showM4(){
+	if(!subMenuShowing){
+	stopAllMv();
+	light.style.pixelTop=sl4.style.pixelTop-30;
+	clearTimeout(light.timeHandle);
+	clearTimeout(menu4.timeHandle);
+	lightMv();
+	showMenu(4);
+	}
+}
+function hideM1(){
+	if (!subMenuShowing){
+	startAllMv();
+	clearTimeout(menu1.timeHandle);
+	hideMenu(1);
+	}
+}
+function hideM2(){
+	if (!subMenuShowing){
+	startAllMv();
+	clearTimeout(menu2.timeHandle);
+	hideMenu(2);
+	}
+}
+function hideM3(){
+	if (!subMenuShowing){
+	startAllMv();
+	clearTimeout(menu3.timeHandle);
+	hideMenu(3);
+	}
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function hideM4(){
+	if (!subMenuShowing){
+	startAllMv();
+	clearTimeout(menu4.timeHandle);
+	hideMenu(4);
+	}
+}
+function init(){
+	sl1.mvStep=1;
+	sl1.dx=0;
+	sl1.speed=50;
+	sl2.mvStep=1;
+	sl2.dx=0;
+	sl2.speed=1;
+	sl3.mvStep=1;
+	sl3.dx=0;
+	sl3.speed=10;
+	sl4.mvStep=1;
+	sl4.dx=0;
+	sl4.speed=20;
+	startAllMv();
+}
+//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+</SCRIPT>
+<body onload="init()">
+<a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+<DIV class="table1" id="Layer1" style="Z-INDEX: 3; LEFT: 50px; WIDTH: 26px; POSITION: absolute; TOP: 0px; HEIGHT: 100%">
+<DIV id="sl1" onmouseover="showM1()" style="Z-INDEX: 3; WIDTH: 24px; CURSOR: hand; POSITION: absolute; TOP: 40px; HEIGHT: 24px" onmouseout="hideM1()"><img height=24 src="/ad/zzjs.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV id="sl2" onmouseover="showM2()" style="Z-INDEX: 3; WIDTH: 24px; CURSOR: hand; POSITION: absolute; TOP: 140px; HEIGHT: 24px" onclick="subMenu1()" onmouseout="hideM2()"><img height=24 src="/ad/zzjs.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV id="sl3" onmouseover="showM3()" style="Z-INDEX: 3; WIDTH: 24px; CURSOR: hand; POSITION: absolute; TOP: 240px; HEIGHT: 24px" onmouseout="hideM3()"><img height=24 src="/ad/zzjs.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV id="sl4" onmouseover="showM4()" style="Z-INDEX: 3; WIDTH: 24px; CURSOR: hand; POSITION: absolute; TOP: 340px; HEIGHT: 24px" onmouseout="hideM4()"><img height=24 src="/ad/zzjs.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV class="alp" id="light" style="Z-INDEX: 2; LEFT: -26px; WIDTH: 80px; POSITION: absolute; TOP: 0px; HEIGHT: 80px"></DIV></DIV>
+<DIV style="Z-INDEX: 2; LEFT: -60px; WIDTH: 30px; POSITION: absolute; TOP: 0px; HEIGHT: 100px">
+<DIV id="menu1" style="Z-INDEX: 5; LEFT: 82px; WIDTH: 20px; POSITION: absolute; TOP: -80px; HEIGHT: 55px"><img height="20" src="/img/1001274.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV id="menu2" style="Z-INDEX: 5; LEFT: 82px; WIDTH: 23px; POSITION: absolute; TOP: -80px; HEIGHT: 75px"><img height="20" src="/img/1001274.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV id="menu3" style="Z-INDEX: 5; LEFT: 82px; WIDTH: 22px; POSITION: absolute; TOP: -80px; HEIGHT: 75px"><img height="20" src="/img/1001274.gif" width="24"  style="cursor:pointer;"/></DIV>
+<DIV id="menu4" style="Z-INDEX: 5; LEFT: 82px; WIDTH: 23px; POSITION: absolute; TOP: -80px; HEIGHT: 77px"><img height="20" src="/img/1001274.gif" width="24"  style="cursor:pointer;"/></DIV></DIV>
+<DIV class="maskl" id="masksub" style="Z-INDEX: 4; LEFT: 80px; WIDTH: 32px; POSITION: absolute; TOP: 0px; HEIGHT: 100%">
+<DIV id=sub2
+style="Z-INDEX: 1; LEFT: -26px; WIDTH: 26px; POSITION: absolute; TOP: 137px; HEIGHT: 304px">
+<TABLE class="submenu" height="100%" cellSpacing="2" cellPadding="0" width="100%" border="0">
+  <TBODY>
+  <TR>
+    <TD bgColor="#666699"> </TD></TR>
+  <TR>
+    <TD bgColor="#666699"> </TD></TR>
+  <TR>
+    <TD bgColor="#666699"> </TD></TR>
+  <TR>
+    <TD bgColor="#666699" height=147> </TD></TR>
+  <TR>
+    <TD onmouseover="this.bgColor='#9999cc'" onmouseout="this.bgColor='#666699'" bgColor="#666699" height="10">
+<DIV style="CURSOR: hand" onclick="subClose1()" align="center"><B><FONT color="#ffff00">B</FONT></B></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+</body>

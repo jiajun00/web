@@ -1,0 +1,57 @@
+* { margin: 0; padding: 0; }
+/*download by http://www.5icool.org */
+body {font: 100% "Helvetica Neue", Helvetica, sans-serif; background: #000000;color: #ffffff;}
+p {letter-spacing: .2pt;line-height: 1.5em;margin-bottom: 1.2em;word-spacing: 0.7pt;}
+
+h1 {font-size:50px; margin: 20px 0;}
+code{border-left: solid 3px #ffffff; padding-left: 8px; display:block;}
+#wrapper{margin: 0 auto; width: 900px;}
+#header {width: auto;height: 366px;margin: auto;}
+
+#images {margin: 0 auto; width: 600px; height: 220px; float:none; margin-bottom: 20px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border:1px solid rgba(200,200,200,0.4);}
+.jfade_image, .portfolio {width: 120px; margin: 15px; float:left;}
+
+#paragraphs{clear:both; margin: 0 auto; height:270px;}
+#column {width: 240px; float:left; margin: 20px; }
+
+#buttons{margin: 0 auto; text-align:center;}
+	
+li{list-style:none; padding-top:10px; padding-bottom:10px;}	
+
+.button, .button:visited {
+	background: #222 url(overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	position: relative;
+	cursor: pointer
+}
+a.button {}
+a.button:active {-webkit-transform:none;}
+ 
+	.button:active								{top: 1px;}					  
+	.small.button, .small.button:visited 		{ font-size: 14px; font-weight:bold; padding: 8px 14px 9px; }
+	.large.button, .large.button:visited 		{ font-size: 34px; padding: 8px 14px 9px; }
+	
+	.pink.button, .pink.button:visited			{ background-color: #e22092; }
+	.green.button, .green.button:visited		{ background-color: #91bd09; }
+	.orange.button, .orange.button:visited		{ background-color: #ff5c00; }
+	.blue.button, .blue.button:visited		    	{ background-color: #2981e4; }
+	.yellow.button, .yellow.button:visited		{ background-color: #ffb515; }
+	
+#footer {}
+#footer a {-webkit-transition: color 0.2s linear;}
+#footer a {color:#355982;text-decoration:none;padding:3px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border:1px solid rgba(200,200,200,0.4);}
+#footer a:hover {color:#3996ff;
+background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(225,225,225,1)), color-stop(50%, rgba(250,250,250,1)) );   
+-moz-border-radius: 5px; -webkit-border-radius: 5px; border:1px solid rgb(200,200,200);
+}
+#footer a:active {-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0, 0.5); -webkit-transform: translateY(-1px);}
+bold {font-weight:bold;font-size:15px;text-decoration:underline;}

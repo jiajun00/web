@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script runat="server" type="text/javascript">
+	function dtime(Endtime){
+		var EndTime1= new Date(''); //截止时间 
+		var EndTime2= new Date('');
+		var EndTime3= new Date('');   
+        var NowTime = new Date();
+        var t1 =EndTime1.getTime() - NowTime.getTime();
+        var t2 =EndTime2.getTime() - NowTime.getTime();
+        var t3 =EndTime3.getTime() - NowTime.getTime();       
+        if(t1<0){t1=0;}
+        var d1=Math.floor(t1/1000/60/60/24);
+        var h1=Math.floor(t1/1000/60/60%24);
+        var m1=Math.floor(t1/1000/60%60);
+        var s1=Math.floor(t1/1000%60);
+		if(d1<10){d1="0"+d1;}
+		if(h1<10){h1="0"+h1;}            
+	    if(m1<10){m1="0"+m1;} 
+	    if(s1<10){s1="0"+s1;} 
+	}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS-touch</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <style type="text/css">
+
+section,ul,li,img,span{
+    margin: 0;padding: 0;
+}
+ul {
+    list-style: none;
+}
+
+.main {
+    margin:30px auto;
+    width:120px;
+    position:relative;
+}
+#img_main {
+    width: 120px;
+    height: 100px;
+    overflow: hidden;
+    visibility: visible;
+    position:relative;
+
+}
+
+#img_list {
+    width: 480px;
+
+    position:absolute;
+    left:0;
+    top:0;
+}
+#img_list li {
+    display:inline-block;
+    vertical-align: top;
+    width: 100px;
+    margin:0 10px;
+}
+.pre_btn {
+    background: url(../images/left.png?121128) no-repeat;
+    display:inline-block;
+    width:60px;
+    height: 60px;
+    float:left;
+    position: absolute;
+    top: 0;
+    left: -100px;
+}
+.next_btn {
+    background: url(../images/right.png?121128) no-repeat;
+    display:inline-block;
+    width:60px;
+    height: 60px;
+    float:left;
+    position: absolute;
+    top: 0;
+    right: -100px;
+}
+.page {
+    text-align: center;
+}
+.page span {
+    color:#fff;
+    background: #666;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+<section class="main">
+    <div id="img_main">
+        <ul id="img_list">
+            <li><img src="../images/1.png" /></li><li><img src="../images/2.png" /></li><li><img src="../images/3.png" /></li><li><img src="../images/4.png" /></li>
+        </ul>
+    </div>
+    <span class="pre_btn" id="pre_btn"></span>
+    <span class="next_btn" id="next_btn"></span>
+    <p class="page"><span class="page_num" id="page_num">1</span>/<span>4</span></p>
+</section>
+
+<script type="text/javascript">
+    var img_main = document.getElementById("img_main");
+    var img_list = document.getElementById("img_list");
+    var next = document.getElementById("next_btn");
+    var prev = document.getElementById("pre_btn");
+    var num = document.getElementById("page_num");
+    var list = img_main.children[0].children;
+    var lg = list.length;
+
+    var  nowX = 0,
+         moveX = 0,
+         startX = 0,
+         startY = 0;
+
+    function index( move , obj) {   //返回索引函数
+        var items = obj.children;
+        for (var i = 0;i < items.length ; i++) {
+            if( (move <= -120*i) && move > (-120*(i+1))) {
+                return i+1;
+            }
+        }
+    }
+    var elems = img_list.getElementsByTagName("li");
+
+
+    //touchStart函数：用于记录鼠标开始点
+    function touchStart(e) {
+        e.preventDefault();
+        var touches = e.changedTouches;
+        startX = e.touches[0].pageX;
+    }
+
+    var s = undefined;  //用于判断moveX是否是第一次被赋值
+
+    function touchMove(e) {  //移动函数
+        e.preventDefault();
+        var touches = e.changedtTouches;
+        moveX = e.touches[0].pageX - startX;
+
+        nowX += moveX;   //累加移动的部分
+
+        if(nowX > 0) {   //第一张向左移还是第一张
+            nowX = 0;
+            this.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+        }
+        if( nowX < -360) { //最后一张向左移还是最后一张
+            nowX = -360;
+            this.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+        }
+
+        var li_index = index(nowX,this);   //求出点击图片在列表中的索引值
+        num.innerHTML = li_index;
+
+            this.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+            s = moveX;
+            startX = e.touches[0].pageX;   //移动每次要重新获取
+
+    }
+    function touchEnd(e) {  //移动结束函数
+        e.preventDefault();
+        e.changedtTouches = null;
+    }
+
+    next.onclick = function() {   //next按钮点击函数
+        var n = index( nowX , img_list);
+        if( n < lg) {
+            nowX = n*(-120);
+            img_list.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+            num.innerHTML = n+1;
+        }
+    }
+    prev.onclick = function() { //prev按钮点击函数
+        var n = index( nowX , img_list);
+        if( n > 1) {
+            nowX = (n -2)*(-120);
+            img_list.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+            num.innerHTML = n-1;
+        }
+    }
+
+   function mouseDown(e) {   //当不支持ontouchstart时采取的函数
+        e ? e:event;
+        startX = e.clientX;     //获取开始的鼠标指针
+        startY = e.clientY;
+        this.onmousemove = function(e) {   //根据鼠标指针的移动来决定图片的移动
+            e ? e:event;
+            moveX = e.clientX - startX;
+            nowX += moveX;
+            if(nowX > 0) {   //第一张向左移还是第一张
+                nowX = 0;
+                this.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+            }
+            if( nowX < -360) { //最后一张向左移还是最后一张
+                nowX = -360;
+                this.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+            }
+
+            var li_index = index(nowX,this);   //求出点击图片在列表中的索引值
+            num.innerHTML = li_index;
+
+            this.style.webkitTransform = 'translate(' + nowX + 'px,0)';
+            startX = e.clientX;
+       }
+       this.onmouseup = function(e) {  //释放鼠标后的行为
+           this.onmousemove = null;
+           mouseDown = null;
+       }
+    }
+
+    var hasTouch = 'ontouchstart' in window;
+
+
+    var evtName = {
+        //屏幕大小调整
+        viewChange: 'onorientationchange' in window ? 'orientationchange' : 'resize',
+        //支持touch时为touchstart，否则为mousedown
+        fingerDown: hasTouch ? 'touchstart' : 'mousedown',
+        //支持touch时为touchmove，否则为mousemove
+        fingerMove: hasTouch ? 'touchmove' : 'mousemove',
+        //支持touch时为touchend，否则为mouseup
+        fingerUp: hasTouch ? 'touchend' : 'mouseup'
+    }
+
+    if(hasTouch ) {
+        img_list.addEventListener(evtName.fingerDown, touchStart, false);
+        img_list.addEventListener(evtName.fingerMove, touchMove, false);
+        img_list.addEventListener(evtName.fingerUp, touchEnd, false);
+    }else {
+        img_list.addEventListener(evtName.fingerDown, mouseDown, false);
+    }
+
+
+
+</script>
+</body>
+</html>

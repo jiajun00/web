@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery+css3实现图片圆形转动效果</title>
+<script src="js/raphael-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+<link href='http://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'/>
+<link href="css/css.css" type="text/css" rel="stylesheet">
+<script type="text/javascript">
+    Raphael.fn.vlogitWheel = function () {
+      var paper = this;
+      wheel = this.set();
+      var angle = 0;
+      var first = true;
+      var slices = [];
+      svgcanv = $('svg')[0];
+      svg = "http://www.w3.org/2000/svg"; 
+      var clippath = document.createElementNS(svg,"clipPath");
+      svgcanv.appendChild(clippath);
+      clippath.setAttribute("id","clipw");
+      p = paper.path("M200,175.223L97.395,34c62.396-45.334,142.814-45.334,205.211,0L200,175.223z");
+      clippath.appendChild(p.node);
+      for (var j = 0; j < 5; j++) {
+	angleplus = 360 / 5;
+	var indimg = $('img').get(j).src;
+	var titleimg = $('img').get(j);
+	var bong = titleimg.getAttribute('alt');
+	var maskedImg = paper.image(indimg, 65,0, 240,150);
+        maskedImg.node.setAttribute("clip-path","url(#clipw)");
+        var deg = angleplus*j;
+	maskedImg.rotate(deg, 202, 175);
+	maskedImg.attr({"opacity": "0.7"});
+	maskedImg.node.style.cursor = 'pointer';
+	maskedImg.index = j;
+	maskedImg.hover(
+	    function(event){
+	      slices[this.index].animate({"opacity": "1"}, 200, "<>");
+	    },
+	    function(event){
+ 	      slices[this.index].animate({"opacity": "0.7"}, 200, "<>");
+ 	    } 
+	).click(
+	    function() {
+		openDescr(this.index);
+                //stop the animation of every slice
+		stopAll();
+ 	    }   
+	);
+	rotateWheel(maskedImg,angleplus,j);
+	angle += angleplus;
+	slices.push(maskedImg);
+      };
+      
+      function openDescr(el) {
+	$(".descr").fadeOut();
+	el = $(".descr").get(el).id;
+        //display the pentagon animation only at the first click; in a 'real' site could be displayed several animations associated to different elements clicked
+	if(first) {
+	  $("header").fadeOut();
+	  var pentagon = paper.path("M 148.721,249.6 115.991,148.868 201.679,86.612 287.368,148.868 254.638,249.6 z").attr({fill: '#eee', "transform": "s0.01r180,202,175","stroke": "none"});
+	  pentagon.animate({"transform":"s1.3r0,202,175"}, "1500", "<>", function(){$('#'+el).css("top",120).fadeIn(1000)});
+	  first = false;
+	} else {
+	  $('#'+el).css("top",120).fadeIn(1000);
+	}
+       };
+      
+      // this function could be re-written using CSS3 transformations or the new Raphael version's Animation.repeat() http://raphaeljs.com/reference.html#Animation.repeat 
+      function rotateWheel(laimg, t, j) {
+	var newgrade = -360+j*t;
+	var loop = function() {
+	  laimg.attr({"transform": "r"+j*t+",200,175"}).animate({"transform": "r"+newgrade +",200,175"}, 30000,loop);  
+	};
+	loop();
+      }
+      
+      function stopAll() {
+	$.each(slices, function() {
+		this.pause();
+	});
+      }
+      return wheel;
+    };
+
+    $(document).ready(function() {
+      var paper = Raphael(document.getElementById('wheel'),400,350);
+      var wheelayout = paper.vlogitWheel();
+      var headerback = paper.circle(202, 175, 90).attr({fill: '#111', "stroke": "none"}).toFront();
+     });
+</script>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="content">
+      <div id="wheel"></div>
+      
+      <p id="info">Click on one of the thumbnails.</p>
+      
+      <ul>
+	<li>
+	  <div class="descr" id="pigeon">
+	    <h3>Rick Pigeon</h3>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod. <a href="#">Read the story &rarr;</a></p>
+	  </div>
+	  <img src="img/rickpigeon.jpg" alt="First Image"/>
+	</li>
+	<li>
+	  <div class="descr" id="ferret">
+	    <h3>Will Ferret</h3>
+	    <p>Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. <a href="#">Read the story &rarr;</a></p>
+	  </div>
+	  <img src="img/willferret.jpg" alt="First Image"/>
+	</li>
+	<li>
+	  <div class="descr" id="beast">
+	    <h3>Walter Beast</h3>
+	    <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">Read the story &rarr;</a></p>
+	  </div>
+	  <img src="img/walterbeast.jpg" alt="First Image"/>
+	</li>
+	<li>
+	  <div class="descr" id="peggy">
+	    <h3>Whip Peggy</h3>
+	    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolor. <a href="#">Read the story &rarr;</a></p>
+	  </div>
+	  <img src="img/whippeggy.jpg" alt="First Image"/>
+	</li>
+	<li>
+	  <div class="descr" id="cat">
+	    <h3>Cathy Cat</h3>
+	    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia commodo consequat. <a href="#">Read the story &rarr;</a></p>
+	  </div>
+	  <img src="img/cathycat.jpg" alt="First Image"/>
+	</li>
+      </ul>
+    </div>
+</div>
+<div style="text-align:center;clear:both"><br>
+<p>适用浏览器：FireFox、Chrome、Opera、傲游、搜狗. 不支持IE8、360、Safari、世界之窗。</p>
+</div>
+</body>
+</html>

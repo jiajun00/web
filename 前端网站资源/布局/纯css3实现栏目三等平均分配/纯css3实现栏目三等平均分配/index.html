@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>纯css3实现栏目三等平均分配</title>
+    <style>
+	*{margin:0;padding:0;font-size:12px;font-family:'Microsoft YaHei'}
+	#nav,#nav2{display:-webkit-box;display:-moz-box;display:box;margin:auto;margin-top:30px;border:10px solid #7f8c8d}
+	#nav{width:300px;height:100px;-webkit-box-orient:horizontal;-moz-box-orient:horizontal;box-orient:horizontal}
+	#nav2{width:100px;height:300px;-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical}	
+	#nav div,#nav2 div{
+						-webkit-box-flex:1;
+						-moz-box-flex:1;
+						box-flex:1;
+						text-align:center;
+						line-height:100px;
+						font-size:36px;
+						color:#fff;
+					}
+					
+	#box1{background:#1abc9c}
+	#box2{background:#3498db}
+	#box3{background:#9b59b6}
+	#box4{background:#f39c12}
+	#box5{background:#27ae60}
+	#box6{background:#c0392b}
+	
+	.nav3{display:-webkit-flex;display:-moz-flex;display:box;margin:auto;margin-top:30px;border:10px solid #7f8c8d;
+			width:300px;height:150px;-webkit-box-orient:horizontal;-moz-box-orient:horizontal;box-orient:horizontal
+			}
+	.nav3 div{flex:1;-webkit-flex:1;}
+    </style>
+</head>
+<body>
+    <!-- 横向排列 -->
+    <div id="nav">
+        <div id="box1">1</div>
+        <div id="box2">2</div>
+        <div id="box3">3</div>
+    </div>
+    <!-- 纵向排列 -->
+    <div id="nav2">
+        <div id="box4">4</div>
+        <div id="box5">5</div>
+        <div id="box6">6</div>
+    </div>
+	
+	<div class="nav3">
+		<div id="box4">7</div>
+		<div id="box5">8</div>
+		<div id="box6">9</div>
+	</div>
+</body>
+</html>

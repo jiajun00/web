@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>右侧滑动快速导航条</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+
+.w960{ width:920px; height:3000px; margin:0 auto; background:#e3e3e3; font-size:25px; padding:20px;}
+
+/* 下面三行是css部分 */
+.float-right{ width:100px; height:200px; background:#EE4646; position:absolute; left:50%; top:220px; margin-left:500px; z-index:800; overflow:hidden;}
+.float-right a{ width:96%; margin:0 2%;height:24px; line-height:24px; text-align:center; display:block; border-bottom:1px solid #F59D9D; font-size:12px; color:#fff; text-decoration:none;}
+.float-right a:hover{ background:#be3737;transition:all 0.3s linear;-webkit-transition:all 0.3s linear;-mos-transition:all 0.3s linear;-o-transition:all 0.3s linear;}
+</style>
+</head>
+<body>
+<div class="w960"></div>
+
+<!--代码部分begin-->
+<div class="float-right">
+	<a href="http://www.lanrenzhijia.com/" target="_blank">首页</a>
+    <a href="http://www.lanrenzhijia.com/nav" target="_blank">菜单导航</a>
+    <a href="http://www.lanrenzhijia.com/time" target="_blank">时间日期</a>
+    <a href="http://www.lanrenzhijia.com/banner" target="_blank">焦点图</a>
+    <a href="http://www.lanrenzhijia.com/tab" target="_blank">tab标签</a>
+    <a href="http://www.lanrenzhijia.com/jquery" target="_blank">jQuery特效</a>
+    <a href="http://www.lanrenzhijia.com/pic" target="_blank">图片特效</a>
+    <a href="http://www.lanrenzhijia.com/service" target="_blank">在线客服</a>
+</div>
+
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+
+<script>
+	var lanren = {
+		navFast:function(){
+			var defaultTop = (window.screen.height - $('.float-right').height())/2 - 100; //默认顶部保持上下居中，再往上去100像素
+			$(window).scroll(function(){
+				var offsetTop = defaultTop + $(window).scrollTop()+'px';
+				$('.float-right').animate({top:offsetTop},
+				{	duration: 1000,	//滑动速度
+     				queue: false    //此动画将不进入动画队列
+     			});						  
+			});
+		}
+	};
+	lanren.navFast();
+</script>
+<!--代码部分end-->
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>懒人原生css3样式控制table表格隔行高亮显示</title>
+<style>
+body{font-family:Arial; font-size:14px;line-height:180%;padding-top: 20px;} /*总控制，可忽略此行*/
+table tr:first-child{background:#0066CC; color:#fff;font-weight:bold;} /*第一行标题蓝色背景*/
+table{border-top:1pt solid #C1DAD7;border-left:1pt solid #C1DAD7;margin: 0 auto;} 
+td{ padding:5px 10px; text-align:center;border-right:1pt solid #C1DAD7;border-bottom:1pt solid #C1DAD7;}
+tr:nth-of-type(odd){ background:#F5FAFA;} /* odd 标识奇数行，even标识偶数行 */
+tr:hover{ background: #E0F0F0;} /*鼠标悬停后表格背景颜色*/
+</style>
+</head>
+<body>
+<table width='600' border='0' cellspacing='0' cellpadding='0' align='center'>
+  <tr>
+    <td>TSNAME</td>
+    <td>ALLSIZE</td>
+    <td>USEDSIZE</td>
+    <td>FREESIZE</td>
+    <td>SYL%</td>
+  </tr>
+  <tr>
+    <td>USERS</td>
+    <td>32767.98</td>
+    <td>4</td>
+    <td>32763.98</td>
+    <td>.01</td>
+  </tr>
+  <tr>
+    <td>UNDOTBS1</td>
+    <td>32767.98</td>
+    <td>13.56</td>
+    <td>32754.42</td>
+    <td>.04</td>
+  </tr>
+  <tr>
+    <td>REGISTRATION</td>
+    <td>120</td>
+    <td>.06</td>
+    <td>119.94</td>
+    <td>.05</td>
+  </tr>
+  <tr>
+    <td>TANG</td>
+    <td>70</td>
+    <td>.13</td>
+    <td>69.88</td>
+    <td>.18</td>
+  </tr>
+  <tr>
+    <td>EXAMPLE</td>
+    <td>32767.98</td>
+    <td>68.25</td>
+    <td>32699.73</td>
+    <td>.21</td>
+  </tr>
+  <tr>
+    <td>TBS</td>
+    <td>32767.98</td>
+    <td>.56</td>
+    <td>32767.42</td>
+    <td>0</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

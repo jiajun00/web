@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>生成随机位数的验证码</title>
+<script src="./js/jquery.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+	function checkCode(digit){
+		//自动生成验证码
+		var result="";
+		for(i=0;i<parseInt(digit);i++){
+			result=result+(parseInt(Math.random()*10)).toString();
+		}
+		return result;
+	}
+	function deal(){		
+	var form1_digit_value = 4;
+	$("#result").html("&nbsp;&nbsp;产生的验证码:"+checkCode(form1_digit_value));
+	//
+	}
+</script>
+<form id="from1">
+<div id="result">&nbsp;&nbsp;</div>
+<input name="Submit" type="button" class="go-wenbenkuang" value="生成" onclick="deal()">
+</form>
+
+</body>
+</html>

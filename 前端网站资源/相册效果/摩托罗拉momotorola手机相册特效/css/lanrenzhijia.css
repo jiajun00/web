@@ -1,0 +1,170 @@
+/* 代码整理：懒人之家 */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em, img {
+	margin:0;
+	padding:0;
+	border:0;
+}
+ul, ol, li {
+	list-style:none;
+}
+input, button {
+	margin:0;
+	font-size:12px;
+	vertical-align:middle;
+}
+body {
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333;
+	margin:0 auto;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+a {
+	color:#333;
+	text-decoration:none;
+}
+#box-lanrenzhijia {
+	width:960px;
+	margin:0 auto;
+}
+.bigPic {
+	MARGIN: 0px auto;
+	OVERFLOW: hidden;
+	WIDTH: 818px;
+	POSITION: relative
+}
+.bigPic A.btnleft {
+	MARGIN-TOP: -42px;
+	DISPLAY: block;
+	BACKGROUND: url(../images/btnLeft.png);
+	LEFT: 10px;
+	OVERFLOW: hidden;
+	WIDTH: 50px;
+	POSITION: absolute;
+	TOP: 50%;
+	HEIGHT: 85px
+}
+.bigPic A.btnleft:hover {
+	MARGIN-TOP: -42px;
+	DISPLAY: block;
+	BACKGROUND: url(../images/btnLeft_1.png);
+	LEFT: 10px;
+	OVERFLOW: hidden;
+	WIDTH: 50px;
+	POSITION: absolute;
+	TOP: 50%;
+	HEIGHT: 85px
+}
+.bigPic A.btnright {
+	MARGIN-TOP: -42px;
+	DISPLAY: block;
+	RIGHT: 10px;
+	BACKGROUND: url(../images/btnRight.png);
+	OVERFLOW: hidden;
+	WIDTH: 50px;
+	POSITION: absolute;
+	TOP: 50%;
+	HEIGHT: 85px
+}
+.bigPic A.btnright:hover {
+	MARGIN-TOP: -42px;
+	DISPLAY: block;
+	RIGHT: 10px;
+	BACKGROUND: url(../images/btnRight_1.png);
+	OVERFLOW: hidden;
+	WIDTH: 50px;
+	POSITION: absolute;
+	TOP: 50%;
+	HEIGHT: 85px
+}
+.bigPic .info {
+	OVERFLOW: hidden;
+	WIDTH: 818px;
+	HEIGHT: auto
+}
+.bigPic .info DIV {
+	OVERFLOW: hidden;
+	WIDTH: 818px;
+	TEXT-ALIGN: center
+}
+.sPic {
+	BORDER-RIGHT: #595858 1px solid;
+	BORDER-TOP: #595858 1px solid;
+	MARGIN: 0px auto;
+	OVERFLOW: hidden;
+	BORDER-LEFT: #595858 1px solid;
+	WIDTH: 818px;
+	BORDER-BOTTOM: #595858 1px solid;
+	POSITION: relative
+}
+.sPic A.btnleft {
+	DISPLAY: block;
+	BACKGROUND: url(../images/btnsl.jpg) no-repeat center center;
+	LEFT: 2px;
+	OVERFLOW: hidden;
+	WIDTH: 15px;
+	POSITION: absolute;
+	TOP: 6px;
+	HEIGHT: 90px
+}
+.sPic A.btnright {
+	DISPLAY: block;
+	RIGHT: 2px;
+	BACKGROUND: url(../images/btnsr.jpg) no-repeat center center;
+	OVERFLOW: hidden;
+	WIDTH: 15px;
+	POSITION: absolute;
+	TOP: 6px;
+	HEIGHT: 90px
+}
+.sPic .info {
+	MARGIN: 0px auto;
+	OVERFLOW: hidden;
+	WIDTH: 791px
+}
+.sPic .info DIV {
+	BACKGROUND: url(../images/spbg0.jpg);
+	OVERFLOW: hidden;
+	WIDTH: 113px;
+	CURSOR: pointer;
+	HEIGHT: 102px;
+	TEXT-ALIGN: center
+}
+.sPic .info DIV IMG {
+	MARGIN: 11px 0px 0px;
+	WIDTH: 90px;
+	HEIGHT: 80px
+}
+.sPic .info TD.current DIV {
+	BACKGROUND: url(../images/spbg1.jpg)
+}
+.chanegecolor {
+	MARGIN-TOP: 15px;
+	FONT-SIZE: 12px;
+	Z-INDEX: 99999;
+	MARGIN-LEFT: 50px;
+	POSITION: absolute
+}
+.chanegecolor SPAN {
+	DISPLAY: block;
+	FLOAT: left;
+	MARGIN-RIGHT: 10px
+}
+.chanegecolor SPAN IMG {
+	BORDER-RIGHT: #ffffff 2px solid;
+	BORDER-TOP: #ffffff 2px solid;
+	DISPLAY: block;
+	MARGIN-BOTTOM: 5px;
+	BORDER-LEFT: #ffffff 2px solid;
+	CURSOR: pointer;
+	BORDER-BOTTOM: #ffffff 2px solid
+}
+.chanegecolor SPAN.b00eaff IMG {
+	BORDER-RIGHT: #00eaff 2px solid;
+	BORDER-TOP: #00eaff 2px solid;
+	BORDER-LEFT: #00eaff 2px solid;
+	BORDER-BOTTOM: #00eaff 2px solid
+}

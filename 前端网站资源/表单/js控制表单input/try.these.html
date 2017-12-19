@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/prototype-1.7.js"></script>
+	</head>
+	<body>
+		<a href='javascript:if(createXHR())alert("使用"+str+"方式创建XMLHttpRequest对象");else alert("创建XMLHttpRequest对象失败!")'>创建对象</a>
+	
+	<script>
+		var str="";
+		function createXHR(){
+			return Try.these(
+				function(){
+					str='new XMLHttpRequest()';
+					return new XMLHttpRequest();
+				},
+				function(){
+					str='new ActiveXObject("Msxml2.XMLHTTP")';
+					return new ActionXbject("Msxml2.XMLHTTP");
+				},
+				function(){
+					str='new ActionXObject("Microsoft.XMLHTTP")';
+					return new ActionXObject('Microsoft.XMLHTTP');
+				}
+			)
+		}
+	</script>
+	</body>
+</html>

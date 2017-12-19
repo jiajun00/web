@@ -1,0 +1,13 @@
+Slides – 是一个简单的，容易定制和风格化，的jQuery幻灯片插件。
+
+Slides提供褪色或幻灯片过渡效果，图像淡入淡出，图像预压，自动生成分页，循环，自动播放的自定义等很多选项。
+
+用Slides插件，你可以随机播放幻灯片，设定那一套您想要开始幻灯片。它附带充分的说明和示例。
+
+
+DEMO地址：http://slidesjs.com/
+
+官网地址：http://slidesjs.com/
+
+下载地址：http://slidesjs.com/downloads/slides.zip
+

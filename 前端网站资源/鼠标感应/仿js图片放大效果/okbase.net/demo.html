@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang=zh-cn>
+<head>
+<title>css3的transition模仿js的放大镜效果</title>
+<style>
+*{margin:0;padding:0px;}
+body{background:#b1b1b1;font-family:Arial;font-size:125%;color:#202020;}
+li{position:relative;list-style:none;float:left;width:235px;height:220px;margin:10px 0 0 10px;cursor:pointer;}
+.tips{width:700px;margin:0 auto;line-height:24px;padding-top:10px;font-size:14px;}
+.bredcolor{color:#fff;}
+.enlarge {position:relative; width:180px; height:240px; margin:20px 0 200px 10px;margin:0 auto;}
+.frame {width:270px; height:360px; position:absolute; left:-9999px; top:0; opacity:0; overflow:hidden;
+    -webkit-transition: opacity 0.5s, left 0s 0.5s;
+    -moz-transition: opacity 0.5s, left 0s 0.5s;
+    -ms-transition: opacity 0.5s, left 0s 0.5s;
+    -o-transition: opacity 0.5s, left 0s 0.5s;
+    transition: opacity 0.5s, left 0s 1s;
+}
+.frame img {left: -134px; top: -181px; position:absolute;
+    -webkit-transition: 0s 3600s;
+    -moz-transition: 0s 3600s;
+    -ms-transition: 0s 3600s;
+    -o-transition: 0s 3600s;
+    transition: 0s 3600s;
+}
+.frame .inner {position:absolute; left:0; top:0; width:270px; height:360px; box-shadow: inset 0px 0px 15px rgba(0,0,0,0.9);z-index:100;}
+.enlarge .area {width:88px; height:118px; background:#fff; opacity:0.5; border:1px solid #000; position:absolute; left:45px; top:60px; z-index:50; display:none;
+    -webkit-transition: 0s 3600s;
+    -moz-transition: 0s 3600s;
+    -ms-transition: 0s 3600s;
+    -o-transition: 0s 3600s;
+    transition: 0s 3600s;
+}
+img.control {position:absolute; display:none; width:32px; height:32px; z-index:100;}
+img.up {left:74px; top:72px;}
+img.down {left:74px; top:136px;}
+img.left {left:42px; top:104px;}
+img.right {left:106px; top:104px;}
+img.dtl {left:42px; top:72px;}
+img.dtr {left:106px; top:72px;}
+img.dbl {left:42px; top:136px;}
+img.dbr {left:106px; top:136px;}
+img.ctr {left:74px; top:104px;}
+.enlarge:hover .control {display:block;}
+.enlarge:hover .area {display:block;}
+/* 鼠标移到图上 */
+.enlarge:hover .frame {left:250px; opacity:1;
+    -webkit-transition: opacity 0.5s, left 0s;
+    -moz-transition: opacity 0.5s, left 0s;
+    -ms-transition: opacity 0.5s, left 0s;
+    -o-transition: opacity 0.5s, left 0s;
+    transition: opacity 0.5s, left 0s;
+}
+img.control:active ~ div.frame img {
+    -webkit-transition: 1.5s linear;
+    -moz-transition: 1.5s linear;
+    -ms-transition: 1.5s linear;
+    -o-transition: 1.5s linear;
+    transition: 1.5s linear;
+}
+img.control:active ~ div.area {
+    -webkit-transition: 1.5s linear;
+    -moz-transition: 1.5s linear;
+    -ms-transition: 1.5s linear;
+    -o-transition: 1.5s linear;
+    transition: 1.5s linear;
+}
+/* 被放大的图 */
+img.up:active ~ div.frame img {top:0;}
+img.down:active ~ div.frame img {top:-360px;}
+img.left:active ~ div.frame img {left:0;}
+img.right:active ~ div.frame img {left:-270px;}
+img.dtl:active ~ div.frame img {top:0; left:0;}
+img.dtr:active ~ div.frame img {top:0; left:-270px}
+img.dbl:active ~ div.frame img {top:-360px; left:0;}
+img.dbr:active ~ div.frame img {top:-360px; left:-270px;}
+img.ctr:active ~ div.frame img {top:-180px; left:-135px;}
+/* 放大镜 */
+img.up:active ~ div.area {top:0;}
+img.down:active ~ div.area {top:120px;}
+img.left:active ~ div.area {left:0;}
+img.right:active ~ div.area {left:90px;}
+img.dtl:active ~ div.area {top:0; left:0;}
+img.dtr:active ~ div.area {top:0; left:90px}
+img.dbl:active ~ div.area {top:120px; left:0;}
+img.dbr:active ~ div.area {top:120px; left:90px;}
+img.ctr:active ~ div.area {top:59px; left:44px;}
+</style>
+</head>
+<body>
+<div class="enlarge">
+        <img src="statue-small.jpg" alt="">
+        <img class="control up" src="up.png" alt="">
+        <img class="control down" src="down.png" alt="">
+        <img class="control left" src="left.png" alt="">
+        <img class="control right" src="right.png" alt="">
+        <img class="control dtl" src="dtl.png" alt="">
+        <img class="control dtr" src="dtr.png" alt="">
+        <img class="control dbl" src="dbl.png" alt="">
+        <img class="control dbr" src="dbr.png" alt="">
+        <img class="control ctr" src="ctr.png" alt="">
+        <div class="area"></div>
+        <div class="frame"><img src="statue.jpg" alt=""><div class="inner"></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name="keywords" content="站长,网页特效,js特效,广告代码,zzjs,zzjs.net,sky,www.zzjs.net,站长特效 网" />
+<meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。大量高质量js特效，提供高质量广告代码下载,尽在站长特效网" />
+<TITLE>漂亮滑动门特效，sky整理收集。</TITLE>
+<STYLE type=text/css>BODY {
+ FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: 宋体
+}
+TD {
+ FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: 宋体
+}
+SELECT {
+ FONT-SIZE: 12px
+}
+INPUT {
+ FONT-SIZE: 12px
+}
+A:link {
+ COLOR: #3d362b
+}
+A:visited {
+ COLOR: #3d362b
+}
+A:hover {
+ COLOR: #f60
+}
+BODY #search {
+ CLEAR: both; WIDTH: 540px; HEIGHT: 50px
+}
+BODY #search #left {
+ FLOAT: left
+}
+BODY #search #searchleft {
+ PADDING-LEFT: 30px; FLOAT: left; PADDING-TOP: 12px; HEIGHT: 35px; TEXT-ALIGN: left
+}
+BODY #search #searchleft1 {
+ PADDING-LEFT: 30px; PADDING-TOP: 12px; HEIGHT: 35px; TEXT-ALIGN: left
+}
+FORM {
+ PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BODY #newsearch {
+ WIDTH: 540px; HEIGHT: 30px
+}
+BODY #newsearchtop {
+ WIDTH: 540px; HEIGHT: 25px; TEXT-ALIGN: right
+}
+BODY #newsearchtop LI {
+ FONT-SIZE: 12px; FLOAT: left
+}
+.newsearchinsidew { BORDER-TOP: #cccccc 1px solid; MARGIN-TOP: 2px; BORDER-LEFT: #ccc 1px solid; WIDTH: 70px; CURSOR: hand; LINE-HEIGHT: 21px; BORDER-BOTTOM: #cc3300 1px solid; HEIGHT: 23px; TEXT-ALIGN: center; TEXT-DECORATION: underline}
+.newsearchinsider { BORDER-RIGHT: #cc3300 1px solid; BORDER-TOP: #cc3300 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #cc3300 1px solid; WIDTH: 70px; COLOR: #ffffff; PADDING-TOP: 5px; HEIGHT: 25px; BACKGROUND-COLOR: #ff7300; TEXT-ALIGN: center}
+.newsearchinsider A:visited {
+ COLOR: #ffffff; TEXT-DECORATION: none
+}
+.newsearchinsidew A:hover {
+background-color:#CCCCCC;WIDTH: 69px; TEXT-ALIGN: center
+}
+BODY #newsearchbottom {
+ BORDER-RIGHT: #cc3300 1px solid; BORDER-LEFT: #cc3300 1px solid; BORDER-BOTTOM: #cc3300 1px solid; POSITION: relative; HEIGHT: 50px; BACKGROUND-COLOR: #ff7300
+}
+BODY #newsearchbottom #e1 { Z-INDEX: 0; LEFT: 0px; VISIBILITY: visible; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+BODY #newsearchbottom #e2 { Z-INDEX: 0; LEFT: 0px; VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+BODY #newsearchbottom #e3 { Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+BODY #newsearchbottom #e4 { Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+BODY #newsearchbottom #e5 { Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+BODY #newsearchbottom #e6 { Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+BODY #newsearchbottom #e7 { Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 538px; POSITION: absolute; TOP: 0px; HEIGHT: 30px}
+UL {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none}
+</STYLE>
+<SCRIPT>
+function doClick(o){
+  o.className="newsearchinsider";
+  var j;
+  var id;
+  var e;
+  for(var i=1;i<=7;i++){
+    id ="v"+i;
+    j = document.getElementById(id);
+    e = document.getElementById("e"+i);
+    if(id != o.id){
+      j.className="newsearchinsidew";
+      e.style.visibility = "hidden";
+    }else{
+   e.style.visibility = "visible";
+    }
+  }
+ var id = o.id+"";
+ var dd=id.substring(1,2);
+ var curForm = document.getElementById("FormSearch"+dd);
+ var inputv ;
+ for(var i=1;i<=7;i++){
+ var otherForm = document.getElementById("FormSearch"+i);
+ }
+}
+function doOut(o){
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+      <DIV id=search>
+        <DIV id=newsearch>
+        <DIV id=newsearchtop>
+        <UL>
+   <LI><DIV class=newsearchinsider id=v1 onClick="javascript:doClick(this)"><A href="#">站长特效网</A></DIV></LI>
+   <LI><DIV class=newsearchinsidew id=v2 onClick="javascript:doClick(this)"><A href="#">网页特效</A></DIV></LI>
+   <LI><DIV class=newsearchinsidew id=v3 onMouseOver="javascript:doClick(this)"><A href="#">zzjs.net</A></DIV></LI>
+   <LI><DIV class=newsearchinsidew id=v4 onMouseOver="javascript:doClick(this)"><A href="#">您自定义</A></DIV></LI>
+   <LI><DIV class=newsearchinsidew id=v5 onMouseOver="javascript:doClick(this)"><A href="#">您自定义</A></DIV></LI>
+   <LI><DIV class=newsearchinsidew id=v6 onMouseOver="javascript:doClick(this)"><A href="#">您自定义</A></DIV></LI>
+   <LI><DIV class=newsearchinsidew id=v7 onMouseOver="javascript:doClick(this)"><A href="#">您自定义</A></DIV></LI>
+  </UL>
+  </DIV>
+<DIV id=newsearchbottom>
+<DIV id=e1><DIV id=left><DIV id=searchleft1>专注于<a href="http://zzjs.net/">网页特效</a>及广告代码</DIV></DIV></DIV>
+<DIV id=e2><DIV id=left><DIV id=searchleft1>无限量高质量<a href="http://zzjs.net/">网页特效</a>，看了包你喜欢</DIV></DIV></DIV>
+<DIV id=e3><DIV id=left><DIV id=searchleft1>记住我们的网址：<a href="http://zzjs.net/">www.zzjs.net</a></DIV></DIV></DIV>
+<DIV id=e4><DIV id=left><DIV id=searchleft1><a href="http://zzjs.net/">站长特效网</a>，专注于网页特效及广告代码。1号<a href="http://zzjs.net/">自定义</a></DIV></DIV></DIV>
+<DIV id=e5><DIV id=left><DIV id=searchleft1><a href="http://zzjs.net/">站长特效网</a>，专注于网页特效及广告代码。2号<a href="http://zzjs.net/">自定义</a></DIV></DIV></DIV>
+<DIV id=e6><DIV id=left><DIV id=searchleft1><a href="http://zzjs.net/">站长特效网</a>，专注于网页特效及广告代码。3号<a href="http://zzjs.net/">自定义</a></DIV></DIV></DIV>
+<DIV id=e7><DIV id=left><DIV id=searchleft1><a href="http://zzjs.net/">站长特效网</a>，专注于网页特效及广告代码。4号<a href="http://zzjs.net/">自定义</a></DIV></DIV></DIV></DIV></DIV>
+</DIV><DIV></DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="站长,网页特效,网页特效代码,js特效,js脚本,脚本,广告代码,zzjs,zzjs.net,www.zzjs.net,站长特效 网" />
+<meta name="description" content="www.zzjs.net,站长特效网，站长必备js特效及广告代码。以质量为核心，以实用为目的,打造一流网页特效站" />
+<script type="text/javascript" src="../jquery.js"></script>
+<title>站长特效 jquery鼠标感应翻动显示导航菜单 站长特效网</title>
+<style>
+ul#nav_zzjs_net {
+     margin: 15px 0 50px 0;
+     padding: 0;
+     list-style: none;
+     float: left;
+     font-size: 1.1em;
+}
+ul#nav_zzjs_net li {
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     float: left;
+     height: 40px;
+}
+ul#nav_zzjs_net a, ul#nav_zzjs_net span {
+     padding: 10px 20px;
+     float: left;
+     text-decoration: none;
+     color: #fff;
+     background: url(/img/a_bg_20110118zzjs_net.gif) repeat-x;
+     text-transform: uppercase;
+     clear: both;
+     width: 100%;
+     height: 20px;
+     line-height: 20px;
+}
+ul#nav_zzjs_net a{
+     color: #555;
+     background-position: left bottom;
+}
+ul#nav_zzjs_net span {
+     background-position: left top;
+}
+ul#nav_zzjs_net.v2 span {
+     background: transparent url(/img/a_bg_20110118zzjs_net.gif) repeat-x left top;
+}
+ul#nav_zzjs_net.v2 a {
+     background: transparent url(/img/a_bg_20110118zzjs_net.gif) repeat-x left bottom;
+     color: #555;
+}
+</style>
+<script type="text/javascript" src="/img/jquery_zzjs.js"></script>
+</head>
+<script>
+$(document).ready(function() {
+$("#nav_zzjs_net li").prepend("<span></span>");
+$("#nav_zzjs_net li").each(function() {
+var linkText = $(this).find("a").html();
+$(this).find("span").show().html(linkText); //Add the text in the <span> tag
+});//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，.net打造靓站，还有许多广告代码下载。
+$("#nav_zzjs_net li").hover(function() { //On hover...
+$(this).find("span").stop().animate({
+marginTop: "-40" //Find the <span> tag and move it up 40 pixels
+}, 250);
+} , function() { //On hover out...
+$(this).find("span").stop().animate({
+marginTop: "0" //Move the <span> back to its original state (0px)
+}, 250);
+});
+});//欢迎来到站z长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，.net打造靓站，还有许多广告代码下载。
+</script>
+<body>
+<a href="http://www.zzjs.net/">站长特效网</a>，以质量为核心，以实用为目的，打造一流网页特效站！zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+<span style="color:#FF0000">需要加载js文件，请刷新后看效果！</span>
+<br />
+<ul id="nav_zzjs_net">
+    <li><a href="http://www.zzjs.net">站长一号</a></li>
+    <li><a href="http://www.zzjs.net">站长二号</a></li>
+    <li><a href="http://www.zzjs.net">站长三号</a></li>
+    <li><a href="http://www.zzjs.net">站长四号</a></li>
+    <li><a href="http://www.zzjs.net">站长五号</a></li>
+    <li><a href="http://www.zzjs.net">站长六号</a></li>
+</ul>
+</body>
+</html>

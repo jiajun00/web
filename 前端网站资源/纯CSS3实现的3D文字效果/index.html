@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>动态CSS3实现的3D文字效果</title>
+<style type="text/css">
+*{ border:0; margin:0; padding:0; }
+body {
+	font-family: helvetica, arial, sans-serif;
+	background-color:#444;
+	background-image:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#888), to(#444));
+	background-image:-moz-radial-gradient(50% 50%, circle, #888 0px, #444 300px);
+	background-size:100% 100%;
+	-webkit-perspective:500px;
+	-moz-perspective:500px;
+}
+#text {
+	position:absolute;
+	width:600px;
+	height:120px;
+	left:50%;
+	margin-top:300px;
+	margin-left:-300px;
+	text-align:center;
+	text-transform:uppercase;
+	-webkit-tranform:translateZ(0);
+	-webkit-transition-duration:0.05s;
+	-moz-tranform:translateZ(0);
+	color:#f3f3f3;
+	text-shadow:0 0 1px rgba(0,0,0,.2);
+}
+
+h1 {
+	font-size:50px;
+}
+
+h2 {
+	font-size:35px;
+}
+
+</style>
+</head>
+<body>
+<div id="text">
+	<h1>Dynamic CSS 3D Text</h1>
+	<h2>Now without glasses!</h2>
+</div>
+
+<script type="text/javascript">
+var text = document.getElementById('text'),
+	body = document.body,
+	steps = 7;
+function threedee (e) {
+	var x = Math.round(steps / (window.innerWidth / 2) * (window.innerWidth / 2 - e.clientX)),
+		y = Math.round(steps / (window.innerHeight / 2) * (window.innerHeight / 2 - e.clientY)),
+		shadow = '',
+		color = 190,
+		radius = 3,
+		i;
+	
+	for (i=0; i<steps; i++) {
+		tx = Math.round(x / steps * i);
+		ty = Math.round(y / steps * i);
+		if (tx || ty) {
+			color -= 3 * i;
+			shadow += tx + 'px ' + ty + 'px 0 rgb(' + color + ', ' + color + ', ' + color + '), ';
+		}
+	}
+	shadow += x + 'px ' + y + 'px 1px rgba(0,0,0,.2), ' + x*2 + 'px ' + y*2 + 'px 6px rgba(0,0,0,.3)';	
+	text.style.textShadow = shadow;
+	text.style.webkitTransform = 'translateZ(0) rotateX(' + y*1.5 + 'deg) rotateY(' + -x*1.5 + 'deg)';
+	text.style.MozTransform = 'translateZ(0) rotateX(' + y*1.5 + 'deg) rotateY(' + -x*1.5 + 'deg)';
+}
+	document.addEventListener('mousemove', threedee, false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>懒人原生纯css向右展开多级导航菜单代码</title>
+<style>
+    *{margin: 0;padding: 0;}
+    .lanren ul a{font-family: '微软雅黑';font-size: 14px;color: #333;text-decoration: none;}
+    .lanren ul a:hover{color: #000;text-decoration: none;}
+    .lanren ul li{width: 100px;height: 35px;line-height: 35px;text-align: center;position: relative;}
+    .lanren ul li:hover{background: #c1c1c1;}
+    .lanren ul{width: 100px;height: auto;position: absolute;background: #DADADA;list-style: none;}
+
+    .lanren ul.nav2{left: 99px;top: 0;display: none;}
+    .lanren ul.nav3{left: 99px;top: 0;display: none;}
+    .lanren .nav1 .li1:hover ul.nav2{display: block;background: #c1c1c1;}
+    .lanren .nav2 .li2:hover ul.nav3{display: block;background: #c1c1c1;}
+</style>
+</head>
+<body>
+<!--代码部分begin-->
+<div class="lanren">
+<ul class="nav1">
+    <li class="li1"><a href="#">一级导航</a>
+        <ul class="nav2">
+            <li class="li2"><a href="#">二级导航</a></li>
+            <li class="li2"><a href="#">二级导航</a>
+                <ul class="nav3">
+                    <li class="li3"><a href="#">三级导航</a></li>
+                    <li class="li3"><a href="#">三级导航</a></li>
+                    <li class="li3"><a href="#">三级导航</a></li>
+                    <li class="li3"><a href="#">三级导航</a></li>
+                </ul>
+            </li>
+            <li class="li2"><a href="#">二级导航</a></li>
+            <li class="li2"><a href="#">二级导航</a></li>
+        </ul>
+    </li>
+    <li class="li1"><a href="#">一级导航</a></li>
+    <li class="li1"><a href="#">一级导航</a></li>
+    <li class="li1"><a href="#">一级导航</a></li>
+    <li class="li1"><a href="#">一级导航</a></li>
+    <li class="li1"><a href="#">一级导航</a></li>
+</ul>
+</div>
+<!--代码部分end-->
+</body>
+</html>

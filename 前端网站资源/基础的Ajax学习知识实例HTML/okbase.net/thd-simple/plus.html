@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+.hover{background:red;}
+.focus{background:green;}
+.blur {background:#fff;}
+</style>
+<script type="text/javascript" src="thd-simple.js"></script>
+
+</head>
+
+<body>
+<!--
+   ┏━━━━━━━━━━━━━━━━━━━━━┓
+   ┃             源 码 爱 好 者               ┃
+   ┣━━━━━━━━━━━━━━━━━━━━━┫
+   ┃                                          ┃
+   ┃           提供源码发布与下载             ┃
+   ┃                                          ┃
+   ┃        http://www.codefans.net           ┃
+   ┃                                          ┃
+   ┃            互助、分享、提高              ┃
+   ┗━━━━━━━━━━━━━━━━━━━━━┛
+-->
+
+<h2 id="m01">menu1</h2>
+<h2 id="m02">menu2</h2>
+<h2 id="m03">menu3</h2>
+<h2 id="m04">menu4</h2>
+
+<div id="c01">1</div>
+<div id="c02">2</div>
+<div id="c03">3</div>
+<div id="c04">4</div>
+
+<script type="text/javascript">
+
+(function(t){
+
+	t.plugs.ScrollDoor = function(obj){
+		this.menus = obj.menus;
+		this.contents = obj.contents;
+		this.hoverClass = obj.hover;
+		this.blurClass = obj.blur;
+		this.focusClass = obj.focus;
+		this.evt = "click" || obj.evt;
+	}
+
+	t.plugs.ScrollDoor.prototype = {
+		_clear : function(){
+			var _this = this;
+			this.menus.each(function(m,i){
+				t(m).removeClass(_this.hoverClass);
+				t(m).removeClass(_this.focusClass);
+			})
+			if((this.contents != undefined) && (this.contents.length != 0)){
+				this.contents.each(function(m,i){
+					t(m).css("display","none");
+				})
+			}
+		},
+
+		_hasContents : function(){
+			if((this.contents != undefined) && (this.contents.length != 0)){
+				return true;
+			}else{
+				return false;
+			}
+		},
+		
+		focus : function(index){
+			this._clear();
+			t(this.menus[index]).addClass(this.focusClass);
+			if((this.contents[index] != undefined) && (this.contents.length != 0)){
+				t(this.contents[index]).css("display","block");
+			}
+		},
+
+		run : function(){
+			var _this = this;
+			this.menus.each(function(m,i){
+				t(m).on(_this.evt,function(e,o){
+					_this.focus(i);
+				})
+			})
+		},
+
+		add : function(){
+			this.menus.push(arguments[0]);
+			if(this._hasContents()){
+				this.contents.push(arguments[1]);
+			}
+			this.run();
+			this.focus(this.menus.length - 1);
+		}
+
+		
+	}
+	
+})(ThirdteenDevil)
+
+
+var sd = new t.plugs.ScrollDoor({
+	menus : ["m01","m02","m03"],
+	contents : ["c01","c02","c03"],
+	hover : "hover",
+	focus : "focus",
+	blur : "blur",
+	evt : "click"
+})
+
+sd.run();
+sd.add("m04","c04");
+
+
+</script>
+
+</body>
+</html>

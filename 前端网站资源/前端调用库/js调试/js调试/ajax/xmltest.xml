@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<书籍>
+	<书 标题="藏地密码" 图片地址="images/Tibet_Code.jpg">
+		<描述>
+			这里是概况1(www.code52.net)
+		</描述>
+	</书>
+
+	<书 标题="剑桥雅思6" 图片地址="images/ielts.jpg">
+		<描述>
+			这里是概况2(www.code52.net)
+		</描述>
+	</书>
+
+	<书 标题="Professional ASP.NET" 图片地址="images/asp.jpg">
+		<描述>
+			这里是概况3(www.code52.net)
+		</描述>
+	</书>
+</书籍>

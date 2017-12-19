@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>懒人原生css3可控旋转音乐播放按钮</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+
+#lanren #audio-btn{width: 44px;height: 44px; margin:100px auto;background-size: 100% 100%;}
+#lanren .on{background: url('images/music_on.png') no-repeat 0 0;-webkit-animation: rotating 1.2s linear infinite;animation: rotating 1.2s linear infinite;}
+#lanren .off{background: url('images/music_off.png') no-repeat 0 0;}
+@-webkit-keyframes rotating {
+	from{
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+    	transform: rotate(0deg);
+	}
+	to{
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+</style>
+</head>
+<body>
+
+<!--代码部分begin-->
+<div id="lanren">
+<div id="audio-btn" class="on" onclick="lanren.changeClass(this,'media')">
+	<audio loop="loop" src="images/SeeYouAgain.mp3" id="media" preload="preload"></audio>
+</div>
+</div>
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+<script>
+var lanren = {
+	changeClass: function (target,id) {
+       	var className = $(target).attr('class');
+       	var ids = document.getElementById(id);
+       	(className == 'on')
+           	? $(target).removeClass('on').addClass('off')
+           	: $(target).removeClass('off').addClass('on');
+       	(className == 'on')
+           	? ids.pause()
+           	: ids.play();
+   	},
+	play:function(){
+		document.getElementById('media').play();
+	}
+}
+lanren.play();
+<!--代码部分end-->
+
+</script>
+</body>
+</html>

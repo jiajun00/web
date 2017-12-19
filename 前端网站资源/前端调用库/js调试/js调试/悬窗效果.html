@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<style>
+		*{margin:0px;padding:0px;list-style: none;text-decoration: none;}
+		.content{width: 1200px;height:6000px;margin: 10px auto;border: 1px solid red;}
+		.content p{position: absolute;top:200px;left:30px;display: block;height: 15px;}
+		
+		.fly_nav{	position:fixed;
+					top:100px;left:50%;
+					margin-left:-800px;				
+					border:3px solid #eee;				
+					transform:scale(0);
+					transition: all .8s ease-in;
+					width:150px;
+					height:150px;
+					}
+		.fly_nav_right{	position:absolute;
+					top:50%;left:50%;
+					margin-left:630px;											
+					border:3px solid #eee;
+					background:#e0e0e0;
+					width:150px;
+					height:400px;
+					}			
+		.over{
+			transform: scale(1);
+			background:#e0e0e0;
+		}
+		
+		
+		</style>
+		
+		<div class="content">
+			<p>sss</p>
+		</div>
+		
+		<div id="fly_nav" class="fly_nav">
+			<ul>
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+			</ul>
+		</div>
+		
+		
+		<div id="fly_nav_right" class="fly_nav_right">
+			<ul>
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+			</ul>
+		</div>
+		
+		
+	</body>
+</html>
+<script type="text/javascript">
+
+ 	/*************  悬窗缓慢打开    **********/	
+ 	$(window).bind('scroll resize',function(){	
+        if($(window).scrollTop()>760){
+        	$(".fly_nav").addClass("over")
+        }
+        else{
+        	$(".fly_nav").removeClass("over")
+        }    
+     });
+	
+   	/*************  悬窗滑动    **********/ 	
+   	var lanren = {
+		navFast:function(){
+			var defaultTop = (window.screen.height - $('#fly_nav_right').height())/2 - 100; //默认顶部保持上下居中，再往上去100像素
+			$(window).scroll(function(){
+				var offsetTop = defaultTop + $(window).scrollTop()+'px';
+				$('#fly_nav_right').animate({top:offsetTop},
+				{	duration: 800,	//滑动速度-
+     				queue: false    //此动画将不进入动画队列
+     			});					  
+			});
+		}
+	};
+	lanren.navFast();
+            
+    /*************  获取元素的top值   ************/ 
+	var $position =$("p").position().top;
+	alert($position);
+	
+	
+</script>

@@ -1,0 +1,178 @@
+html, body{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+}
+
+#wrap{ width:100%; min-height:900px; top:0px; position:relative; bottom:0px; }
+#wrap ul{ margin:0px; padding:0px; width: 700px;text-align:center;  }
+
+#wrap .detail-view {
+   /* background: none repeat scroll 0 0 #F3F4EE;*/
+    border: 1px solid #E2E2E2;
+    border-top: 1px solid #E2E2E2;
+    left: 0;
+	height:380px;
+    overflow: hidden;
+	clear:both;
+	display:none;
+	margin-left:13px;
+	margin-bottom:15px;
+    width: 96%;
+}
+
+#wrap .detail-view .close{ text-align:right; width:98%; margin:5px; }
+#wrap .close a{ padding:6px; height:10px; width:20px; color:#525049; }
+#wrap .detail-view .detail_images{ float:left}
+
+#wrap .detail-view .detail_info{ 
+	float:right;
+	font-family: "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,sans-serif; 
+	color:#525049;
+	margin-right:20px;
+	margin-top:30px;
+	text-align:justify;
+	width:250px;
+	font-size:12px;
+}
+
+#wrap .detail-view .detail_info label{ font-size:12px;text-transform:uppercase; letter-spacing:1px; line-height:60px;} 
+
+#wrap .detail-view .detail_info p{ height:110px;}
+
+a#show_cart{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E8E7DC;
+    cursor: pointer;
+	display:block;
+    display: inline-block;
+    font: 9px/21px "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,sans-serif;
+    letter-spacing: 2px;
+    color:#525049;
+	padding:8px;
+	text-decoration:none;
+	
+    text-transform: uppercase;
+}
+.add-to-cart-button{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E8E7DC;
+    cursor: pointer;
+    display: inline-block;
+    font: 9px/21px "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,sans-serif;
+    letter-spacing: 2px;
+    padding-top: 10px;color:#525049;
+	margin-top:15px;
+    text-transform: uppercase;
+}
+
+.add-to-cart-button:hover {
+    background: none repeat scroll 0 0 #F8F8F3;
+}
+
+.shopp{background: none repeat scroll 0 0 #F8F8F3;}
+
+#wrap ul li{
+ 
+	list-style-type:none; 
+	height:146px; 
+	width:160px; 
+	margin-left:10px; 
+	margin-bottom:15px; 
+	float:left;
+	padding:15px 0px 0px 0px;
+	font-family:"LubalGraphBdBTBold",Tahoma;
+	font-size:2em;
+	border:solid #fff 1px; 
+	overflow:hidden;
+}
+
+.footer{ height:400px; background:#E2E2E2} 
+
+#wrap ul li:hover{ border:solid #f3f4ee 1px; }
+
+#wrap ul li div{ 
+
+	height:31px;
+	text-align:center;
+	width:160px;
+	margin-top:10px;
+	position:relative;
+	bottom:0px;
+	padding-top:6px;
+	padding-bottom:4px;
+	background:#f3f4ee ;
+	font: 12px/21px "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,sans-serif;
+	opacity:0.8;
+	color: #525049 ;
+	text-shadow: 0px 2px 3px #555;
+}
+
+img#cart{bottom:0px;position:fixed; margin-left:30px; /* keep the bar on top  */}
+
+#wrap ul li { cursor:pointer;}
+
+#cart_wrapper { 
+	border:solid #E8E7DC 1px; 
+	min-height:120px;
+	width:100%;
+	padding-top:15px;
+	display:none;
+    background:#E2E2E2;
+	font: 12px/21px "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,sans-serif;
+    
+	position:relative
+}
+
+#Submit {
+  height: 78px;
+  float:left;
+}
+
+.closeCart{ cursor:pointer;}
+
+button {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E8E7DC;
+	width:140px;
+    cursor: pointer;
+    display: inline-block;
+    font: 9px/21px "Helvetica Neue",Helvetica,"Nimbus Sans L",Arial,sans-serif;
+    letter-spacing: 2px;
+    padding-top: 12px;color:#525049;
+	margin-top:1px;
+	border:solid #ccc 1px; padding:8px; 
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	margin-left:20px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: none repeat scroll 0 0 #F8F8F3;
+}
+
+.cart-total{background: none repeat scroll 0 0 #F8F8F3;}
+
+.shopp,.cart-total{ 
+	border:solid #E8E7DC 1px; padding:8px; 
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px; font-size:12px;
+	background:url(remove.png) center right no-repeat 5px;
+	border-radius: 8px; 
+	font-family:"LubalGraphBdBTBold",Tahoma; 
+	margin-top:3px;
+	width:320px;
+	float:left;
+	}
+
+#cart_form{ width:570px; padding-left:15px;}
+
+div.shopp span{ float:left;}	
+div.shopp div.label{ width:130px; float:left; }		
+div.shopp div.shopp-price{ width:70px; float:left;}
+.quantity{ float:left; margin-top:-3px; width:20px;}
+
+img.remove{float:right;cursor:pointer;}
+.cart-total b{width:130px;}

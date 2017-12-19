@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Visual QuickMenu</title>
+
+
+<script type="text/javascript">
+
+	var br_ie = window.showHelp;	
+	var br_safari = navigator.userAgent.indexOf("afari")+1;
+	var br_s3 = br_safari && navigator.userAgent.indexOf("ersion/3")+1;
+
+
+	function launch_vis(this_window)
+	{
+		
+
+		var link = "run001";
+
+		if (this_window || br_s3)
+			window.location.href = link+".html";
+		else
+		{
+			var newwindow = window.open(link+".html","","scrollbars=no,location=no,status=yes,menu=no,toolbar=no,resizable=yes");
+			if (window.focus) {newwindow.focus()}
+			
+		}
+		
+
+	}
+
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="help/help.css">
+
+
+</head><body class="title" style="margin:20px;background-color:#ffffff;">
+<noscript>
+<div style="margin:20px 20px 1000px 20px;font-family:arial;font-size:13px;color:#333333;"><b>Warning:</b> To run the Visual CSS QuickMenu Interface, JavaScript must be enabled in your browser.<br><br>If you are using IE and running SP2, click the yellow bar at the top of the document window and select 'Enable Blocked Content...'.  You can permenatly enable local scripts in IE by selecting 'Tools' --> 'Internet Options'.  Next click on the 'Advanced' tab, from the list of options check 'Allow active content to run in files on My Computer' under the 'Security' category.</div>
+</noscript>
+<div style="padding-bottom:5px;font-size:13px;font-weight:bold;">Welcome To Visual CSS QuickMenu (local version)</div><div class="topdivider"></div><div class="content">
+
+
+	<div style="font-size:1px;height:10px;"></div>
+				
+
+	<div class="icontent">
+	The Visual QuickMenu design tool is a browser based tool which runs fastest in Firefox, Safari and Netscape.  Internet Explorer users may experience 1 to 5 second delays when editing certain menu settings.
+	</div>
+
+	<div style="font-size:1px;height:40px;"></div>
+	<a href="javascript:launch_vis();" class="icontent" style="outline:none;display:block;text-align:center;color:#0033dd;font-weight:bold;">
+	Launch Visual CSS QuickMenu
+	</a>
+
+	<span class="icontent" style="outline:none;display:block;text-align:center;color:#dd3300;font-size:12px;">
+	<script type="text/javascript">
+
+		if (br_ie)
+			document.write("The visual interface runs faster if using Firefox or Safari!");
+		
+	</script>
+	</span>
+
+	
+	<div style="font-size:1px;height:40px;"></div>
+	<div class="icontent" style="color:#444444;font-size:12px;">
+	Note: If the above link does not work, you may have to temporarily enable pop-ups for this page in the browser.  Alternatively, the interface may be loaded in this window by clicking <a href="javascript:launch_vis(true);" style="color:#0033dd;">here</a>.
+	</div>
+
+	<div style="font-size:1px;height:20px;"></div>
+	<div class="ctitle" style="color:#333333;">
+	Visual Design Compatibility
+	</div>
+	<div class="icontent">
+	
+		<ul class="ordlist_container">
+		<li class="ordlist">IE 6, 7+</li>
+		<li class="ordlist">Firefox 2+</li>
+		<li class="ordlist">Safari 3+</li>
+		<li class="ordlist">Netscape 9+</li>
+	</ul>
+	</div>
+
+	
+	<div class="ctitle"  style="color:#333333;">
+	Menu Compatibility
+	</div>
+	<div class="icontent">
+	<ul class="ordlist_container">
+		<li class="ordlist">IE 5, 6, 7+</li>
+		<li class="ordlist">Firefox 1, 2+</li>
+		<li class="ordlist">Safari 1, 2, 3+</li>
+		<li class="ordlist">Mozilla .9+</li>
+		<li class="ordlist">Netscape 6, 7, 8, 9+</li>
+		<li class="ordlist">Opera 8, 9+</li>
+	</ul>
+	</div>
+
+
+	<div class="ctitle"  style="color:#333333;">
+	Text Based Customization
+	</div>
+	<div class="icontent">
+	All QuickMenus are fully customizable with a text editor. Saved menus include simple to follow comments, standardized CSS settings, and HTML based pure CSS structures.  If you want to bypass the visual design completely and skip directly to text based editing, do the following...
+	<ol class="ordlist_container">
+		<li class="ordlist">Launch the visual interface above.</li>
+		<li class="ordlist">Choose a template.</li>
+		<li class="ordlist">Open the template in the visual editor using the 'Customize Menu' button.</li>
+		<li class="ordlist">Choose 'File' --> 'Create Component' from the main menu.</li>
+		<li class="ordlist">Follow the steps for saving the menu.</li>
+		<li class="ordlist">Optionally save associated template images with 'File' --> 'Publish Images'</li>
+	</ol>
+	</div>
+	<div style="font-size:1px;height:10px;"></div>
+
+
+
+	<div class="ctitle"  style="color:#333333;">
+	Image File Refernces
+	</div>
+	<div class="icontent">
+	QuickMenu places the full power of both relative and absolute based image file references in the designers hand.  All images should be defined absolute, or relative to what will be the final folder location of your menu.  The following options will allow you to see your images during visual design, and have them present after the menu is published to your documents.
+	<ol class="ordlist_container">
+		<li class="ordlist">If you use http:// absolute paths, your images will be visible during 
+		design and when published, no matter the folder location of the menu.</li>
+		<li class="ordlist">For relative referencing, try saving or publishing a template to your local or live web site folder. Next, re-open the menu, all relative references will now be visible during design.</li>
+		<li class="ordlist">Copy the contents of the 'qmvis' folder to a folder in your web site, then open 'lauch_qmv.html' in your browser.  All references will work relative to that folder!</li>
+	</ol>
+	</div>
+	<div style="font-size:1px;height:10px;"></div>
+
+
+
+	
+</div><div class="bottomdivider"></div><div class="copyright">Copyright (c) 2007, OpenCube Inc., All Rights Reserved.</div></body></html>
+
+
+
+

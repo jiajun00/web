@@ -1,0 +1,14 @@
+[DEFAULT]
+BASEURL=http://bbs.mumayi.net/index.php
+[InternetShortcut]
+URL=http://www.baidu.com/s?wd=%E5%BD%93%E6%98%93%E7%BD%91
+Modified=60478CFB7471CA01DE
+IconFile=C:\Windows\system32\SHELL32.dll
+IconIndex=130
+Hotkey=1624
+IDList=
+[InternetShortcut.A]
+[InternetShortcut.W]
+IconFile=C:+AFw-Documents and Settings+AFw-Administrator+AFxoTJdiAFxlh072VA0-.ico
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>AntiModerate Demo</title>
+        <style>
+        img.antimoderate {
+            display:inline-block;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>AntiModerate</h1>
+        <h4>The Progressive Image Loader</h4>
+
+        <p>we just pass an image, the base64 image data for the micro image, and then (optionally) a scale for the blur</p>
+        <code>
+            AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"), img.getAttribute("data-antimoderate-scale"));
+        </code>
+        <br>
+        <br>
+
+
+        <h2>Example 1</h2>
+        <img style="width:200px; height:200px;" src="1.jpg">
+        <!-- add src="1.jpg" to this to function as it would on a normal website -->
+        <img style="width:200px; height:200px;" class="antimoderate" data-antimoderate-scale="1" data-antimoderate-idata="data:image/jpg;base64, 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">
+        <br>
+
+        <h2>Example 2</h2>
+        <img style="width:800px; height:576px;" src="2.jpg">
+        <!-- add src="2.jpg" to this to function as it would on a normal website -->
+        <img style="width:800px; height:576px;" class="antimoderate" data-antimoderate-idata="data:image/jpg;base64, /9j/4AAQSkZJRgABAQEASABIAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wgARCAArADwDAREAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAgMBAAQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAH50VsuKhAJEyhq+vOhZpEFkrHDzttNZJjB1JJs0bL51lnIVxJWOVVw86NiSVgPTLwhDAeIZ//EAB8QAAICAgMAAwAAAAAAAAAAAAABAhESIRAiMQMyQf/aAAgBAQABBQKEciMbEikNGI1oi8TOmtuSsjslLEvqenVyU7lpSloU9v7CfVF0NqHyS2ZPHhqjM03KOTfkaSe+KMUYoquHs/T/xAAdEQACAgIDAQAAAAAAAAAAAAAAARExICECEDAy/9oACAEDAQE/AfCihLZEFFE4cHsX1LNR08Xecj302Ly//8QAGxEAAgIDAQAAAAAAAAAAAAAAASAAMREhMFH/2gAIAQIBAT8B4Wly5hCgUPjyDXX/xAAgEAABAwQDAQEAAAAAAAAAAAAAAREhAhAgMRJBYSKB/9oACAEBAAY/AlyfBaPDehn6PMIJFlzTCU8Sqy2+kcVjl0fp7fRJBxJTDRojH//EAB8QAQACAgIDAQEAAAAAAAAAAAEAESExQXEQUYGhYf/aAAgBAQABPyHkKouWKIaR5MTbNMep0HgNzf7AarIKTFcoi4ZDDt2xfybQDpTMvkl3M0rOI204ziUNuAlAHTKlTBMgFc+1mtUcajBm2ZH2VoB0xc2CxzGg3DU3CiLot23FgdoVKSwR6BMjBoW5z3OzvUdsG5VxDs8IdgJ/qaMTFmJUIT//2gAMAwEAAgADAAAAEO0M+iCRNCgVxwJGH1ICs8kEtv/EABsRAQEBAQEBAQEAAAAAAAAAAAEAESEQMTBB/9oACAEDAQE/EA2DX07Btj5qo6hYaO2a2DG3Hiazi8kgOjkaaw5xj3kx8fNyWTubLyfnquZHXbC0kwyQMCD/AH8Cb//EABwRAQEBAAMBAQEAAAAAAAAAAAEAERAhMSBBUf/aAAgBAgEBPxBclz4XLTjAT2SuS75bi/i7cDhahDq3rLxk/SfXD6THfkNLrcs7j3jYyek0Mb12AXuUPjfhi//EACIQAQACAgICAgMBAAAAAAAAAAEAESExQVFhcYHRkbHh8f/aAAgBAQABPxAbUYbyxAK3qCVwQWaDziCoDiXU5An8TJ4C4mZSBNCytHuGaY2IzZjaHPGmUxBHIylfcJAQS066RQ52uZ11K2LpvKzkdsNHgVrgD+TUcEd2sR3WBqXlC4GSAFA4+9xWVABW83ct3JTVoMb+CcaM2A4IhUhA3MytInNZm5dNaTiXQxLXMvLGQOgFyxeBWB79RoAjewqqMfuUEbubOalT8QAq6dzEOa9+/cUVYyeIwvhLcdcxRS1b2f4SiU558OIK0D0luDB9mYNsbg27fLKIEBktzKMAPRCUZkIQ7gmgxP/Z">
+
+
+        <script src="../antimoderate.js"></script>
+        <script>
+            var antimoderate_images = document.querySelectorAll('.antimoderate');
+
+            for(var i=0; i<antimoderate_images.length; ++i) {
+                var img = antimoderate_images[i];
+                AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"), img.getAttribute("data-antimoderate-scale"));
+            }
+        </script>
+    </body>
+</html>

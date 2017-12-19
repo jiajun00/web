@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<style type="text/css">
+			*{list-style:none;}
+			body{margin:0; font-size:12px; background:#666;}
+			#box{width:1160px; height:600px; margin:100px auto 0;}
+			#tab_nav{margin:0; padding:0; height:25px; line-height:24px;}
+			#tab_nav li{float:left; margin:0 3px;  border:1px solid #999; border-bottom:none; height:24px;   background:#FFF;}
+			a{color:#000; text-decoration:none;}
+			a:hover{color:red;}
+			#tab_content{width:1160px; height:600px; border:1px solid #999; background:#FFF; overflow:hidden;}
+			#t_1,#t_2,#t_3{width:100%; height:600px;}
+			.mendianimages {width:100%; height:583px;}
+			/* 门店分布 */
+            #mendianfenbulunbo{ width:1160px; overflow:hidden; position:relative; }
+            #mendianfenbulunbo .bd{ position:relative; height:100%; z-index:0; left:-20px;  }
+            #mendianfenbulunbo .bd li{ zoom:1; vertical-align:middle; }
+            #mendianfenbulunbo .bd img{ width:100%; height:583px; display:block;  }
+                            /* 下面是前/后按钮代码，如果不需要删除即可 */
+            #mendianfenbulunbo .prev,#mendianfenbulunbo .next{position:absolute; left:-2px; top:50%; margin-top:-25px; display:block; width:35px; height:45px; background:url(_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/e/arrow.png) -115px 5px no-repeat; filter:alpha(opacity=50);opacity:0.5;}
+
+            #mendianfenbulunbo .next{ left:auto; right:2px; background-position:8px 5px; }
+            #mendianfenbulunbo .prev:hover,
+            #mendianfenbulunbo .next:hover{ filter:alpha(opacity=70);opacity:0.7;  }
+            #mendianfenbulunbo .prevStop{ display:none;  }
+            #mendianfenbulunbo .nextStop{ display:none;  }
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<ul id="tab_nav">
+				<li><a href="#t_1">昆明</a></li>
+				<li><a href="#t_2">丽江 德宏 大理</a></li>
+				<li><a href="#t_3">楚雄 玉溪 曲靖</a></li>
+			</ul>
+			<div id="tab_content">
+				<div id="t_1">		
+					<div id="mendianfenbulunbo" class="yxts2kjgslideBox">
+						<div class="bd">
+							<ul>
+								<li>
+									<a target="_blank"><img src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/kunming-1.jpg" /></a>
+								</li>
+								<li>
+									<a target="_blank"><img src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/kunming-2.jpg" /></a>
+								</li>
+								<li>
+									<a target="_blank"><img src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/kunming-3.jpg" /></a>
+								</li>
+								<li>
+									<a target="_blank"><img src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/kunming-4.jpg" /></a>
+								</li>
+								<li>
+									<a target="_blank"><img src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/kunming-5.jpg" /></a>
+								</li>
+								<li>
+									<a target="_blank"><img src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/kunming-6.jpg" /></a>
+								</li>
+							</ul>
+						</div>
+						<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+						<a class="prev">&nbsp;</a>
+						<a class="next">&nbsp;</a>
+					</div>					
+				</div>
+				<div id="t_2"><img class="mendianimages" src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/lijiang-baoshan-dali-7.jpg" /></div>
+				<div id="t_3"><img class="mendianimages" src="_ui/desktop/common/images/onesite/secondpage/yanjing-yijifenleiye/mendianfenbu/chuxiong-yuxi-qujing-8.jpg" /></div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>
+/<script type="text/javascript">
+// 轮播图js 	
+jQuery(".yxts2kjgslideBox").slide({mainCell:".bd ul",autoPlay:true});
+//楼层选项卡
+jQuery(".yxts2kjg3tabs").slide();
+
+</script>

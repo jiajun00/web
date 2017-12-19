@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>懒人原生移动端(高版本浏览器)上下左右居中模块</title>
+	<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	body{background-color: #000;}
+	.lanren{
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		-webkit-transform:translate(-50%,-50%);
+		-moz-transform:translate(-50%,-50%);
+		-o-transform:translate(-50%,-50%);
+		-ms-transform:translate(-50%,-50%);
+		transform:translate(-50%,-50%);
+	}
+	</style>
+</head>
+<body>
+	<div class="lanren">
+		<img src="images/lanren.jpg" alt="懒人原生">
+	</div>
+</body>
+</html>

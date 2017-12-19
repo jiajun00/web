@@ -1,0 +1,287 @@
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+ 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*base*/
+
+body {
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	color: #666;
+	padding: 2em 0;
+	background: url(img/farmer.png) top center no-repeat #e8e9e4; /*http://subtlepatterns.com/?p=1109*/
+}
+p {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em 0;
+}
+a {
+	color: #40bfe8;
+}
+a:hover {
+	text-decoration: none;
+}
+h1 {
+	font-size: 6em;
+	font-weight: bold;
+	margin: 0 0 .3em 0;
+	color: #40bfe8;
+	letter-spacing: -0.07em;
+}
+h3 {
+	font-size: 2em;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin: 0 0 .5em 0;
+	color: #40bfe8;
+	letter-spacing: -0.07em;
+}
+img {
+	max-width: 100%;
+	margin-bottom: 1em
+}
+.wrapper {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+	padding: 0;
+	background: #ffffff;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1); /* FF3.5 - 3.6 */
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+	-webkit-border-radius: 0 0 1px 1px;
+	-moz-border-radius: 0 0 1px 1px;
+	border-radius: 0 0 1px 1px;
+}/* 代码整理：懒人之家 www.lanrenzhijia.com */
+header {
+	padding: 2em 2em 0;
+}
+section {
+	padding: 0 2em 1em;
+}
+footer {
+	padding: 1em;
+	font-size: 0.9em;
+}
+hr {
+	width: 100%;
+	display: block;
+	height: 1px;
+	border: none;
+	outline: none;
+	clear: both;
+	background: #ccc;
+	margin: 1em 0;
+}
+.wrapper .column {
+	float: left;
+	display: inline;
+	width: 50%;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.column.left {
+	padding-right: 1em
+}
+.column.right {
+	padding-left: 1em
+}
+.nav-container {
+	margin-bottom: 2em;
+	width:100%;
+	margin-right:-2em
+}
+nav {
+	z-index: 42;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 928px;
+	padding: 1em 3em;
+	margin-left: -14px;
+	background: rgba(132, 138, 106, 0.7);
+	filter: alpha(opacity=80); /* IE6-IE8 */
+	position: relative;
+	border-top-left-radius: 1em 0.5em;
+	border-top-right-radius: 1em 0.5em;
+}
+.nav-left {
+	position: absolute;
+	left:0;
+	bottom:-14px;
+	width:14px;
+	height:14px;
+	background: #848a6a;
+	background: rgba(132, 138, 106, 0.7);
+	border-bottom-left-radius: 100% 50%;
+}
+.nav-left:after {
+	content: '';
+	position: absolute;
+	right:0;
+	width:66%;
+	height:66%;
+	background: #000;
+	border-top-left-radius:100% 50%;
+	border-bottom-left-radius:100% 50%;
+}/* 代码整理：懒人之家 www.lanrenzhijia.com */
+.nav-right {
+	position: absolute;
+	right:0;
+	bottom:-14px;
+	width:14px;
+	height:14px;
+	background: #848a6a;
+	background: rgba(132, 138, 106, 0.7);
+	border-bottom-right-radius:100% 50%;
+}
+.nav-right:after {
+	content: '';
+	position: absolute;
+	left:0;
+	width:66%;
+	height:66%;
+	background: #000;
+	border-top-right-radius:100% 50%;
+	border-bottom-right-radius:100% 50%;
+}
+nav li {
+	display: inline;
+	list-style: none;
+}
+nav li a {
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #2c2e24;
+	font-weight: bold;
+	display: inline-block;
+	width: 5em;
+	text-align: center;
+	padding: .5em 1em;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+}
+nav li a:hover, nav li a.selected {
+	color: #fff;
+	background: #40bfe8;
+}
+/*clearfix*/    
+.wrapper:before, .wrapper:after {
+	content: '';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	clear: both;
+	zoom: 1
+}
+.sticky {
+	position: fixed;
+	top: 15px;
+	animation:thedrop 1s 1;
+	-moz-animation:thedrop 1s 1;
+	-webkit-animation:thedrop 1s 1;
+}
+.sticky .nav-above {
+	position: absolute;
+	top:-15px;
+	left:1em;
+	right:1em;
+	height:15px;
+	background: linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 80%);
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+    
+/*media queries*/  
+
+	/* #Tablet (Portrait) width of 768px */  
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+ .wrapper {
+ width: 700px;
+}
+ nav {
+ width: 728px;
+}
+}
+	
+	/* #Mobile (Portrait) width of 320px */
+
+    @media only screen and (max-width: 767px) {
+ .wrapper {
+ width: 300px;
+}
+ .wrapper .column {
+ float: none;
+ width: 100%;
+}
+ nav {
+ width: 328px;
+}
+ h1 {
+ font-size: 2.5em;
+ text-align: center;
+}
+ h3 {
+ font-size: 1.3em;
+ text-align: center;
+}
+}
+ 	
+ 	/* Mobile (Landscape) width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+ .wrapper {
+ width: 400px;
+}
+ nav {
+ width: 428px;
+}
+ h1 {
+ font-size: 3.5em;
+}
+ h3 {
+ font-size: 1.7em;
+}
+}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */

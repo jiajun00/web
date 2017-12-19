@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style>
+			#randomnum{margin-left:400px;border:none;color:#000;background-color:#fff;}
+		</style>
+	</head>
+	<body>
+		<input type="text" disabled="disabled" id="randomnum"  value="100000" style=""/>
+			<a href="javascript:;" id="reducebtnnum"/>减少</a>
+			<a href="javascript:;" id="addbtnnum"/>增加</a>
+			<button onclick="addbtn()">增加</button>
+			<button onclick="reducebtn()">减少</button>
+			
+		<dl>
+			<dt>购买数量：</dt>
+			<dd>
+				<a href="javascript:;" id="reduce_num">-</a>
+				<input type="text"  value="1" class="amount"/>
+				<a href="javascript:;" id="add_num">+</a>
+			</dd>
+		</dl>
+	</body>
+</html>
+<script>
+	
+	/******************  商品数量修改   ***********************/
+	$("#reduce_num").click(function(){
+		if (parseInt($(".amount").val()) <= 1){
+			alert("商品数量最少为1");
+		} else{
+			$(".amount").val(parseInt($(".amount").val()) - 1);
+		}
+	});
+
+	//增加
+	$("#add_num").click(function(){
+		$(".amount").val(parseInt($(".amount").val()) + 1);
+	});
+
+	//直接输入
+	$(".amount").blur(function(){
+		if (parseInt($(".amount").val()) < 1){
+			alert("商品数量最少为1");
+			$(this).val(1);
+		}
+	});
+	
+	/*******************  随机数加减  *************************/
+	$("#addbtnnum").click(function(){
+		$("#randomnum").val(parseInt($("#randomnum").val())+Math.round(Math.random()*1000));
+	})
+	
+	$("#reducebtnnum").click(function(){
+		if (parseInt($("#randomnum").val()) <= 1){
+			alert("订单数量最少为1");
+		}else{
+			$("#randomnum").val(parseInt($("#randomnum").val())-Math.round(Math.random()*1000));
+		}
+		
+	});
+	
+	function addbtn(){
+		var rnum=parseInt($("#randomnum").val())+Math.round(Math.random()*1000)
+		$("#randomnum").val(rnum);
+	}
+	function reducebtn(){
+		var rnum=parseInt($("#randomnum").val())-Math.round(Math.random()*1000)
+		$("#randomnum").val(rnum);
+	}
+
+</script>
+

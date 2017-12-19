@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<h1 id="header">内容列表</h1>
+		<table id="order" width="400px" height="48px" border="1" cellpadding="0">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+		<button onclick="outDoc()" href="#">输出到word中</button>
+	<script language="JavaScript">
+		function outDoc(){
+			var table=document.all.order;
+			row=table.rows.length;
+			column=table.rows[1].cells.length;
+			var wdapp = new ActiveXObject("Word.Application");
+			wdapp.visible=true;
+			wddoc=wdapp.Documents.Add();//添加新文档
+			thearray=new Array();
+			//将页面中的表格内容放在数组中
+			for(i=0;i<row;i++){
+				thearray[i]=new Array();
+				for(j=0;j<column;j++){
+					thearray[i][j]=table.rows[i].cells[j].innerHTML;
+				}
+			}
+			var range=wddoc.Range(0,0);
+			//range.Text="文档内容";
+			range.Text= document.getElementById("header").innerHTML;
+			//alert(a);
+			wdapp.Application.Activedocument.Paragraphs.Add(range);
+			wdapp.Application.Activedocument.Paragraphs.Add();
+			rngcurrent=wdapp.Application.Activedocument.Paragraphs(3).Range;
+			
+			var objTable=wddoc.Tables.Add(rngcurrent,row,column);  //插入表格
+			
+			for(i=0;i<row;i++){
+				for(j=0;j<column;j++){
+					objTable.Cell(i+1,j+1).Range.Text=thearray[i][j].replace("&nbsp;","");
+				}
+			}
+			wdapp.Application.ActiveDocument.SaveAs("orderInfo.doc",0,false,"",true,"",false,false,false,false,false);
+			wdapp.Application.Printout();
+			wdapp=null;
+		}
+	</script>
+	</body>
+</html>

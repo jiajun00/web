@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>一个复杂的懒人原生css3动画效果</title>
+    <style>
+	body{ background:#202A38}
+    img{display: block;}
+    .cssBox {width: 360px;height: 360px;margin: 100px auto;background-color: #202A38;position: relative;}
+    .cssBox .borderRadius {width: 276px;height: 276px;
+        position: absolute;left: 50%;top: 50%;margin: -138px 0 0 -138px;
+        -webkit-animation: rotating 2s ease 0s infinite;
+                animation: rotating 2s ease 0s infinite;
+    }
+    @-webkit-keyframes rotating {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+        65% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+    }
+    .cssBox .borderRadius .lfRaidus {width: 276px;height: 138px;border-radius: 138px 138px 0 0;position: relative;
+        -webkit-animation: lfRaidus 2s ease 0s infinite;
+                animation: lfRaidus 2s ease 0s infinite;
+    }
+    @-webkit-keyframes lfRaidus {
+        0% {
+            background: -moz-linear-gradient(right,red,black);background: -webkit-linear-gradient(right,#0F956F,#202A38);background: -o-linear-gradient(right,red,black);
+        }
+        65% {
+            background: -moz-linear-gradient(right,red,black);background: -webkit-linear-gradient(right,#0F956F,#202A38);background: -o-linear-gradient(right,red,black);
+        }
+        100% {
+            background: -moz-linear-gradient(right,red,black);background: -webkit-linear-gradient(right,#0F956F,#202A38);background: -o-linear-gradient(right,red,black);
+        }
+    }
+    .cssBox .borderRadius .lfRaidus .ctRaidus {width: 262px;height: 131px;background-color: #202A38;border-radius: 131px 131px 0 0;
+        position: absolute;left: 50%;bottom: 0;-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);
+    }
+    .cssBox .borderRadius .rtRaidus {width: 276px;height: 138px;border-radius: 0 0 138px 138px;position: relative;
+        -webkit-animation: rtRaidus 2s ease 0s infinite;
+                animation: rtRaidus 2s ease 0s infinite;
+    }
+    @-webkit-keyframes rtRaidus {
+        0% {
+            background: -moz-linear-gradient(right,red,black);background: -webkit-linear-gradient(right,#0F956F,#00FFA8);background: -o-linear-gradient(right,red,black);
+        }
+        65% {
+            background: -moz-linear-gradient(right,red,black);background: -webkit-linear-gradient(right,#0F956F,#00FFA8);background: -o-linear-gradient(right,red,black);
+        }
+        100% {
+            background: -moz-linear-gradient(right,red,black);background: -webkit-linear-gradient(right,#0F956F,#00FFA8);background: -o-linear-gradient(right,red,black);
+        }
+    }
+    .cssBox .borderRadius .rtRaidus .ctRaidus {width: 262px;height: 131px;background-color: #202A38;border-radius: 0 0 131px 131px;
+        position: absolute;left: 50%;top: 0;-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);
+    }
+    .cssBox .borderRadius .rtRaidus .hfPoint {width: 7px;height: 5px;position: absolute;left: 0px;top: -5px;border-radius: 5px 5px 0 0;background-color: #00FFA8;}
+    .cssBox .borderRadius .rtRaidus .rtPoint {width: 5px;height: 5px;position: absolute;left: 10px;top: -5px;border-radius: 5px;background-color: #00FFA8;}
+    .cssBox .imageRadius {margin-top: 4px;opacity: 0;width: 100%;height: 100%;
+        position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
+        -webkit-animation: imageRadius 2s ease 0s infinite;
+                animation: imageRadius 2s ease 0s infinite;
+    }
+    @-webkit-keyframes imageRadius {
+        0% {
+            opacity: 0;
+        }
+        65% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .cssBox .waveRaidus {margin-top: 4px;opacity: 0;
+        position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
+        -webkit-animation: waveRaidus 2s ease-out 0s infinite;
+                animation: waveRaidus 2s ease-out 0s infinite;
+    }
+    @-webkit-keyframes waveRaidus {
+        0% {
+            width: 100%;height: 100%;
+            opacity: 0;
+        }
+        65% {
+            width: 100%;height: 100%;
+            opacity: 0;
+        }
+        66% {
+            width: 100%;height: 100%;
+            opacity: 0.8;
+        }
+        100% {
+            width: 130%;height: 130%;
+            opacity: 0;
+        }
+    }
+    .cssBox .pointRadius {width: 10px;height: 10px;border-radius: 360px;background-color: #FFF;border: 1px solid transparent;
+        position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
+        -webkit-animation: pointRadius 2s ease 0s infinite;
+                animation: pointRadius 2s ease 0s infinite;
+    }
+    @-webkit-keyframes pointRadius {
+        0% {width: 10px;height: 10px;border: 0;box-shadow: 0 0 0px 3px rgba(255,255,255,0.3), 0 0 0px 6px rgba(255,255,255,0.2), 0 0 0px 9px rgba(255,255,255,0.1);}
+        5% {width: 10px;height: 10px;border: 0;box-shadow: 0 0 0px 3px rgba(255,255,255,0.3), 0 0 0px 6px rgba(255,255,255,0.2), 0 0 0px 9px rgba(255,255,255,0.1);}
+        10% {width: 12px;height: 12px;border: 0;box-shadow: 0 0 0px 2px rgba(255,255,255,0.3), 0 0 0px 4px rgba(255,255,255,0.2), 0 0 0px 6px rgba(255,255,255,0.1);}
+        15% {width: 16px;height: 16px;border: 0;box-shadow: 0 0 0px 1px rgba(255,255,255,0.3), 0 0 0px 2px rgba(255,255,255,0.2), 0 0 0px 3px rgba(255,255,255,0.1);}
+        20% {width: 26px;height: 26px;border: 0;box-shadow: none;}
+        65% {width: 205px;height: 205px;border: 2px solid #CCC;}
+        100% {width: 205px;height: 205px;border: 2px solid #CCC;}
+    }
+    </style>
+</head>
+<body>
+    <div class="cssBox">
+        <div class="borderRadius">
+            <div class="lfRaidus">
+                <div class="ctRaidus"></div>
+            </div>
+            <div class="rtRaidus">
+                <div class="ctRaidus"></div>
+                <div class="hfPoint"></div>
+                <div class="rtPoint"></div>
+            </div>
+        </div>
+        <div class="imageRadius">
+            <img src="images/1.png" width="100%" alt="">
+        </div>
+        <div class="waveRaidus">
+            <img src="images/1.png" width="100%" alt="">
+        </div>
+        <div class="pointRadius">
+            <img src="images/2.png" width="100%" alt="">
+        </div>
+    </div>
+</body>
+</html>

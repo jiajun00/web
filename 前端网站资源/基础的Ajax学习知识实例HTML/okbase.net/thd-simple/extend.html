@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="thd-simple.js"></script>
+
+</head>
+
+<body>
+<input type="text" name="a" id="a" value="sss"/>
+
+<input type="button" name="b" id="b" value="extend"/>
+<script type="text/javascript">
+
+t.extend("tt",function(){
+	alert(this.el.value)
+})
+
+t("a").on("keyup",function(e,o){
+	t(this).tt();
+})
+
+
+
+
+t.extend({
+	t1: 1,
+	t2: 2,
+	id : "a",
+	el : "1",//属性相同不会被覆盖
+	m1 : function(){
+		alert(this.el)
+		alert(this.el.id);
+		alert(this.t1);
+	}
+})
+
+
+t("b").on("click",function(e,o){
+	t(this).m1();
+	alert("t1 :" + t(this).t1)
+})
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<style>
+.flyoutMenu {
+    background-color: #F1F1F1;
+    border-color: #999999;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+}
+.flyoutMenu TD.flyoutLink  {
+    border-color: #F1F1F1;
+    border-width: 1px;
+    border-style: solid;
+    font-family: Verdana,Arial;
+    font-size: 70%;
+    padding: 1px 25px 3px 6px;
+    cursor: hand;
+}
+.flyoutLink a {
+    color: black;
+    text-decoration: none;
+}
+.flyoutLink a:hover {
+    color: black;
+    text-decoration: none;
+}
+.flyoutLink a:visited {
+    color: black;
+    text-decoration: none;
+}
+.flyoutLink a:active {
+    color: black;
+    text-decoration: none;
+}
+</style>
+<script>
+function over(){
+    if(obj=event.srcElement)
+        if(obj.className=="flyoutLink"){
+            obj.style.backgroundColor='#cccccc'
+            obj.style.borderColor = '#999999'
+        }
+}
+function out(){
+    if(obj=event.srcElement)
+        if(obj.className=="flyoutLink"){
+            obj.style.backgroundColor='#f1f1f1'
+            obj.style.borderColor = '#f1f1f1'
+        }
+}
+function show(d){
+    if(obj=document.all(d))    obj.style.display=""
+}
+function hide(d){
+    if(obj=document.all(d))    obj.style.display="none"
+}
+document.onmouseover=over
+document.onmouseout=out
+</script>
+<a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr><td>
+    <table class="flyoutMenu" width="180" cellpadding="2" cellspacing="0" border="0" >
+        <tr><td>
+        <table width="175" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="flyoutLink">微软菜单</td></tr>
+            <tr><td class="flyoutLink" onmouseover=show("div1")  onmouseout=hide("div1")><a href="javascript:alert(1)">美国</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(2)">加拿大</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(3)">英国</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(4)">法国</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(5)">意大利</a></td></tr>
+        </Table>
+    </table>
+    <table class="flyoutMenu" width="180" cellpadding="2" cellspacing="0" border="0" >
+        <tr><td>
+        <table width="175" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="flyoutLink" ><a href="javascript:alert(5)">澳大利亚</a></td></tr>
+        </table>
+        </td></tr>
+    </table>
+    <table class="flyoutMenu" width="180" cellpadding="2" cellspacing="0" border="0" >
+        <tr><td>
+        <table width="175" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="flyoutLink" handle="1672" onmouseover=show("div7")  onmouseout=hide("div7")><a href="javascript:alert(6)">中国</a></td></tr>
+            <tr><td class="flyoutLink" onmouseover=show("wwwzzjsnet")  onmouseout=hide("wwwzzjsnet") ><a href="javascript:alert(7)">站长特效网</a></td></tr>
+        </table>
+        </td></tr>
+    </table>
+    </td></tr>
+</table>
+<div id=div1 style="position:absolute;display:none;left:191;top:37" onmouseover=show("div1") onmouseout=hide("div1")>
+    <table class="flyoutMenu" width="180" cellpadding="2" cellspacing="0" border="0" >
+        <tr><td>
+        <table width="175" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="flyoutLink">美国菜单</td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(1)">纽约</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(2)">芝加哥</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(3)">三藩市</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(4)">华盛顿</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(5)">费城</a></td></tr>
+        </Table>
+    </table>
+</div>
+<div id=div7 style="position:absolute;display:none;left:191;top:165" onmouseover=show("div7") onmouseout=hide("div7")>
+    <table class="flyoutMenu" width="180" cellpadding="2" cellspacing="0" border="0" >
+        <tr><td>
+        <table width="175" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="flyoutLink">中国菜单</td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(1)">北京</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(2)">上海</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(3)">深圳</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(4)">厦门</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(5)">大连</a></td></tr>
+        </Table>
+    </table>
+</div>
+<div id="wwwzzjsnet" style="position:absolute;display:none;left:191;top:185" onmouseover=show("wwwzzjsnet") onmouseout=hide("wwwzzjsnet")>
+    <table class="flyoutMenu" width="180" cellpadding="2" cellspacing="0" border="0" >
+        <tr><td>
+        <table width="175" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="flyoutLink">zzjs.net频道列表</td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(1)">zzjs</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(2)">网页特效</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(3)">广告代码</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(4)">RSS订阅</a></td></tr>
+            <tr><td class="flyoutLink"><a href="javascript:alert(5)">留言本</a></td></tr>
+        </Table>
+    </table>
+</div>

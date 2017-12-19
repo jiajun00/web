@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+	</head>
+	<style type="text/css">
+	*{padding:0;margin: 0;}
+	.container{height: 2800px;}
+	.top{width: 100%;height: 120px;background: #B10000;}
+	.top img{ margin-left: 50px;margin-top:5px;}
+	.header{height: 30px;background: black;width: 100%; }
+	.header ul{margin: 0 auto;width: 980px;height: 30px;}
+	.header ul li{float: left;margin-right: 4px;line-height: 23px;padding: 2px 6px;}
+	.header ul li a{color: white;text-decoration: none;font-size:12px;font-family: 微软雅黑;padding: 2px 13px;}
+	.header ul li a:hover{text-decoration: underline; }
+	.nav_fixed{position: fixed;top: 0px;}
+	</style>
+	<body>
+ 		
+ 		<div class='container'>
+ 			<div class="top"><img src="http://gtms01.alicdn.com/tps/i1/T1eHH3FaBcXXaeNZTJ-345-87.gif"></div>
+			<div class="header" id="J_m_nav">
+				<ul>
+					<li><a href="http://www.jizhiwang.com">首页</a></li>
+					<li><a href="http://www.phpjz.cn">网页设计</a></li>
+					<li><a href="http://www.jizhiwang.com">首页</a></li>
+					<li><a href="http://www.phpjz.cn">网页设计</a></li>
+					<li><a href="http://www.jizhiwang.com">首页</a></li>
+					<li><a href="http://www.phpjz.cn">网页设计</a></li>
+				</ul>
+			</div>
+ 		</div>
+ 			
+
+		<script type='text/javascript' src='./js/jquery-1.7.2.js'></script>
+		<script type='text/javascript' >
+			var nt = !1;
+			$(window).bind("scroll",
+				function() {
+				var st = $(document).scrollTop();//往下滚的高度
+				nt = nt ? nt: $("#J_m_nav").offset().top;
+				// document.title=st;
+				var sel=$("#J_m_nav");
+				if (nt < st) {
+					sel.addClass("nav_fixed");
+				} else {
+					sel.removeClass("nav_fixed");
+				}
+			});
+		</script>
+	</body>
+</html>

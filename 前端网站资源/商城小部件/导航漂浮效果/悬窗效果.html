@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+	</head>
+	<body>
+		<style>
+		*{margin:0px;padding:0px;list-style: none;}
+			.content{width: 1200px;height:6000px;margin: 10px auto;border: 1px solid red;}
+			.content p{position: relative;top:50px;left:30px;display: block;height: 15px;}
+			
+			.fly_nav{	position:fixed;
+						top:50px;left:50%;
+						margin-left:-800px;				
+						border:3px solid #eee;
+						background:#e0e0e0;
+						transform: scale(0);
+						width:150px;
+						height:150px;
+						}
+			.over{
+				transform: scale(1);
+				transition: all .6s ease-in;
+				/*
+				-webkit-animation:animations 2.5s ease-out;
+				-moz-animation:animations 2.5s ease-out;
+				-o-animation:animations 2.5s ease-out;
+				-ms-animation:animations 2.5s ease-out;
+				animation:animations 2.5s ease-out;
+				*/
+			}
+			/*
+			@-webkit-keyframes animations{
+				0%{-webkit-transform:scale(0);opacity:0;}
+				40%{-webkit-transform:scale(1);opacity:1;}
+				100%{opacity:1;}
+			}
+			@-moz-keyframes animations{
+				0%{-moz-transform:scale(0);opacity:0;}
+				40%{-moz-transform:scale(1);opacity:1;}
+				100%{opacity:1;}
+			}
+			@-o-keyframes animations{
+				0%{-o-transform:scale(0);opacity:0;}
+				40%{-o-transform:scale(1);opacity:1;}
+				100%{opacity:1;}
+			}
+			@-ms-keyframes animations{
+				0%{-ms-transform:scale(0);opacity:0;}
+				40%{-ms-transform:scale(1);opacity:1;}
+				100%{opacity:1;}
+			}
+			@keyframes animations{
+				0%{transform:scale(0);opacity:0;}
+				40%{transform:scale(1);opacity:1;}
+				100%{opacity:1;}
+			}
+			*/
+			.over1{
+				transition: all .6s ease-in;
+				transform: scale(0);
+				/*
+				transform:scale(0);opacity:0;
+				-webkit-animation:animations2 1s ease-out;
+				-moz-animation:animations2 1s ease-out;
+				-o-animation:animations2 1s ease-out;
+				-ms-animation:animations2 1s ease-out;
+				animation:animations2 1s ease-out;
+				*/
+				}
+				/*
+			@-webkit-keyframes animations2{
+				0%{-webkit-transform:scale(1);opacity:1;}
+				100%{-webkit-transform:scale(0);opacity:0;}				
+			}
+			@-moz-keyframes animations2{
+				0%{-moz-transform:scale(1);opacity:1;}
+				100%{-moz-transform:scale(0);opacity:0;}				
+			}
+			@-o-keyframes animations2{
+				0%{-o-transform:scale(1);opacity:1;}
+				100%{-o-transform:scale(0);opacity:0;}				
+			}
+			@-ms-keyframes animations2{
+				0%{-ms-transform:scale(1);opacity:1;}
+				100%{-ms-transform:scale(0);opacity:0;}				
+			}
+			@keyframes animations2{
+				0%{transform:scale(1);opacity:1;}
+				100%{transform:scale(0);opacity:0;}	
+			}*/
+		</style>
+		
+		<div class="content">
+			<p>asd</p>
+		</div>
+		
+		<div id="fly_nav" class="fly_nav">
+			<ul>
+				<li>a</li>
+				<li>b</li>
+				<li>c</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var $fly_nav=$(".fly_nav")
+ 	var $window=$(window);
+	var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); // opera fix
+	$(window).bind('scroll resize',function(){
+        if($window.scrollTop()>1160)
+         {
+         	if($(".fly_nav").hasClass("over1")==1){
+         		$fly_nav.removeClass("over1").addClass("over")
+         	}
+         	else{
+         		$fly_nav.addClass("over").addClass("over");
+         	}     	          
+         }
+        else
+         { 
+         	if($(".fly_nav").hasClass("over")==1){
+         		$fly_nav.removeClass("over").addClass("over1")
+         		}
+         	else{
+         		$fly_nav.addClass("over1");
+         	}      
+         }
+     });
+	var $position = p.position().top;
+	alert($position);
+</script>
