@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="example"></div>
+		<script type="text/babel">
+			var arr = [
+				<h1>React is awesome</h1>,
+				<h2>React is awesome</h2>,
+			];
+			ReactDOM.render(
+				<div>{arr}</div>,
+				document.getElementById("example")
+			);
+		</script>
+	</body>
+</html>
