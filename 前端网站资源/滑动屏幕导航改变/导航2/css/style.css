@@ -1,0 +1,59 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+html,body{height:100%;}
+li{list-style-type:none;}
+img{vertical-align:middle;}
+a{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+.clear{clear:both;}
+
+.ce{display:block;width:90%;height: 120px;background:rgb(255,255,255);position: absolute;top: 0px;padding-left:10%;}
+.ce li{float:left}
+.ce .ce_li{margin-right:110px;}
+.ce .ce_li .ce_img2{display:none;}
+.ce li a{padding:10px 5px;color:rgb(60,60,60);display:block;margin:50px 10px 0px;cursor:pointer;font-size:18px;}
+.ce li a:hover{border-bottom:2px solid rgb(0,82,228);}
+.ce li .dqian{background:none}
+.ce li .xz{border-bottom:2px solid rgb(0,82,228);}
+.ce_img1{margin-top:-40px;}
+
+.ce2{background:rgb(60,60,60);height:83px;position:fixed;z-index:5;top:0px;left:0px;margin-top:0px;}
+.ce2 li a{color:white}
+.ce2 .ce_li{margin-right:210px;}
+.ce2 .ce_li .ce_img2{display:block;padding:5px 0px;}
+.ce2 .ce_li .ce_img{display:none;}
+.ce2 li a{padding:30px 5px;margin:0px 10px;border:0px;}
+.ce2 li a:hover,.ce li .xz{background:rgb(255,255,255);color:rgb(60,60,60);}
+
+#div0{width:100%;height:100%;background:rgb(230,230,230);}
+#div1{width:100%;height:100%;background:rgb(253,83,49);}
+#div2{width:100%;height:100%;background:rgb(192,10,185);}
+#div3{width:100%;height:100%;background:rgb(20,156,225);}
+#div4{width:100%;height:100%;background:rgb(249,152,49);}
+#div5{width:100%;height:100%;background:rgb(10,255,60);}
+#div6{width:100%;height:100%;background:rgb(219,230,247);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
