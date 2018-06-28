@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pjax</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<h1>My Site</h1>
+<div>
+    Go to <a href="res1.php">第一页</a>.<a href="res2.php">第二页</a>
+</div>
+<div id="container"></div>
+</body>
+<script src="./jquery-1.6.2.min.js"></script>
+<script src="./query.pjax.js"></script>
+<script type="text/javascript">
+    $(document).pjax('a', '#container')
+</script>
+</html>
